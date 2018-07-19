@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Management.Data.Repositories
+namespace Management.Data.Infrastructure
 {
     public abstract class RepositoryBase<T> where T : class
     {
