@@ -47,17 +47,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ManagementDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\DbFactory.cs" />
+    <Compile Include="Repositories\Disposable.cs" />
+    <Compile Include="Repositories\IDbFactory.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\IUnitOfWork.cs" />
+    <Compile Include="Repositories\RepositoryBase.cs" />
+    <Compile Include="Repositories\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Management.Common\Management.Common.csproj">
       <Project>{ca953dbd-8f0e-4ad0-87a9-bcaf00f8539d}</Project>
       <Name>Management.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Management.Model\Management.Model.csproj">
+      <Project>{855bdf36-46c0-4fac-877e-6779287ce8f5}</Project>
+      <Name>Management.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Infrastructure\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

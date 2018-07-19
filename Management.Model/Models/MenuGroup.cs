@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Management.Model.Models
 {
     [Table("MenuGroups")]
-    class MenuGroup
+    public class MenuGroup
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
