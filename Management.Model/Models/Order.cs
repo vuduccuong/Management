@@ -42,4 +42,5 @@ namespace Management.Model.Models
 
         public virtual IEnumerable<OrderDetail> OrderDetails { set; get; }
     }
+
 }

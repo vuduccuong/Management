@@ -20,6 +20,6 @@ namespace Management.Model.Models
         public string Name { set; get; }
 
         public virtual IEnumerable<Menu> Menus { set; get; }
-
     }
+
 }

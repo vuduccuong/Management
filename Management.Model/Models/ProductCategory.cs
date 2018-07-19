@@ -22,7 +22,6 @@ namespace Management.Model.Models
 
         [MaxLength(500)]
         public string Description { set; get; }
-
         public int? ParentID { set; get; }
         public int? DisplayOrder { set; get; }
 
@@ -33,4 +32,5 @@ namespace Management.Model.Models
 
         public virtual IEnumerable<Product> Products { set; get; }
     }
+
 }

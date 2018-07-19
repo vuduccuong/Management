@@ -16,4 +16,5 @@ namespace Management.Model.Models
         [MaxLength(50)]
         public string IPAddress { set; get; }
     }
+
 }
