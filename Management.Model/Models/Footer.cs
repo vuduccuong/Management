@@ -19,4 +19,5 @@ namespace Management.Model.Models
         public string Content { set; get; }
     }
 
+
 }

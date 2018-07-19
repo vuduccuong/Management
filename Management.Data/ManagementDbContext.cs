@@ -10,7 +10,7 @@ namespace Management.Data
 {
     public class ManagementDbContext:DbContext
     {
-        public ManagementDbContext() : base("ManagementConnection")
+        public ManagementDbContext() : base("Management")
         {
             this.Configuration.LazyLoadingEnabled = false;
         }

@@ -35,6 +35,6 @@ namespace Management.Model.Models
         public string Target { set; get; }
 
         public bool Status { set; get; }
-
     }
+
 }

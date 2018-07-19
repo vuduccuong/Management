@@ -27,4 +27,5 @@ namespace Management.Model.Models
 
         public bool Status { set; get; }
     }
+
 }

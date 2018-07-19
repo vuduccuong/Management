@@ -38,4 +38,5 @@ namespace Management.Model.Models
         [ForeignKey("CategoryID")]
         public virtual PostCategory PostCategory { set; get; }
     }
+
 }
