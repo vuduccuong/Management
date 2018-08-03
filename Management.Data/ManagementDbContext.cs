@@ -1,4 +1,5 @@
 ﻿using Management.Model.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Management.Data
 {
-    public class ManagementDbContext:DbContext
+    public class ManagementDbContext: IdentityDbContext<ApplicationUser>
     {
         public ManagementDbContext() : base("Management")
         {
@@ -36,8 +37,17 @@ namespace Management.Data
 
         public DbSet<Error> Errors { set; get; }
 
+
+        //Phương thức tạo mới chính nó
+        public static ManagementDbContext Create()
+        {
+            return new ManagementDbContext();
+        }
+
         protected override void OnModelCreating(DbModelBuilder builder)
         {
+            builder.Entity<IdentityUserRole>().HasKey(i => new { i.UserId, i.RoleId });
+            builder.Entity<IdentityUserLogin>().HasKey(i => i.UserId);
 
         }
 
