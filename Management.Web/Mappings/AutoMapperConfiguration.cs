@@ -11,6 +11,10 @@ namespace Management.Web.Mappings
             CreateMap<Post, PostViewModel>();
             CreateMap<PostCategory, PostCategoryViewModel>();
             CreateMap<Tag, TagViewModel>();
+
+            CreateMap<ProductCategory, ProductCategoryViewModel>();
+            CreateMap<ProductCategory, ProductViewModel>();
+            CreateMap<ProductTag, ProductTagViewModel>();
         }
     }
 }
