@@ -52,6 +52,7 @@ namespace Management.Service
             return _postCategoryRepository.GetAll();
         }
 
+ 
         public IEnumerable<PostCategory> GetAllByParentId(int parentId)
         {
             return _postCategoryRepository.GetMulti(x => x.Status && x.ParentID == parentId);

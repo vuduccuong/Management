@@ -4,7 +4,8 @@
     angular.module('management',
         ['management.products',
             'management.product_categories',
-            'management.common'
+            'management.common',
+            'angularUtils.directives.dirPagination'
         ])
         .config(config);
 
