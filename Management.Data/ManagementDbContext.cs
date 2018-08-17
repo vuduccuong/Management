@@ -41,7 +41,7 @@ namespace Management.Data
         //Phương thức tạo mới chính nó
         public static ManagementDbContext Create()
         {
-            return new ManagementDbContext();
+            return new ManagementDbContext(); 
         }
 
         protected override void OnModelCreating(DbModelBuilder builder)
