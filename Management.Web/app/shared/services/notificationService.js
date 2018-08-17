@@ -39,6 +39,6 @@
             displayError: displayError,
             displayWarning: displayWarning,
             displayInfo: displayInfo
-        }
+        };
     }
 })(angular.module('management.common'));

@@ -247,11 +247,14 @@
     <Content Include="app\components\products\productListView.html" />
     <Content Include="app\components\products\products.module.js" />
     <Content Include="app\components\product_categories\productCategoryAddController.js" />
+    <Content Include="app\components\product_categories\productCategoryEditController.js" />
+    <Content Include="app\components\product_categories\productCategoryEditView.html" />
     <Content Include="app\components\product_categories\productCategoryListController.js" />
     <Content Include="app\components\product_categories\productCategoryAddView.html" />
     <Content Include="app\components\product_categories\productCategoryListView.html" />
     <Content Include="app\shared\modules\management.common.js" />
     <Content Include="app\shared\services\apiService.js" />
+    <Content Include="app\shared\services\commonService.js" />
     <Content Include="app\shared\services\notificationService.js" />
     <Content Include="Assets\admin\css\bootstrap.min.css" />
     <Content Include="Assets\admin\css\icons.css" />
@@ -438,7 +441,9 @@
     <Content Include="Scripts\angular-ui-router.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\dirPagination.js" />
+    <Content Include="Scripts\ngBootbox.js" />
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\toastr.min.js" />
     <Content Include="Views\Admin\dirPagination.tpl.html" />
