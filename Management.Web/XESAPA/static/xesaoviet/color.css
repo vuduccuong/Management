@@ -1,0 +1,372 @@
+header.bg-color {
+  /* background: linear-gradient(to top , rgba(0, 0, 0, 0), rgba(0,0,0,0.7)); */
+  background-color: #f7ad0d;
+  color:white;
+}
+
+.bg-color{
+  background-color: #f7ad0d;
+  color:white;
+
+}
+.bg-translate {
+  background: linear-gradient(to top , rgba(0, 0, 0, 0), rgba(0,0,0,0.7));
+}
+header.color a {
+  font-size: 4.3vw;   
+
+  color: #fcdb00;
+}
+.mh25{
+  margin-right: 25px;
+}
+.height-minVH{
+  height:35vh;
+}
+.margin-top {
+  margin-top: -65px;
+}
+
+.color-all-fare{
+  color: #f7ad0d
+}
+.form-control, output {
+  display: block;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+}
+.form-control {
+  height: 40px;
+  padding: 6px 12px;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  -webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  -moz-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.form-input {
+  height: 40px;
+  padding: 6px 12px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  -webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  -moz-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.w-15{
+  width: 15%;
+}
+
+.btn-ticket-action {
+  background-color: #e5f3ff;
+  border-color: #beffff;
+  color: #f7ad0d;
+}
+.floatingbuttons{ 
+  background:#aaa;
+  background:-moz-linear-gradient(top, #f2f2f2, #aaa);
+  border:1px solid #808080;
+  float:left; 
+  padding:0 0 3px 0;
+  position:fixed; 
+  top:15%; 
+  left:0; 
+  z-index:10; 
+  border-radius:0 5px 5px 0; 
+  box-shadow:2px 2px 5px rgba(0,0,0,0.3);
+ }
+
+.color-font-mini{
+  color: #fcdb00;
+}
+.bg-form{
+  background-color:#dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+}
+.bottom-margin{
+  bottom: 8px;
+}
+.color-font{
+  color: #fcdb00;
+}
+.color-menu{
+  color: #f7ad0d;
+}
+.bg-color-login {
+  background-color: #f7ad0d;
+}
+.color-login {
+  color: #f7ad0d;
+}
+.font-size-hotline{
+  color: red;
+  font-size: 17px;
+  font-size: 1.5vw;
+}
+.margin-left-info{
+  margin-left: 110px;
+}
+.margin-top-info{
+  margin-top: 140px
+}
+.top-margin{
+  top: -45px;
+}
+footer .p-doPayment.bg-color {
+  background-color: #f7ad0d;
+}
+.margin-left{
+  margin-left: 23px; 
+}
+.margin-right{
+right: 40px;
+}
+header.p-doPayment.bg-color {
+  background-color: #f7ad0d ;
+}
+
+.top-banner.color {
+  color: #f7ad0d;
+}
+
+.bg-poweredby-color {
+  background-color: #cccccc;
+}
+
+.color {
+  color: #333333;
+}
+
+.color-cta {
+  color: #fcdb00;
+}
+
+.bg-cta {
+  background-color: #f70000;
+}
+
+.underline {
+  height: 3px;
+  width: 20px;
+  background: red;
+  -webkit-transition: width 0s; /* Safari */
+  transition: width 0.3s;
+}
+.underline1 {
+  width: 0%;
+  height: 3px;
+  -webkit-transition: width 0s; /* Safari */
+  transition: width 0.3s;
+}
+.slick-next:before {
+  padding: 10px 10px 10px 10px;
+  background-color: black;
+}
+.slick-next {
+  right: 20px;
+  opacity: 0;
+
+}
+.slick-prev {
+  left: 0px;
+  z-index: 2;
+  opacity: 0;
+}
+/* .slick-list{
+  height: 565px !important;
+} */
+.slick-prev:before {
+  padding: 10px 10px 10px 10px;
+  background-color: black;  
+}
+.mt8{
+  margin-top: 135px;
+}
+.content > ul > li:hover span {
+  width: 100%;
+  border-style: solid;
+  border-width: 1px; 
+  background: red;
+}
+.menu-children > ul > li:hover ul {
+  display: block;
+}
+.content > ul > li:hover b {
+  width: 100%;
+   background: red;
+}
+.content > ul > li:hover ul {
+  display: block;
+}
+
+.red {
+  color: #f70000;
+}
+
+.blue {
+  color: #00c6f7;
+}
+
+.yellow {
+  color: #f7f700;
+}
+
+.vxr-blue {
+  color: #0088cf;
+}
+
+.bg-vxr-gray {
+  background-color: #f0f5f7;
+}
+
+/* old gray #F0F5F7*/
+
+.vxr-gray {
+  color: #b3b3b3;
+}
+
+/*E03B28*/
+
+.btn-bg-color {
+  background-color: #f70000;
+}
+
+.tsb-bg-color {
+  background-color: #f7ad0d;
+}
+
+.post-title,
+.post-title a {
+  color: #dd3333;
+}
+
+.cat-title {
+  color: #dd3333;
+}
+
+footer .poweredby {
+  background-color: #ffffff;
+  color: #333333;
+}
+/* 
+.popupCloseBtn:before,
+.popupCloseBtn:after {
+  background: #2c3e50;
+} */
+
+/* .popupContainer {
+  -webkit-box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1),
+    0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1),
+    0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+} */
+
+.date-picker {
+  background: #fff
+    url(../../../cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)
+    97% 50% no-repeat;
+}
+
+.panel-group .panel-heading {
+  color: #333;
+}
+
+.panel-default > .panel-heading {
+  color: #333;
+  background-color: #f5f5f5;
+  border-color: #ddd;
+}
+
+.panel-group .panel-heading {
+  color: #333;
+}
+
+.fa-angle-up {
+  color: #1867aa;
+}
+
+.btn-vxr-thanhtoan {
+  color: #684d18;
+  background-image: -webkit-radial-gradient(
+      circle at 0 50%,
+      rgba(255, 255, 224, 0) 0.4em,
+      #ffffe0 0.5em
+    ),
+    -webkit-radial-gradient(circle at 100% 50%, rgba(255, 255, 224, 0) 0.4em, #ffffe0
+          0.5em);
+  background-image: -webkit-radial-gradient(
+      0 50% circle,
+      rgba(255, 255, 224, 0) 0.4em,
+      #ffffe0 0.5em
+    ),
+    -webkit-radial-gradient(100% 50% circle, rgba(255, 255, 224, 0) 0.4em, #ffffe0
+          0.5em);
+  background-image: radial-gradient(
+      circle at 0 50%,
+      rgba(255, 255, 224, 0) 0.4em,
+      #f9af00 0.5em
+    ),
+    radial-gradient(
+      circle at 100% 50%,
+      rgba(255, 255, 224, 0) 0.4em,
+      #f9af00 0.5em
+    );
+}
+
+.btn-vxr-thanhtoan:before {
+  border-right: 1.8px solid #e5a100;
+}
+.font-size-color {
+  font-family: Britannic;
+  color: #e31b22;
+}
+.font-color{
+  color: #e31b22;
+  font-size: 1.7vw; 
+}
+.font-family-slogan3{
+  color: #e31b22;
+  font-size: 2.3vw; 
+  font-family: Britannic;
+}
+.bg-img-info{
+  background-image: url(img/Thongtin.png);
+  width: 400px;
+  height: 250px;
+}
+.top-5{
+  top: 5.5px;
+}
+.font-CompanyName{
+  color: #e31b22;
+  font-size: 4.3vw;   
+  font-family: Britannic;
+}
+.font-family-slogan2{
+  font-family:  "Lobster Two", Helvetica, sans-serif;
+  color: #e31b22;
+  font-size: 2.0vw; 
+}
+
+.font-color-menu {
+    color: #eee7e7;
+    font-size: 15px;
+}
+.font-header{
+  font-size: 1vw;
+}
+.bg-menu{
+  background: linear-gradient(to top , rgba(0, 0, 0,0.7), rgba(0,0,0,0.7));
+
+}
