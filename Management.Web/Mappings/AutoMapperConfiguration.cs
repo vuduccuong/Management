@@ -15,6 +15,8 @@ namespace Management.Web.Mappings
             CreateMap<ProductCategory, ProductCategoryViewModel>();
             CreateMap<ProductCategory, ProductViewModel>();
             CreateMap<ProductTag, ProductTagViewModel>();
+
+            CreateMap<Driver, DriverViewModel>();
         }
     }
 }

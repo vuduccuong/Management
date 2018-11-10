@@ -56,6 +56,9 @@
     <Compile Include="Abstract\Auditable.cs" />
     <Compile Include="Abstract\IAuditable.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\Car.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Driver.cs" />
     <Compile Include="Models\Error.cs" />
     <Compile Include="Models\Footer.cs" />
     <Compile Include="Models\Menu.cs" />
@@ -69,8 +72,12 @@
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductCategory.cs" />
     <Compile Include="Models\ProductTag.cs" />
+    <Compile Include="Models\Router.cs" />
+    <Compile Include="Models\Seat.cs" />
+    <Compile Include="Models\SeatNo.cs" />
     <Compile Include="Models\Slide.cs" />
     <Compile Include="Models\Tag.cs" />
+    <Compile Include="Models\Ticket.cs" />
     <Compile Include="Models\VisitorStatistic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
