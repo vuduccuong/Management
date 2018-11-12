@@ -70,6 +70,10 @@
     <Compile Include="Migrations\201808031852355_CreateDfAcc.Designer.cs">
       <DependentUpon>201808031852355_CreateDfAcc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811100715479_DbDoAn.cs" />
+    <Compile Include="Migrations\201811100715479_DbDoAn.Designer.cs">
+      <DependentUpon>201811100715479_DbDoAn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Infrastructure\DbFactory.cs" />
@@ -79,6 +83,9 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
+    <Compile Include="Repositories\CarRepository.cs" />
+    <Compile Include="Repositories\CustomerRepository.cs" />
+    <Compile Include="Repositories\DriverRepository.cs" />
     <Compile Include="Repositories\ErroRepository.cs" />
     <Compile Include="Repositories\FooterRepository.cs" />
     <Compile Include="Repositories\MenuGroupRepository.cs" />
@@ -92,8 +99,12 @@
     <Compile Include="Repositories\ProductCategoryRepository.cs" />
     <Compile Include="Repositories\ProductRepository.cs" />
     <Compile Include="Repositories\ProductTagRepository.cs" />
+    <Compile Include="Repositories\RouteRepository.cs" />
+    <Compile Include="Repositories\SeatNoRepository.cs" />
+    <Compile Include="Repositories\SeatRepository.cs" />
     <Compile Include="Repositories\SlideRepository.cs" />
     <Compile Include="Repositories\TagRepository.cs" />
+    <Compile Include="Repositories\TicketRepository.cs" />
     <Compile Include="Repositories\VisitorStatisticRepository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -122,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808031852355_CreateDfAcc.resx">
       <DependentUpon>201808031852355_CreateDfAcc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811100715479_DbDoAn.resx">
+      <DependentUpon>201811100715479_DbDoAn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

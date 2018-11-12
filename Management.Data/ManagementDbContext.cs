@@ -22,8 +22,6 @@ namespace Management.Data
         public DbSet<Order> Orders { set; get; }
         public DbSet<OrderDetail> OrderDetails { set; get; }
         public DbSet<Page> Pages { set; get; }
-        public DbSet<Post> Posts { set; get; }
-        public DbSet<PostCategory> PostCategories { set; get; }
         public DbSet<PostTag> PostTags { set; get; }
         public DbSet<Product> Products { set; get; }
 
@@ -36,6 +34,17 @@ namespace Management.Data
         public DbSet<VisitorStatistic> VisitorStatistics { set; get; }
 
         public DbSet<Error> Errors { set; get; }
+
+        //Database Do an
+        public DbSet<Post> Posts { set; get; }
+        public DbSet<PostCategory> PostCategories { set; get; }
+        public DbSet<Route> Cars { set; get; }
+        public DbSet<Driver> Drivers { set; get; }
+        public DbSet<Customer> Customers { set; get; }
+        public DbSet<Router> Routers { set; get; }
+        public DbSet<Seat> Seats { set; get; }
+        public DbSet<SeatNo> SeatNos { set; get; }
+        public DbSet<Ticket> Tickets { set; get; }
 
 
         //Phương thức tạo mới chính nó

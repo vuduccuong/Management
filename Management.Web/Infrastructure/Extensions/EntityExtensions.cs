@@ -71,5 +71,24 @@ namespace Management.Web.Infrastructure.Extensions
             post.Status = postVm.Status;
         }
 
+        public static void UpdateDriver(this Driver driver, DriverViewModel driverVm)
+        {
+            driver.ID = driverVm.ID;
+            driver.Name = driverVm.Name;
+            driver.Description = driverVm.Description;
+            driver.Address = driverVm.Address;
+            driver.PhoneNumber = driverVm.PhoneNumber;
+            driver.isDel = driverVm.isDel;
+
+
+            driver.CreatedDate = driverVm.CreatedDate;
+            driver.CreatedBy = driverVm.CreatedBy;
+            driver.UpdatedDate = driverVm.UpdatedDate;
+            driver.UpdatedBy = driverVm.UpdatedBy;
+            driver.MetaKeyword = driverVm.MetaKeyword;
+            driver.MetaDescription = driverVm.MetaDescription;
+            driver.Status = driverVm.Status;
+        }
+
     }
 }

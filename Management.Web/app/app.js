@@ -2,7 +2,9 @@
 
 (function () {
     angular.module('management',
-        ['management.products',
+        [
+            'management.drivers',
+            'management.products',
             'management.product_categories',
             'management.common',
             'angularUtils.directives.dirPagination'

@@ -1,0 +1,734 @@
+.color-cta {
+  color: #fcdb00;
+}
+
+.bg-cta {
+  background-color: #fcdb00;
+}
+
+.bg-color {
+  background-color: #0088cf;
+  
+}
+
+.color {
+  color: #333333;
+}
+
+.vxr-blue {
+  color: #0088cf;
+}
+
+.bg-vxr-gray {
+  background-color: #f0f5f7;
+}
+
+/* old gray #F0F5F7*/
+
+.vxr-gray {
+  color: #b3b3b3;
+}
+
+/*E03B28*/
+
+.btn-bg-color {
+  background-color: #e03b28;
+}
+
+footer.bg-color {
+  background-color: #777777;
+  color: white;
+}
+
+/* .popupCloseBtn:before,
+.popupCloseBtn:after {
+  background: #2c3e50;
+} */
+
+/* .popupContainer {
+  -webkit-box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1),
+    0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1),
+    0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+} */
+
+.date-picker {
+  background: #fff
+    url(../../../cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)
+    97% 50% no-repeat;
+}
+
+.panel-group .panel-heading {
+  color: #333;
+}
+
+.panel-default > .panel-heading {
+  color: #333;
+  background-color: #f5f5f5;
+  border-color: #ddd;
+}
+
+.panel-group .panel-heading {
+  color: #333;
+}
+
+.fa-angle-up {
+  color: #1867aa;
+}
+
+.btn-vxr-thanhtoan {
+  color: #684d18;
+  background-image: -webkit-radial-gradient(
+      circle at 0 50%,
+      rgba(255, 255, 224, 0) 0.4em,
+      #ffffe0 0.5em
+    ),
+    -webkit-radial-gradient(circle at 100% 50%, rgba(255, 255, 224, 0) 0.4em, #ffffe0
+          0.5em);
+  background-image: -webkit-radial-gradient(
+      0 50% circle,
+      rgba(255, 255, 224, 0) 0.4em,
+      #ffffe0 0.5em
+    ),
+    -webkit-radial-gradient(100% 50% circle, rgba(255, 255, 224, 0) 0.4em, #ffffe0
+          0.5em);
+  background-image: radial-gradient(
+      circle at 0 50%,
+      rgba(255, 255, 224, 0) 0.4em,
+      #f9af00 0.5em
+    ),
+    radial-gradient(
+      circle at 100% 50%,
+      rgba(255, 255, 224, 0) 0.4em,
+      #f9af00 0.5em
+    );
+}
+
+.btn-vxr-thanhtoan:before {
+  border-right: 1.8px solid #e5a100;
+}
+
+.link-more {
+  display: none;
+}
+
+.f0 {
+  font-size: 0;
+}
+.height {
+  height: 66px;
+}
+nav li:hover > .sub-menu {
+  display: block;
+}
+
+table.table-slim-border,
+table.table-slim-border th,
+table.table-slim-border tr,
+table.table-slim-border td {
+  border-collapse: collapse;
+  border: 1px solid rgb(236, 236, 236);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+table.table-padding-cell td,
+table.table-padding-cell th {
+  padding-top: 1em !important;
+  padding-bottom: 1em !important;
+}
+
+.moretag {
+  display: none;
+}
+
+@media screen and (min-width: 64em) {
+  .w6-l {
+    width: 20rem;
+  }
+  .h4-5-l {
+    height: 12rem;
+  }
+}
+
+.h4-5 {
+  height: 12rem;
+}
+
+.w6 {
+  width: 32rem;
+}
+
+/* .popupCloseBtn:before,
+.popupCloseBtn:after {
+  content: "";
+  position: absolute;
+  background: #2c3e50;
+  border-radius: 1px;
+  left: 14px;
+  right: 14px;
+  top: 24px;
+  height: 3px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition: background 0.1s;
+  transition: background 0.1s;
+} */
+/* 
+.popupCloseBtn:after {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.popupCloseBtn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 51px;
+  height: 51px;
+  font-size: 0;
+  cursor: pointer;
+} */
+a:active, a:focus {
+  outline: 0;
+  border: none;
+  -moz-outline-style: none;
+}
+a {
+  outline: none;
+}
+object, embed { 
+  outline: 0;
+}
+.popup {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  right: 10px;
+}
+div:focus{
+  outline: none;
+}
+/* .popupContainer {
+  -webkit-box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1),
+    0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1),
+    0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  font-size: 17px;
+  line-height: 40px;
+  white-space: nowrap;
+  -ms-flex-positive: 1;
+  box-flex: 1;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  -webkit-transform: rotate3d(1, 1, 0, -15deg);
+  transform: rotate3d(1, 1, 0, -15deg);
+  -webkit-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+  opacity: 0;
+  will-change: transform, opacity;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+} */
+
+/* .opened .popupContainer {
+  -webkit-transform: none;
+  transform: none;
+  opacity: 1;
+  pointer-events: auto;
+} */
+
+.hamburger {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  height: 50px;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 17px;
+  line-height: 50px;
+  font-weight: 400;
+  padding: 0 10px;
+}
+
+.hamburger h2 {
+  font-size: 0;
+  left: 27px;
+  top: 25px;
+}
+
+.hamburger h2,
+.hamburger h2:before,
+.hamburger h2:after {
+  position: absolute;
+  width: 24px;
+  height: 3px;
+  border-radius: 3px;
+  background: currentColor;
+}
+
+.hamburger h2:before,
+.hamburger h2:after {
+  content: "";
+  left: 0;
+}
+
+.hamburger h2:before {
+  top: -9px;
+}
+
+.hamburger h2:after {
+  top: 9px;
+}
+
+#btnControl {
+  display: none;
+}
+.btn-ticket-action {
+  background-color: #e5f3ff;
+  border-color: #beffff;
+  color: #0e62ab;
+}
+
+.color-font-mini{
+  color: #fcdb00;
+}
+.bg-form{
+  background-color:#dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+}
+.color-all-fare{
+  color: #337ab7
+}
+.form-control, output {
+  display: block;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+}
+.form-control {
+  height: 40px;
+  padding: 6px 12px;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  -webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  -moz-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+button:focus{
+  outline: none;
+}
+li:focus{
+  outline: none;
+}
+a:active { 
+  border: none;
+}
+.form-input {
+  height: 40px;
+  padding: 6px 12px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  -webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  -moz-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.w-15{
+  width: 15%;
+}
+/* #btnControl:checked + label .popupContainer {
+  -webkit-transform: none;
+  transform: none;
+  opacity: 1;
+  pointer-events: auto;
+} */
+
+.date-picker {
+  background: #fff
+    url(../../../cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)
+    97% 50% no-repeat;
+}
+
+.news-date-h {
+  height: 69px;
+}
+
+.mw8-5 {
+  max-width: 73rem;
+}
+
+.mw7-5 {
+  max-width: 52rem;
+}
+
+/*
+  Header - navigation
+  */
+
+#header.transparent-navbar {
+  height: 80px;
+  z-index: 1000;
+  padding: 0 0 10px;
+  margin-bottom: 0;
+  background: transparent;
+  will-change: transfo9m, opacity;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 0;
+}
+
+.h6 {
+  height: 32rem;
+}
+
+.h7 {
+  height: 48rem;
+}
+
+.panel-collapse.collapse {
+  display: none;
+}
+
+.creditcard-logo {
+  height: 20px;
+  margin-left: 5px;
+}
+
+@media (max-width: 991px) {
+  .creditcard-logo {
+    width: 15px;
+    height: auto;
+    margin-left: 1px;
+  }
+}
+
+@media (max-width: 991px) {
+  .creditcard-logo {
+    width: 15px;
+    height: auto;
+    margin-left: 1px;
+  }
+}
+
+.panel-group .panel-heading {
+  color: #333;
+  position: relative;
+}
+
+.panel-group .panel-heading {
+  border-bottom: 0;
+}
+
+.panel-heading {
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+.panel-default > .panel-heading {
+  color: #333;
+  background-color: #f5f5f5;
+  border-color: #ddd;
+}
+
+.panel-group .panel-heading {
+  color: #333;
+  position: relative;
+}
+
+input[name="PaymentMethod"] {
+  display: inline;
+  margin-right: 10px;
+}
+
+.ico-atm {
+  background: url("../img/newlayout/ico-payment.png") no-repeat -3px -143px;
+  width: 23px;
+  height: 15px;
+  display: inline-block;
+  vertical-align: text-bottom;
+  margin-right: 10px;
+  min-width: 25px;
+}
+
+.ico-visa {
+  background: url("../img/newlayout/ico-payment.png") no-repeat -5px -187px;
+  width: 20px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: text-top;
+  margin-right: 10px;
+  min-width: 25px;
+}
+
+.ico-nl {
+  background: url("../img/newlayout/ico-payment.png") no-repeat -4px -229px;
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  vertical-align: bottom;
+  margin-right: 10px;
+  min-width: 25px;
+}
+
+.ico-office {
+  background: url("../img/newlayout/ico-payment.png") no-repeat -7px -276px;
+  width: 19px;
+  height: 19px;
+  display: inline-block;
+  vertical-align: text-bottom;
+  margin-right: 10px;
+  min-width: 25px;
+}
+
+.ico-dgd {
+  background: url("../img/newlayout/ico-payment.png") no-repeat -7px -47px;
+  width: 14px;
+  height: 18px;
+  display: inline-block;
+  vertical-align: text-bottom;
+  margin-right: 10px;
+  min-width: 25px;
+}
+
+.ico-banktransfer {
+  background: url("../img/newlayout/ico-payment.png") no-repeat -5px -3px;
+  width: 23px;
+  height: 23px;
+  display: inline-block;
+  vertical-align: text-bottom;
+  margin-right: 10px;
+  min-width: 25px;
+}
+
+.ico-cod {
+  background: url("../img/newlayout/ico-payment.png") no-repeat -5px -92px;
+  width: 19px;
+  height: 19px;
+  display: inline-block;
+  vertical-align: text-bottom;
+  margin-right: 10px;
+  min-width: 25px;
+}
+
+/* .panel-title>a:focus, .panel-title>a:active, .panel-title>a:visited {
+//   color: #1556a6;
+//   font-weight: bold;
+ }*/
+@media (max-width: 991px) {
+  .panel-title > a {
+    font-weight: bold;
+  }
+}
+
+.panel-title > a {
+  text-decoration: none;
+  display: block;
+}
+
+.panel-title > a,
+.panel-title > small,
+.panel-title > .small,
+.panel-title > small > a,
+.panel-title > .small > a {
+  color: inherit;
+}
+
+[role="button"] {
+  cursor: pointer;
+}
+
+.panel-title > a > i {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.fa-angle-up {
+  color: #1867aa;
+  top: 10px;
+  position: absolute;
+  right: 15px;
+}
+
+@media (max-width: 991px) {
+  .btn-vxr-thanhtoan {
+    width: 100%;
+  }
+}
+
+.btn-vxr-thanhtoan {
+  display: inline-block;
+  position: relative;
+  padding: 14px 5px 10px 45px;
+  color: #684d18;
+  font-weight: bold;
+  font-size: 22px;
+  background-repeat: no-repeat;
+  background-image: -webkit-radial-gradient(
+      circle at 0 50%,
+      rgba(255, 255, 224, 0) 0.4em,
+      #ffffe0 0.5em
+    ),
+    -webkit-radial-gradient(circle at 100% 50%, rgba(255, 255, 224, 0) 0.4em, #ffffe0
+          0.5em);
+  background-image: -webkit-radial-gradient(
+      0 50% circle,
+      rgba(255, 255, 224, 0) 0.4em,
+      #ffffe0 0.5em
+    ),
+    -webkit-radial-gradient(100% 50% circle, rgba(255, 255, 224, 0) 0.4em, #ffffe0
+          0.5em);
+  background-image: radial-gradient(
+      circle at 0 50%,
+      rgba(255, 255, 224, 0) 0.4em,
+      #f9af00 0.5em
+    ),
+    radial-gradient(
+      circle at 100% 50%,
+      rgba(255, 255, 224, 0) 0.4em,
+      #f9af00 0.5em
+    );
+  background-position: top left, top right;
+  background-color: transparent;
+  min-width: 200px;
+  border: none;
+  box-shadow: none;
+  border-radius: 3px !important;
+}
+
+.btn-vxr-thanhtoan:before {
+  content: "";
+  background-image: url(widget/img/vexere-bus-icon-sm.svg);
+  background-repeat: no-repeat;
+  float: left;
+  left: 14px;
+  top: 15px;
+  position: absolute;
+  border-right: 1.8px solid #e5a100;
+  height: 25px;
+  padding-top: 1px;
+  width: 38px;
+  background-size: 32px 25px;
+}body {
+  font-family: Helvetica, sans-serif;
+}
+
+.react-autosuggest__container {
+  position: relative;
+}
+input:focus {
+    outline: none;
+}
+.react-autosuggest__input {
+  width: 240px;
+  height: 30px;
+  padding: 10px 20px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+.form-center{
+  left: 33%;
+}
+.form-center-mini{
+  left: 10%;
+}
+.react-autosuggest__input--focused {
+  outline: none;
+}
+
+.react-autosuggest__input--open {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.react-autosuggest__suggestions-container {
+  display: none;
+}
+.err{
+  border: 1px solid red !important;
+}
+.bg{
+  border: 1px solid white !important;
+}
+.react-autosuggest__suggestions-container--open {
+  display: block;
+  position: absolute;
+  width: 100%;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  z-index: 2;
+}
+
+.react-autosuggest__suggestions-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+
+.react-autosuggest__suggestion--highlighted {
+  background-color: #ddd;
+}
+
+.react-autosuggest__section-container {
+  width: 100%;
+}
+
+.react-autosuggest__section-container--first {
+  border-top: 0;
+}
+
+
+
+
+.mg-left {
+  margin-left: 43px;
+}
+.bg_img_left {
+  background-image: -webkit-linear-gradient(left, transparent, #ff0000);
+  background-image: linear-gradient(to right, transparent, #ff0000);
+  height: 3px;
+}
+.bg_img_right {
+  background-image: -webkit-linear-gradient(left, #ff0000, transparent);
+  background-image: linear-gradient(to right, #ff0000, transparent);
+  height: 3px;
+}
+.main-backgroud {
+  background-color: rgb(234, 234, 234);
+}
+.fsize {
+  font-size: 80px;
+}
