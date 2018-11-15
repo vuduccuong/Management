@@ -74,6 +74,18 @@
     <Compile Include="Migrations\201811100715479_DbDoAn.Designer.cs">
       <DependentUpon>201811100715479_DbDoAn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811140633340_AAA.cs" />
+    <Compile Include="Migrations\201811140633340_AAA.Designer.cs">
+      <DependentUpon>201811140633340_AAA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811140654011_Ab.cs" />
+    <Compile Include="Migrations\201811140654011_Ab.Designer.cs">
+      <DependentUpon>201811140654011_Ab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811140753104_Abb.cs" />
+    <Compile Include="Migrations\201811140753104_Abb.Designer.cs">
+      <DependentUpon>201811140753104_Abb.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Infrastructure\DbFactory.cs" />
@@ -105,6 +117,7 @@
     <Compile Include="Repositories\SlideRepository.cs" />
     <Compile Include="Repositories\TagRepository.cs" />
     <Compile Include="Repositories\TicketRepository.cs" />
+    <Compile Include="Repositories\TypeCarRepository.cs" />
     <Compile Include="Repositories\VisitorStatisticRepository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +149,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811100715479_DbDoAn.resx">
       <DependentUpon>201811100715479_DbDoAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811140633340_AAA.resx">
+      <DependentUpon>201811140633340_AAA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811140654011_Ab.resx">
+      <DependentUpon>201811140654011_Ab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811140753104_Abb.resx">
+      <DependentUpon>201811140753104_Abb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -90,5 +90,44 @@ namespace Management.Web.Infrastructure.Extensions
             driver.Status = driverVm.Status;
         }
 
+        public static void UpdateCar(this Car car, CarViewModel carVm)
+        {
+            car.ID = carVm.ID;
+            car.Name = carVm.Name;
+            car.Code = carVm.Code;
+            car.IDtype = carVm.IDtype;
+            car.IDRouter = carVm.IDRouter;
+            car.IDDriver = carVm.IDDriver;
+            car.isDel = carVm.isDel;
+
+
+            car.CreatedDate = carVm.CreatedDate;
+            car.CreatedBy = carVm.CreatedBy;
+            car.UpdatedDate = carVm.UpdatedDate;
+            car.UpdatedBy = carVm.UpdatedBy;
+            car.MetaKeyword = carVm.MetaKeyword;
+            car.MetaDescription = carVm.MetaDescription;
+            car.Status = carVm.Status;
+        }
+
+        public static void UpdateRoute(this Router route, RouterViewModel routeVm)
+        {
+            route.ID = routeVm.ID;
+            route.StartPoint = routeVm.StartPoint;
+            route.Description = routeVm.Description;
+            route.EndPoint = routeVm.EndPoint;
+            route.TimeStart = routeVm.TimeStart;
+            route.isDel = routeVm.isDel;
+
+
+            route.CreatedDate = routeVm.CreatedDate;
+            route.CreatedBy = routeVm.CreatedBy;
+            route.UpdatedDate = routeVm.UpdatedDate;
+            route.UpdatedBy = routeVm.UpdatedBy;
+            route.MetaKeyword = routeVm.MetaKeyword;
+            route.MetaDescription = routeVm.MetaDescription;
+            route.Status = routeVm.Status;
+        }
+
     }
 }

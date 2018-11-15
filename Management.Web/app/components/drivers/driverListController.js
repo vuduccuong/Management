@@ -28,7 +28,6 @@
             });
         }
 
-
         function search() {
             getdrivers();
         }
@@ -46,7 +45,6 @@
                     result.data[i].CreatedDate = 0;
                 }
                 $scope.drivers = result.data;
-
             }, function () {
                 console.log('Load productcategory failed.');
             });

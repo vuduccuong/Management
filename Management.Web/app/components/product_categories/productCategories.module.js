@@ -6,7 +6,6 @@
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
 
     function config($stateProvider, $urlRouterProvider) {
-
         $stateProvider.state('product_categories', {
             parent: 'base',
             url: "/product_categories",
@@ -25,6 +24,5 @@
                 templateUrl: "/app/components/product_categories/productCategoryEditView.html",
                 controller: "productCategoryEditController"
             });
-
     }
 })();

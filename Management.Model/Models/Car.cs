@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Management.Model.Models
 {
     [Table("Cars")]
-    public class Route:Auditable
+    public class Car:Auditable
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

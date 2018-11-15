@@ -5,8 +5,7 @@
 
     function driverEditController(apiService, $scope, notificationService, $state, $stateParams, commonService) {
         $scope.driver = {
-            UpdatedDate: new Date(),
-            Status: true
+            UpdatedDate: new Date()
         };
 
         $scope.Updatedriver = Updatedriver;
@@ -31,5 +30,4 @@
 
         loaddriverDetail();
     }
-
-})(angular.module('management.product_categories'));
+})(angular.module('management.drivers'));

@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Management.Data.Repositories
 {
-    public interface IRouteRepository : IRepository<Route>
+    public interface IRouteRepository : IRepository<Router>
     {
     }
-    public class RouteRepository : RepositoryBase<Route>, IRouteRepository
+    public class RouteRepository : RepositoryBase<Router>, IRouteRepository
     {
         public RouteRepository(IDbFactory dbFactory) : base(dbFactory)
         {

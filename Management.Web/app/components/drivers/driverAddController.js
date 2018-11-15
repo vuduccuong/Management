@@ -4,10 +4,6 @@
     driverAddController.$inject = ['apiService', '$scope', 'notificationService', '$state'];
 
     function driverAddController(apiService, $scope, notificationService, $state) {
-        $scope.driver = {
-            CreatedDate: new Date(),
-            Status: true,
-        };
 
         $scope.AddDriver = AddDriver;
 
@@ -21,5 +17,4 @@
                 });
         }
     }
-
 })(angular.module('management.drivers'));
