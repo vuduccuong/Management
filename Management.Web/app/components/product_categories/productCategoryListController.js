@@ -28,7 +28,6 @@
             });
         }
 
-
         function search() {
             getProductCagories();
         }
@@ -46,7 +45,6 @@
                     result.data[i].CreatedDate = 0;
                 }
                 $scope.productCategories = result.data;
-
             }, function () {
                 console.log('Load productcategory failed.');
             });

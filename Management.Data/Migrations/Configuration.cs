@@ -21,33 +21,57 @@
             CreateProductCategorySample(context);
             //  This method will be called after migrating to the latest version.
 
-            //var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ManagementDbContext()));
+            CreateAccount(context);
+            CreatTypeCar(context);
 
-            //var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new ManagementDbContext()));
+        }
 
-            //string birtday = "June 18, 1996";
-            //var user = new ApplicationUser()
-            //{
-            //    UserName = "cuongvd",
-            //    Email = "vuduccuong.ck48@gmail.com",
-            //    EmailConfirmed = true,
-            //    BirthDay = DateTime.Parse(birtday),
-            //    FullName = "Vu Duc Cuong"
+        private void CreatTypeCar(ManagementDbContext context)
+        {
+            if (context.TypeCars.Count() == 0)
+            {
+                List<TypeCar> listTypeCars = new List<TypeCar>()
+            {
+                new TypeCar() { Name="Xe khách"},
+                 new TypeCar() { Name="Xe hợp đồng"},
+            };
+                context.TypeCars.AddRange(listTypeCars);
+                context.SaveChanges();
+            }
+        }
 
-            //};
+        private void CreateAccount(ManagementDbContext context)
+        {
+            if (context.Users.Count() == 0)
+            {
+                var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ManagementDbContext()));
 
-            //manager.Create(user, "123@123a");
+                var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new ManagementDbContext()));
 
-            //if (!roleManager.Roles.Any())
-            //{
-            //    roleManager.Create(new IdentityRole { Name = "Admin" });
-            //    roleManager.Create(new IdentityRole { Name = "User" });
-            //    roleManager.Create(new IdentityRole { Name = "Management" });
-            //}
+                string birtday = "June 18, 1996";
+                var user = new ApplicationUser()
+                {
+                    UserName = "cuongvd",
+                    Email = "vuduccuong.ck48@gmail.com",
+                    EmailConfirmed = true,
+                    BirthDay = DateTime.Parse(birtday),
+                    FullName = "Vu Duc Cuong"
 
-            //var adminUser = manager.FindByEmail("vuduccuong.ck48@gmail.com");
+                };
 
-            //manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User", "Management" });
+                manager.Create(user, "123@123a");
+
+                if (!roleManager.Roles.Any())
+                {
+                    roleManager.Create(new IdentityRole { Name = "Admin" });
+                    roleManager.Create(new IdentityRole { Name = "User" });
+                    roleManager.Create(new IdentityRole { Name = "Management" });
+                }
+
+                var adminUser = manager.FindByEmail("vuduccuong.ck48@gmail.com");
+
+                manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User", "Management" });
+            }
 
         }
 

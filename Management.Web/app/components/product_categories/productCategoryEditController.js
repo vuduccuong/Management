@@ -1,9 +1,9 @@
 ﻿(function (app) {
     app.controller('productCategoryEditController', productCategoryEditController);
 
-    productCategoryEditController.$inject = ['apiService', '$scope', 'notificationService', '$state', '$stateParams','commonService'];
+    productCategoryEditController.$inject = ['apiService', '$scope', 'notificationService', '$state', '$stateParams', 'commonService'];
 
-    function productCategoryEditController(apiService, $scope, notificationService, $state, $stateParams,commonService) {
+    function productCategoryEditController(apiService, $scope, notificationService, $state, $stateParams, commonService) {
         $scope.productCategory = {
             CreatedDate: new Date(),
             Status: true
@@ -44,5 +44,4 @@
         loadParentCategory();
         loadProductCategoryDetail();
     }
-
 })(angular.module('management.product_categories'));

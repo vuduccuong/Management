@@ -33,5 +33,4 @@
 
         loadParentCategory();
     }
-
 })(angular.module('management.product_categories'));

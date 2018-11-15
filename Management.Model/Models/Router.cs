@@ -18,11 +18,11 @@ namespace Management.Model.Models
 
         [Required]
         [MaxLength(255)]
-        public string Start { get; set; }
+        public string StartPoint { get; set; }
 
         [Required]
         [MaxLength(255)]
-        public string End { get; set; }
+        public string EndPoint { get; set; }
 
         [Required]
         public string TimeStart { get; set; }

@@ -61,6 +61,7 @@
     <Compile Include="Models\Driver.cs" />
     <Compile Include="Models\Error.cs" />
     <Compile Include="Models\Footer.cs" />
+    <Compile Include="Models\HistoryAction.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\MenuGroup.cs" />
     <Compile Include="Models\Order.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Models\Slide.cs" />
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\Ticket.cs" />
+    <Compile Include="Models\TypeCar.cs" />
     <Compile Include="Models\VisitorStatistic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

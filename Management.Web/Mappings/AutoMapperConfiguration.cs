@@ -17,6 +17,10 @@ namespace Management.Web.Mappings
             CreateMap<ProductTag, ProductTagViewModel>();
 
             CreateMap<Driver, DriverViewModel>();
+            CreateMap<Car, CarViewModel>();
+            CreateMap<Router, RouterViewModel>();
+            CreateMap<TypeCar, TypeCarViewModel>();
+            CreateMap<HistoryAction, HistoryActionViewModel>();
         }
     }
 }

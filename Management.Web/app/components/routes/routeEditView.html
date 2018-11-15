@@ -1,0 +1,62 @@
+﻿  <!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Cập nhật danh mục: {{route.Name}}
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+        <li><a href="#">Sản phẩm</a></li>
+        <li><a ui-sref="routes">Danh mục</a></li>
+        <li class="active">Cập nhật</li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+    <!-- Horizontal Form -->
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">{{route.StartPoint}} - {{route.EndPoint}}</h3>
+        </div><!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal" novalidate name="frmUpdatedriver" role="form" ng-submit="Updateroute()">
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Điểm bắt đầu</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" required name="name" ng-model="route.StartPoint">
+                        <span ng-show="frmAdddriver.name.$invalid" class="has-error">Phải nhập điểm bắt đầu</span>
+                        <span ng-show="frmAdddriver.name.$error.maxlength" class="has-error">điểm bắt đầu chỉ được 256 ký tự</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Điểm kết thúc</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" ng-maxlength="255" name="description" ng-model="route.EndPoint">
+                        <span ng-show="frmAdddriver.description.$error.maxlength" class="has-error">Điểm kết thúc chỉ được 255 ký tự</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Giờ bắt đầu</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="time" ng-model="route.TimeStart">
+                        <span ng-show="frmAdddriver.description.$error.maxlength" class="has-error">Số điện thoại chỉ được nhập 15 kí tự</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="">
+                        <div class="checkbox checkbox-custom">
+                            <input id="checkbox11" type="checkbox" ng-model="route.Status" ng-checked="route.Status">
+                            <label for="checkbox11">
+                                Kích hoạt
+                            </label>
+                        </div>
+                    </div>
+                </div> 
+            </div><!-- /.box-body -->
+            <div class="box-footer">
+                <button ui-sref="routes" class="btn btn-default">Hủy</button>
+                <button type="submit" class="btn btn-success pull-right" ng-disabled="frmUpdatedriver.$invalid">Lưu</button>
+            </div><!-- /.box-footer -->
+        </form>
+    </div><!-- /.box -->
+</section><!-- /.content -->

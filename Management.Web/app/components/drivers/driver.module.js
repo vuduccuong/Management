@@ -6,7 +6,6 @@
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
 
     function config($stateProvider, $urlRouterProvider) {
-
         $stateProvider.state('drivers', {
             parent: 'base',
             url: "/drivers",

@@ -1,0 +1,82 @@
+﻿  <!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Cập nhật danh mục: {{car.Name}}
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+        <li><a href="#">Sản phẩm</a></li>
+        <li><a ui-sref="cars">Danh mục</a></li>
+        <li class="active">Cập nhật</li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+    <!-- Horizontal Form -->
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">{{car.Name}}</h3>
+        </div><!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal" novalidate name="frmUpdatedriver" role="form" ng-submit="Updatecar()">
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Tên xe</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="name" ng-model="car.Name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Biển số xe</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="code" ng-model="car.Code">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Loại xe</label>
+                    <div class="col-sm-10">
+                        <select name="IDtype" class="form-control" ng-model="car.IDtype" ng-options="option.ID as option.Name for option in typeCars">
+                            <option value="">-Chọn loại xe-</option>
+                        </select>
+                        <input type="hidden" name="IDtype" ng-model="car.IDtype" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Tài xế</label>
+                    <div class="col-sm-10">
+                        <select name="IDDriver" class="form-control" ng-model="car.IDDriver" ng-options="option.ID as option.Name for option in drivers">
+                            <option value="">-Chọn tài xế-</option>
+                        </select>
+                        <input type="hidden" name="IDDriver" ng-model="car.IDDriver" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Lộ trình</label>
+                    <div class="col-sm-10">
+                        <select name="IDRouter" class="form-control" ng-model="car.IDRouter" ng-options="option.ID as option.StartPoint + ' - ' + option.EndPoint+' ( ' + option.TimeStart+' h )' for option in routes">
+                            <option value="">-Chọn Lộ trình-</option>
+                        </select>
+                        <input type="hidden" name="IDRouter" ng-model="car.IDRouter" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="">
+                        <div class="checkbox checkbox-custom">
+                            <input id="checkbox11" type="checkbox" ng-model="car.Status" ng-checked="car.Status">
+                            <label for="checkbox11">
+                                Kích hoạt
+                            </label  
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.box-body -->
+            <div class="box-footer">
+                <button ui-sref="drivers" class="btn btn-default">Hủy</button>
+                <button type="submit" class="btn btn-success pull-right" ng-disabled="frmUpdatedriver.$invalid">Lưu</button>
+            </div><!-- /.box-footer -->
+        </form>
+    </div><!-- /.box -->
+</section><!-- /.content -->

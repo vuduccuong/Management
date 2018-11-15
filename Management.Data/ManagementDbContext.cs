@@ -16,7 +16,7 @@ namespace Management.Data
             this.Configuration.LazyLoadingEnabled = false;
         }
 
-        public DbSet<Footer> Footers { set; get; }
+        //public DbSet<Footer> Footers { set; get; }
         public DbSet<Menu> Menus { set; get; }
         public DbSet<MenuGroup> MenuGroups { set; get; }
         public DbSet<Order> Orders { set; get; }
@@ -38,13 +38,16 @@ namespace Management.Data
         //Database Do an
         public DbSet<Post> Posts { set; get; }
         public DbSet<PostCategory> PostCategories { set; get; }
-        public DbSet<Route> Cars { set; get; }
+        public DbSet<Car> Cars { set; get; }
         public DbSet<Driver> Drivers { set; get; }
         public DbSet<Customer> Customers { set; get; }
         public DbSet<Router> Routers { set; get; }
         public DbSet<Seat> Seats { set; get; }
         public DbSet<SeatNo> SeatNos { set; get; }
         public DbSet<Ticket> Tickets { set; get; }
+        public DbSet<TypeCar> TypeCars { set; get; }
+
+        public DbSet<HistoryAction> HistoryActions { set; get; }
 
 
         //Phương thức tạo mới chính nó
