@@ -1,0 +1,49 @@
+﻿<div class="card-box">
+    <h4 class="header-title">Danh sách lịch sử tác động hệ thống</h4>
+    <di class="row">
+        <div class="col-md-6">
+            <div class="input-group">
+                <input type="text" class="form-control" ng-model="keyword" placeholder="Từ khóa">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" ng-click="search()">Tìm kiếm</button>
+                </span>
+            </div><!-- /input-group -->
+        </div>
+    </di>
+
+    <div id="datatable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-hover m-0 tickets-list table-actions-bar dt-responsive nowrap dataTable no-footer dtr-inline collapsed" cellspacing="0" id="datatable" role="grid" aria-describedby="datatable_info" style="width: 100%;">
+                    <thead>
+                        <tr role="row">
+                            <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 45px;" aria-sort="ascending" aria-label="
+                                                ID
+                                            : activate to sort column descending">
+                                STT
+                            </th>
+                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Requested By: activate to sort column ascending">UserName</th>
+                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Assignee: activate to sort column ascending">Loại tác động</th>
+                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Assignee: activate to sort column ascending">Ngày tác động</th>
+                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Assignee: activate to sort column ascending">Trạng thái</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr dir-paginate="item in history_actions | itemsPerPage: 10 ">
+                            <td>{{$index+1}}</td>
+                            <td>{{item.UserName}}</td>
+                            <td>{{item.ActionName}}</td>
+                            <td>{{item.ActionDate}}</td>
+                            <td><span class="badge badge-danger">{{item.Status}}</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dir-pagination-controls boundary-links="true"
+                                         direction-links="true"
+                                         on-page-change="pageChangeHandler(newPageNumber)">
+                </dir-pagination-controls>
+            </div>
+        </div>
+    </div>
+</div>

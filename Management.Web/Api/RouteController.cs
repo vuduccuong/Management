@@ -78,7 +78,6 @@ namespace Management.Web.Api
                     var newRoute = new Router();
                     newRoute.UpdateRoute(routeVm);
                     newRoute.CreatedDate = DateTime.Now;
-                    newRoute.CreatedBy = User.Identity.Name;
 
                     _routeService.Add(newRoute);
                     _routeService.Save();

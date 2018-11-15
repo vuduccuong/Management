@@ -47,6 +47,8 @@ namespace Management.Data
         public DbSet<Ticket> Tickets { set; get; }
         public DbSet<TypeCar> TypeCars { set; get; }
 
+        public DbSet<HistoryAction> HistoryActions { set; get; }
+
 
         //Phương thức tạo mới chính nó
         public static ManagementDbContext Create()

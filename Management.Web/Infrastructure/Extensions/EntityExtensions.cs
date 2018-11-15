@@ -50,6 +50,7 @@ namespace Management.Web.Infrastructure.Extensions
             productCategory.Status = productCategoryVm.Status;
 
         }
+
         public static void UpdatePost(this Post post, PostViewModel postVm)
         {
             post.ID = postVm.ID;
@@ -127,6 +128,15 @@ namespace Management.Web.Infrastructure.Extensions
             route.MetaKeyword = routeVm.MetaKeyword;
             route.MetaDescription = routeVm.MetaDescription;
             route.Status = routeVm.Status;
+        }
+
+        public static void UpdateHistoryAction(this HistoryAction historyAction, HistoryActionViewModel historyActionVM)
+        {
+            historyAction.ID = historyActionVM.ID;
+            historyAction.UserName = historyActionVM.UserName;
+            historyAction.ActionName = historyActionVM.ActionName;
+            historyAction.ActionDate = historyActionVM.ActionDate;
+            historyAction.Status = historyActionVM.Status;
         }
 
     }

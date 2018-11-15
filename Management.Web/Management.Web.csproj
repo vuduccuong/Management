@@ -211,6 +211,7 @@
     <Compile Include="Api\AccountController.cs" />
     <Compile Include="Api\CarController.cs" />
     <Compile Include="Api\DriverController.cs" />
+    <Compile Include="Api\HistoryActionController.cs" />
     <Compile Include="Api\HomeController.cs" />
     <Compile Include="Api\PostCategoryController.cs" />
     <Compile Include="Api\ProductCategoryController.cs" />
@@ -232,6 +233,7 @@
     <Compile Include="Mappings\AutoMapperConfiguration.cs" />
     <Compile Include="Models\CarViewModel.cs" />
     <Compile Include="Models\DriverViewModel.cs" />
+    <Compile Include="Models\HistoryActionViewModel.cs" />
     <Compile Include="Models\PostCategoryViewModel.cs" />
     <Compile Include="Models\PostTagViewModel.cs" />
     <Compile Include="Models\PostViewModel.cs" />
@@ -299,6 +301,9 @@
     <Content Include="app\components\drivers\driverEditView.html" />
     <Content Include="app\components\drivers\driverListController.js" />
     <Content Include="app\components\drivers\driverListView.html" />
+    <Content Include="app\components\history_actions\historyAction.module.js" />
+    <Content Include="app\components\history_actions\historyActionListController.js" />
+    <Content Include="app\components\history_actions\historyActionListView.html" />
     <Content Include="app\components\home\homeController.js" />
     <Content Include="app\components\home\homeView.html" />
     <Content Include="app\components\home\rootController.js" />

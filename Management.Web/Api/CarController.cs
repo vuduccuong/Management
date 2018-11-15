@@ -97,7 +97,6 @@ namespace Management.Web.Api
                     var newCar = new Car();
                     newCar.UpdateCar(carVm);
                     newCar.CreatedDate = DateTime.Now;
-                    newCar.CreatedBy = User.Identity.Name;
 
                     _carService.Add(newCar);
                     _carService.Save();

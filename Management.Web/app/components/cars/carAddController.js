@@ -1,15 +1,21 @@
 ﻿(function (app) {
     app.controller('carAddController', carAddController);
 
-    carAddController.$inject = ['apiService', '$scope', 'notificationService', '$state'];
+    carAddController.$inject = ['apiService', '$scope', 'notificationService', '$state','authData'];
 
-    function carAddController(apiService, $scope, notificationService, $state) {
+    function carAddController(apiService, $scope, notificationService, $state, authData) {
+        var userName = authData.authenticationData.userName;
         $scope.car = {
-            CreatedDate: new Date(),
+            CreatedBy : userName,
             Status: true,
         };
 
         $scope.AddCar = AddCar;
+        var historyAction = {
+            "ActionName" : "Thêm mới xe",
+            "Status": 1,
+            "UserName": userName,
+        };
 
         function AddCar() {
             apiService.post('api/car/create', $scope.car,
@@ -17,8 +23,19 @@
                     notificationService.displaySuccess(result.data.Name + ' đã được thêm mới.');
                     $state.go('cars');
                 }, function (error) {
+                    historyAction["Status"] = 0;
                     notificationService.displayError('Thêm mới không thành công.');
                 });
+            debugger;
+            apiService.post('api/historyaction/create', JSON.stringify(historyAction),
+                function () {
+                    debugger;
+                    console.log("Lưu lịch sử thành công");
+                },
+                function () {
+                    console.log("Không lưu lịch sử thành công");
+                }
+            )
         }
 
         //Load tất cả loại xe

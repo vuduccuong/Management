@@ -6,6 +6,7 @@
             'management.routes',
             'management.cars',
             'management.drivers',
+            'management.history_actions',
             'management.common'
             
         ])
