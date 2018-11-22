@@ -20,26 +20,30 @@ namespace Management.Web.Api
         #region Initalize
         private ICarService _carService;
         private ITypeCarService _typecarService;
+        private ISeatService _seatService;
+        private ISeatNoService _seatnoService;
 
-        public CarController(IErrorService errorService, ICarService carService, ITypeCarService typecarService)
+        public CarController(IErrorService errorService, ICarService carService, ITypeCarService typecarService, ISeatService seatService, ISeatNoService seatnoService)
             : base(errorService)
         {
             this._carService = carService;
             this._typecarService = typecarService;
+            this._seatService = seatService;
+            this._seatnoService = seatnoService;
         }
         #endregion
 
         #region GetCarBySearch
         [Route("getall")]
         [HttpGet]
-        public HttpResponseMessage GetAll(HttpRequestMessage request,string keyword)
+        public HttpResponseMessage GetAll(HttpRequestMessage request)
         {
             return CreateHttpResponse(request, () =>
             {
-                var model = _carService.GetAll(keyword);
+                var model = _carService.GetAllDetail();
 
-                var responseData = Mapper.Map<IEnumerable<Car>, IEnumerable<CarViewModel>>(model);
-                var response = request.CreateResponse(HttpStatusCode.OK, responseData);
+                //var responseData = Mapper.Map<IEnumerable<Car>, IEnumerable<CarViewModel>>(model);
+                var response = request.CreateResponse(HttpStatusCode.OK, model);
                 return response;
             });
         }
@@ -94,12 +98,49 @@ namespace Management.Web.Api
                 }
                 else
                 {
+                    var crSeat = new Seat();
+                    var crSeatNo = new SeatNo();
+                    string[] seat = new string[] { "A", "B", "C", "D", "E", "G", "H", "I" };
+
                     var newCar = new Car();
                     newCar.UpdateCar(carVm);
                     newCar.CreatedDate = DateTime.Now;
 
                     _carService.Add(newCar);
                     _carService.Save();
+
+                    for (int i = 0; i < 8; i++)
+                    {
+                        crSeat.IDCar = newCar.ID;
+                        crSeat.Row = seat[i];
+                        crSeat.isDel = false;
+                        _seatService.Add(crSeat);
+                        _seatService.Save();
+
+                        if (seat[i] == "I") //Hàng cuối luôn 6 ghế
+                        {
+                            for (int j = 1; j < 7; j++)
+                            {
+                                crSeatNo.IDSeat = crSeat.ID;
+                                crSeatNo.SeatNb = j;
+                                crSeatNo.Status = false;
+                                _seatnoService.Add(crSeatNo);
+                                _seatnoService.Save();
+                            }
+                        }
+
+                        else //Các hàng còn lại 4 ghế
+                            for (int j = 1; j < 5; j++)
+                            {
+                                crSeatNo.IDSeat = crSeat.ID;
+                                crSeatNo.SeatNb = j;
+                                crSeatNo.Status = false;
+                                _seatnoService.Add(crSeatNo);
+                                _seatnoService.Save();
+                            }
+                    }
+
+
 
                     var responseData = Mapper.Map<Car, CarViewModel>(newCar);
                     response = request.CreateResponse(HttpStatusCode.Created, responseData);

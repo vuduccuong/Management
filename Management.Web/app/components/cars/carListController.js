@@ -49,15 +49,17 @@
             getcars();
         }
         function getcars() {
-            var config = {
-                params: {
-                    keyword: $scope.keyword
-                }
-            };
-            apiService.get('/api/car/getall', config, function (result) {
+            //var config = {
+            //    params: {
+            //        keyword: $scope.keyword
+            //    }
+            //};
+            apiService.get('/api/car/getall', null, function (result) {
+                debugger;
                 if (result.data === 0) {
                     notificationService.displayWarning('Không có bản ghi nào được tìm thấy.');
                 }
+                console.log(result.data);
                 for (var i = 0; i < result.data.length; i++) {
                     result.data[i].CreatedDate = 0;
                 }

@@ -3,6 +3,7 @@
 (function () {
     angular.module('management',
         [
+            'management.seats',
             'management.routes',
             'management.cars',
             'management.drivers',

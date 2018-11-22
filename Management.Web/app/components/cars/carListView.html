@@ -1,5 +1,5 @@
 ﻿<div class="card-box">
-    <h4 class="header-title">Danh sách tài xế</h4>
+    <h4 class="header-title">Danh sách xe</h4>
     <di class="row">
         <div class="col-md-6">
             <div class="input-group">
@@ -37,10 +37,10 @@
                     <tbody>
                         <tr dir-paginate="item in cars | itemsPerPage: 10 ">
                             <td>{{$index+1}}</td>
-                            <td>{{item.Name}}</td>
+                            <td><a style="color:blue" ui-sref="seat_car({id:item.ID})">{{item.NameCar}}</a></td>
                             <td>{{item.Code}}</td>
-                            <td>{{item.IDDriver}}</td>
-                            <td>{{item.IDRouter}}</td>
+                            <td>{{item.NameDriver}}</td>
+                            <td>{{item.StartPoint}} <=> {{item.EndPoint}} </td>
                             <td><span class="badge badge-danger">{{item.Status}}</span></td>
                             <td>
                                 <button class="btn btn-sm btn-primary" ui-sref="edit_car({id:item.ID})"><i class="fa fa-pencil"></i></button>

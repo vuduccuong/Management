@@ -1,12 +1,12 @@
 ﻿  <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Cập nhật danh mục: {{car.Name}}
+        Cập nhật xe: {{car.Name}}
     </h1>
     <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
-        <li><a href="#">Sản phẩm</a></li>
-        <li><a ui-sref="cars">Danh mục</a></li>
+        <li><a href=""><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+        <li><a href="">Xe</a></li>
+        <li><a ui-sref="cars">Quản lý xe</a></li>
         <li class="active">Cập nhật</li>
     </ol>
 </section>
@@ -74,7 +74,7 @@
                 </div>
             </div><!-- /.box-body -->
             <div class="box-footer">
-                <button ui-sref="drivers" class="btn btn-default">Hủy</button>
+                <button ui-sref="cars" class="btn btn-default">Hủy</button>
                 <button type="submit" class="btn btn-success pull-right" ng-disabled="frmUpdatedriver.$invalid">Lưu</button>
             </div><!-- /.box-footer -->
         </form>

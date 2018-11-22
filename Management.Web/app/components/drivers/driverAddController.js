@@ -7,7 +7,6 @@
         var userName = authData.authenticationData.userName;
         $scope.driver = {
             CreatedBy: userName,
-            Status: true
         }
         $scope.AddDriver = AddDriver;
 

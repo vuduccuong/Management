@@ -1,4 +1,5 @@
-﻿using Management.Data.Infrastructure;
+﻿using Management.Common.ViewModel;
+using Management.Data.Infrastructure;
 using Management.Data.Repositories;
 using Management.Model.Models;
 using System;
@@ -17,6 +18,8 @@ namespace Management.Service
         IEnumerable<Car> GetAll(string keyword);
 
         Car GetById(int id);
+
+        IEnumerable<CarDetailVewModel> GetAllDetail();
 
         void Save();
     }
@@ -47,6 +50,11 @@ namespace Management.Service
                 return _carRepository.GetMulti(x => x.Name.Contains(keyword) || x.Code.Contains(keyword));
             else
                 return _carRepository.GetAll();
+        }
+
+        public IEnumerable<CarDetailVewModel> GetAllDetail()
+        {
+            return _carRepository.GetAllDetail();
         }
 
         public Car GetById(int id)
