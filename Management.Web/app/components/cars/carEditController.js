@@ -12,7 +12,7 @@
         var historyAction = {
             "ActionName": "cập nhật xe",
             "Status": true,
-            "UserName": authData.authenticationData.userName,
+            "UserName": userName,
         };
 
         function loadcarDetail() {

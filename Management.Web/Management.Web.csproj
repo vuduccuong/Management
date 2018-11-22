@@ -216,6 +216,7 @@
     <Compile Include="Api\PostCategoryController.cs" />
     <Compile Include="Api\ProductCategoryController.cs" />
     <Compile Include="Api\RouteController.cs" />
+    <Compile Include="Api\SeatController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -241,6 +242,7 @@
     <Compile Include="Models\ProductTagViewModel.cs" />
     <Compile Include="Models\ProductViewModel.cs" />
     <Compile Include="Models\RouterViewModel.cs" />
+    <Compile Include="Models\SeatViewModel.cs" />
     <Compile Include="Models\TagViewModel.cs" />
     <Compile Include="Models\TypeCarViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -330,6 +332,15 @@
     <Content Include="app\components\routes\routeEditView.html" />
     <Content Include="app\components\routes\routeListController.js" />
     <Content Include="app\components\routes\routeListView.html" />
+    <Content Include="app\components\seats\seat.module.js" />
+    <Content Include="app\components\seats\seatAddController.js" />
+    <Content Include="app\components\seats\seatAddView.html" />
+    <Content Include="app\components\seats\seatCarController.js" />
+    <Content Include="app\components\seats\seatCarView.html" />
+    <Content Include="app\components\seats\seatEditController.js" />
+    <Content Include="app\components\seats\seatEditView.html" />
+    <Content Include="app\components\seats\seatListController.js" />
+    <Content Include="app\components\seats\seatListView.html" />
     <Content Include="app\shared\modules\management.common.js" />
     <Content Include="app\shared\services\apiService.js" />
     <Content Include="app\shared\services\authData.js" />

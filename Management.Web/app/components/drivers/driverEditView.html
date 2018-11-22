@@ -1,12 +1,12 @@
 ﻿  <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Cập nhật danh mục: {{driver.Name}}
+        Cập nhật tài xế: {{driver.Name}}
     </h1>
     <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
-        <li><a href="#">Sản phẩm</a></li>
-        <li><a ui-sref="drivers">Danh mục</a></li>
+        <li><a href=""><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+        <li><a href="">Nghiệp vụ</a></li>
+        <li><a ui-sref="drivers">Quản lý tài xế</a></li>
         <li class="active">Cập nhật</li>
     </ol>
 </section>
@@ -43,10 +43,11 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" name="status" ng-model="driver.Status" ng-checked="driver.Status"> Kích hoạt
+                    <div class="">
+                        <div class="checkbox checkbox-custom">
+                            <input id="checkbox11" type="checkbox" ng-model="driver.Status" ng-checked="driver.Status">
+                            <label for="checkbox11">
+                                Kích hoạt
                             </label>
                         </div>
                     </div>

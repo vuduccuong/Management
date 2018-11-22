@@ -1,4 +1,5 @@
-﻿using Management.Data.Infrastructure;
+﻿using Management.Common.ViewModel;
+using Management.Data.Infrastructure;
 using Management.Model.Models;
 using System;
 using System.Collections.Generic;
@@ -10,24 +11,17 @@ namespace Management.Data.Repositories
 {
     public interface ICarRepository : IRepository<Car>
     {
+        IEnumerable<CarDetailVewModel> GetAllDetail();
     }
     public class CarRepository : RepositoryBase<Car>, ICarRepository
     {
         public CarRepository(IDbFactory dbFactory) : base(dbFactory)
         {
-
+            
         }
-        public IEnumerable<Car> GetAllDetail()
+        public IEnumerable<CarDetailVewModel> GetAllDetail()
         {
-            var query = from c in DbContext.Cars
-                        join dr in DbContext.Drivers
-                        on c.IDDriver equals dr.ID
-                        join rot in DbContext.Routers
-                        on c.IDRouter equals rot.ID
-                        where c.Status
-                        orderby c.CreatedDate descending
-                        select c;
-            return query;
+            return DbContext.Database.SqlQuery<CarDetailVewModel>("Proc_CarDetal");
         }
     }
 }

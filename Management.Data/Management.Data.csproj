@@ -90,6 +90,18 @@
     <Compile Include="Migrations\201811151215400_AddTableHistoryAction.Designer.cs">
       <DependentUpon>201811151215400_AddTableHistoryAction.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811221700114_CreatProCarDetail.cs" />
+    <Compile Include="Migrations\201811221700114_CreatProCarDetail.Designer.cs">
+      <DependentUpon>201811221700114_CreatProCarDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811221724035_aaaa.cs" />
+    <Compile Include="Migrations\201811221724035_aaaa.Designer.cs">
+      <DependentUpon>201811221724035_aaaa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811221746461_bb.cs" />
+    <Compile Include="Migrations\201811221746461_bb.Designer.cs">
+      <DependentUpon>201811221746461_bb.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Infrastructure\DbFactory.cs" />
@@ -166,6 +178,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811151215400_AddTableHistoryAction.resx">
       <DependentUpon>201811151215400_AddTableHistoryAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811221700114_CreatProCarDetail.resx">
+      <DependentUpon>201811221700114_CreatProCarDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811221724035_aaaa.resx">
+      <DependentUpon>201811221724035_aaaa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811221746461_bb.resx">
+      <DependentUpon>201811221746461_bb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

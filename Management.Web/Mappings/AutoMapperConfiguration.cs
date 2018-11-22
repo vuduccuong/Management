@@ -21,6 +21,7 @@ namespace Management.Web.Mappings
             CreateMap<Router, RouterViewModel>();
             CreateMap<TypeCar, TypeCarViewModel>();
             CreateMap<HistoryAction, HistoryActionViewModel>();
+            CreateMap<Seat, SeatViewModel>();
         }
     }
 }
