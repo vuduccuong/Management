@@ -56,9 +56,6 @@
                 if (result.data === 0) {
                     notificationService.displayWarning('Không có bản ghi nào được tìm thấy.');
                 }
-                for (var i = 0; i < result.data.length; i++) {
-                    result.data[i].CreatedDate = 0;
-                }
                 $scope.routes = result.data;
             }, function () {
                 console.log('Load route failed.');

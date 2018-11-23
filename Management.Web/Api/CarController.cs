@@ -100,7 +100,7 @@ namespace Management.Web.Api
                 {
                     var crSeat = new Seat();
                     var crSeatNo = new SeatNo();
-                    string[] seat = new string[] { "A", "B", "C", "D", "E", "G", "H", "I" };
+                    string[] seat = new string[] { "A", "B", "C", "D", "E", "G", "H", "I","K" };
 
                     var newCar = new Car();
                     newCar.UpdateCar(carVm);
@@ -109,7 +109,7 @@ namespace Management.Web.Api
                     _carService.Add(newCar);
                     _carService.Save();
 
-                    for (int i = 0; i < 8; i++)
+                    for (int i = 0; i < 9; i++)
                     {
                         crSeat.IDCar = newCar.ID;
                         crSeat.Row = seat[i];
@@ -117,9 +117,9 @@ namespace Management.Web.Api
                         _seatService.Add(crSeat);
                         _seatService.Save();
 
-                        if (seat[i] == "I") //Hàng cuối luôn 6 ghế
+                        if (seat[i] == "K") //Hàng cuối luôn 5 ghế
                         {
-                            for (int j = 1; j < 7; j++)
+                            for (int j = 1; j < 6; j++)
                             {
                                 crSeatNo.IDSeat = crSeat.ID;
                                 crSeatNo.SeatNb = j;

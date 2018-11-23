@@ -1,4 +1,5 @@
-﻿using Management.Data.Infrastructure;
+﻿using Management.Common.ViewModel;
+using Management.Data.Infrastructure;
 using Management.Data.Repositories;
 using Management.Model.Models;
 using System;
@@ -24,6 +25,7 @@ namespace Management.Service
         void Save();
 
         IEnumerable<Seat> GetSeatByCarID(int id);
+        IEnumerable<SeatStatusViewModel> GetSeatStatus(int id);
     }
     class SeatService : ISeatService
     {
@@ -62,6 +64,11 @@ namespace Management.Service
         public IEnumerable<Seat> GetSeatByCarID(int id)
         {
            return _seatRepository.GetMulti(x => x.IDCar == id);
+        }
+
+        public IEnumerable<SeatStatusViewModel> GetSeatStatus(int id)
+        {
+            return _seatRepository.GetAllSeatStatus(id);
         }
 
         public void Save()
