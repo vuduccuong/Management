@@ -114,6 +114,39 @@
     <Compile Include="Migrations\201811231202547_Proc_Status_Seat1.Designer.cs">
       <DependentUpon>201811231202547_Proc_Status_Seat1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811251009259_addDateBooking.cs" />
+    <Compile Include="Migrations\201811251009259_addDateBooking.Designer.cs">
+      <DependentUpon>201811251009259_addDateBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811251028359_addTableBooking.cs" />
+    <Compile Include="Migrations\201811251028359_addTableBooking.Designer.cs">
+      <DependentUpon>201811251028359_addTableBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811251057230_getSeatByDate.cs" />
+    <Compile Include="Migrations\201811251057230_getSeatByDate.Designer.cs">
+      <DependentUpon>201811251057230_getSeatByDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811251257466_getSeatByDate3.cs" />
+    <Compile Include="Migrations\201811251257466_getSeatByDate3.Designer.cs">
+      <DependentUpon>201811251257466_getSeatByDate3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811260202419_26\11\2018.cs" />
+    <Compile Include="Migrations\201811260203324_addStoreProc.cs" />
+    <Compile Include="Migrations\201811260203324_addStoreProc.Designer.cs">
+      <DependentUpon>201811260203324_addStoreProc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811260817249_addSearchCarByRoute.cs" />
+    <Compile Include="Migrations\201811260817249_addSearchCarByRoute.Designer.cs">
+      <DependentUpon>201811260817249_addSearchCarByRoute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811260842390_addSearchCarByRoute1.cs" />
+    <Compile Include="Migrations\201811260842390_addSearchCarByRoute1.Designer.cs">
+      <DependentUpon>201811260842390_addSearchCarByRoute1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811261003151_addCheckStatusByCar.cs" />
+    <Compile Include="Migrations\201811261003151_addCheckStatusByCar.Designer.cs">
+      <DependentUpon>201811261003151_addCheckStatusByCar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Infrastructure\DbFactory.cs" />
@@ -208,6 +241,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811231202547_Proc_Status_Seat1.resx">
       <DependentUpon>201811231202547_Proc_Status_Seat1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811251009259_addDateBooking.resx">
+      <DependentUpon>201811251009259_addDateBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811251028359_addTableBooking.resx">
+      <DependentUpon>201811251028359_addTableBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811251057230_getSeatByDate.resx">
+      <DependentUpon>201811251057230_getSeatByDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811251257466_getSeatByDate3.resx">
+      <DependentUpon>201811251257466_getSeatByDate3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811260203324_addStoreProc.resx">
+      <DependentUpon>201811260203324_addStoreProc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811260817249_addSearchCarByRoute.resx">
+      <DependentUpon>201811260817249_addSearchCarByRoute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811260842390_addSearchCarByRoute1.resx">
+      <DependentUpon>201811260842390_addSearchCarByRoute1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811261003151_addCheckStatusByCar.resx">
+      <DependentUpon>201811261003151_addCheckStatusByCar.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

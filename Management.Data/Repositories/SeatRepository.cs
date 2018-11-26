@@ -12,7 +12,7 @@ namespace Management.Data.Repositories
 {
     public interface ISeatRepository : IRepository<Seat>
     {
-        IEnumerable<SeatStatusViewModel> GetAllSeatStatus(int id);
+        IEnumerable<SeatStatusViewModel> GetAllSeatStatus(int id, string dateBook);
     }
     public class SeatRepository : RepositoryBase<Seat>, ISeatRepository
     {
@@ -20,13 +20,14 @@ namespace Management.Data.Repositories
         {
         }
 
-        public IEnumerable<SeatStatusViewModel> GetAllSeatStatus(int id)
+        public IEnumerable<SeatStatusViewModel> GetAllSeatStatus(int id, string dateBook)
         {
             var parameters = new Object[]
             {
-                new SqlParameter("@IDCar",id)
+                new SqlParameter("@IDCar",id),
+                new SqlParameter("@DateBook",dateBook)
             };
-             return DbContext.Database.SqlQuery<SeatStatusViewModel>("Proc_Status_Seat1  @IDCar", parameters);
+             return DbContext.Database.SqlQuery<SeatStatusViewModel>("Proc_Status_Seat  @IDCar, @DateBook", parameters);
         }
     }
 }

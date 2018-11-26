@@ -20,6 +20,9 @@ namespace Management.Service
         Car GetById(int id);
 
         IEnumerable<CarDetailVewModel> GetAllDetail();
+        IEnumerable<CarByRouteViewModel> GetByRoute(int id, string timeStart);
+        IEnumerable<RowByCarViewModel> GetRowByCar(int id);
+        IEnumerable<StatusBySeatViewModel> GetStatusBySeat(int id, string dateBook);
 
         void Save();
     }
@@ -60,6 +63,21 @@ namespace Management.Service
         public Car GetById(int id)
         {
             return _carRepository.GetSingleById(id);
+        }
+
+        public IEnumerable<CarByRouteViewModel> GetByRoute(int id, string timeStart)
+        {
+            return _carRepository.GetCarByRoute(id, timeStart);
+        }
+
+        public IEnumerable<RowByCarViewModel> GetRowByCar(int id)
+        {
+            return _carRepository.GetRowByCar(id);
+        }
+
+        public IEnumerable<StatusBySeatViewModel> GetStatusBySeat(int id, string dateBook)
+        {
+            return _carRepository.GetStatusBySeat(id, dateBook);
         }
 
         public void Save()

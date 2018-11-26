@@ -25,7 +25,7 @@ namespace Management.Service
         void Save();
 
         IEnumerable<Seat> GetSeatByCarID(int id);
-        IEnumerable<SeatStatusViewModel> GetSeatStatus(int id);
+        IEnumerable<SeatStatusViewModel> GetSeatStatus(int id, string dateBook);
     }
     class SeatService : ISeatService
     {
@@ -66,9 +66,9 @@ namespace Management.Service
            return _seatRepository.GetMulti(x => x.IDCar == id);
         }
 
-        public IEnumerable<SeatStatusViewModel> GetSeatStatus(int id)
+        public IEnumerable<SeatStatusViewModel> GetSeatStatus(int id, string dateBook)
         {
-            return _seatRepository.GetAllSeatStatus(id);
+            return _seatRepository.GetAllSeatStatus(id, dateBook);
         }
 
         public void Save()

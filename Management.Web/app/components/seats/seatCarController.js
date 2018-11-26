@@ -4,21 +4,27 @@
     seatCarController.$inject = ['$scope', 'apiService', '$state', '$stateParams','notificationService', '$ngBootbox', 'authData'];
 
     function seatCarController($scope, apiService, $state, $stateParams, notificationService, $ngBootbox, authData) {
+        
         $scope.seatStatus = [];
         $scope.getSeatStatus = getSeatStatus;
         var id = $stateParams.id;
         function getSeatStatus() {
-            $.ajax({
-                url: "api/seat/getseatstatus/" + id,
-                success: function (data) {
-                    console.log(data);
-                    binData(data);
-                },
-                error: function () {
-                    console.log("aa");
+            var config = {
+                params: {
+                    id: id,
+                    dateBook: '11/29/2018'
                 }
-            })
-        }
+            };
+            apiService.get('api/seat/getseatstatus?id=' + config.params.id + '&dateBook=' + config.params.dateBook,null, function (result) {
+                console.log(result)
+                //$scope.seatStatus = result.data;
+                binData(result.data);
+            }, function () {
+                console.log("Oopz..");
+            }
+            )
+        };
+
         function binData(item) {
             var html1 = item[0].NameCar;
             $('#nameCar').append(html1);
@@ -77,7 +83,7 @@
                 html += "<td><input id='checkbox11' type='checkbox' type='checkbox' value='3' " + check3 + " ng-model='" + item[i].row3 +"'></td>";
                 html += "<td><input id='checkbox11' type='checkbox' type='checkbox' value='4' " + check4 + " ng-model='" + item[i].row4 +"'></td>";
                 html += "<td><input id='checkbox11' type='checkbox' type='checkbox' value='5' " + check5 + " ng-model='" + item[i].row5 +"'></td>";
-                console.log(html);
+
                 check = "";
             }
             $('#tblData').append(html);

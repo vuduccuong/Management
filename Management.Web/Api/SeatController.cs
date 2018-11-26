@@ -23,13 +23,13 @@ namespace Management.Web.Api
         #endregion
 
         #region GetSeatStatus
-        [Route("getseatstatus/{id:int}")]
+        [Route("getseatstatus")]
         [HttpGet]
-        public HttpResponseMessage GetSeatStatus(HttpRequestMessage request, int id)
+        public HttpResponseMessage GetSeatStatus(HttpRequestMessage request, int id, string dateBook)
         {
             return CreateHttpResponse(request, () =>
             {
-                var model = _seatService.GetSeatStatus(id);
+                var model = _seatService.GetSeatStatus(id, dateBook);
 
                 //var responseData = Mapper.Map<IEnumerable<Car>, IEnumerable<CarViewModel>>(model);
                 var response = request.CreateResponse(HttpStatusCode.OK, model);
