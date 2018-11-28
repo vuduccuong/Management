@@ -28,6 +28,9 @@ namespace Management.Model.Models
         [MaxLength(255)]
         public string Email { get; set; }
 
+        [Required]
+        public string Address { get; set; }
+
         public bool? isDel { get; set; }
     }
 }

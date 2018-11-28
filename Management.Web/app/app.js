@@ -9,6 +9,7 @@
             'management.drivers',
             'management.history_actions',
             'management.booking',
+            'management.customers',
             'management.common'
             
         ])

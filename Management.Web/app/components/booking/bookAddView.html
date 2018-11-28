@@ -47,6 +47,15 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                            <br />
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <lable>Nơi ở hiện tại</lable>
+                                                    <div class="col-">
+                                                        <input type="text" class="form-control" required id="addressCustomer" name="name" ng-model="book.AddressCustomer">
+                                                    </div>
+                                                </div>
+                                            </div>
 
                                                 <hr />
                                                 <h4 style="color:firebrick">Thông tin chuyến đi</h4>
@@ -101,7 +110,7 @@
                                                         <div class="col-md-4">
                                                             <lable>Tên xe</lable>
                                                             <div class="col-">
-                                                                <select name="IDCar" class="form-control" ng-model="book.IDCar" ng-change="LoadStatus()" ng-options="option.ID as option.Name  for option in cars">
+                                                                <select name="IDCar" id="IDCar" class="form-control" ng-model="book.IDCar" ng-change="LoadStatus()" ng-options="option.ID as option.Name  for option in cars">
                                                                     <option value="">-Chọn xe-</option>
                                                                 </select>
                                                             </div>
@@ -109,7 +118,7 @@
                                                         <div class="col-md-4">
                                                             <lable>Hàng ghế</lable>
                                                             <div class="col-">
-                                                                <select name="IDSeat" class="form-control" ng-model="book.IDSeat" ng-change="GetStatus()" ng-options="option.ID as option.Row for option in rows">
+                                                                <select name="IDSeat" id="IDSeat" class="form-control" ng-model="book.IDSeat" ng-change="GetStatus()" ng-options="option.ID as option.Row for option in rows">
                                                                     <option value="">-Chọn hàng ghế-</option>
                                                                 </select>
                                                             </div>
@@ -117,7 +126,7 @@
                                                         <div class="col-md-4">
                                                             <lable>Vị trí</lable>
                                                             <div class="col-">
-                                                                <select name="IDSeatNo" class="form-control" ng-model="book.IDSeatNo" ng-options="option.ID as option.SeatNb  for option in status">
+                                                                <select name="IDSeatNo" id="IDSeatNo" class="form-control" ng-model="book.IDSeatNo"  ng-options="option.IDSeatNo as option.SeatNb  for option in status">
                                                                     <option value="">-Chọn vị trí-</option>
                                                                 </select>
                                                             </div>

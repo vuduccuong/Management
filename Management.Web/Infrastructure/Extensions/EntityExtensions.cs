@@ -139,5 +139,11 @@ namespace Management.Web.Infrastructure.Extensions
             historyAction.Status = historyActionVM.Status;
         }
 
+
+        public static void UpdateStatusSeatNo(this SeatNo seatno, SeatNoViewModel seatnoVM)
+        {
+            seatno.ID = seatnoVM.ID;
+            seatno.Status = seatnoVM.Status;
+        }
     }
 }

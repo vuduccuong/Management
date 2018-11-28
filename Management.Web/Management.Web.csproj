@@ -209,7 +209,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\AccountController.cs" />
+    <Compile Include="Api\BookController.cs" />
     <Compile Include="Api\CarController.cs" />
+    <Compile Include="Api\CustomerController.cs" />
     <Compile Include="Api\DriverController.cs" />
     <Compile Include="Api\HistoryActionController.cs" />
     <Compile Include="Api\HomeController.cs" />
@@ -232,8 +234,11 @@
     <Compile Include="Infrastructure\Core\ApiControllerBase.cs" />
     <Compile Include="Infrastructure\Extensions\EntityExtensions.cs" />
     <Compile Include="Mappings\AutoMapperConfiguration.cs" />
+    <Compile Include="Models\BookViewModel.cs" />
     <Compile Include="Models\CarViewModel.cs" />
+    <Compile Include="Models\CustomerViewModel.cs" />
     <Compile Include="Models\DriverViewModel.cs" />
+    <Compile Include="Models\GetIDCustomerViewModel.cs" />
     <Compile Include="Models\HistoryActionViewModel.cs" />
     <Compile Include="Models\PostCategoryViewModel.cs" />
     <Compile Include="Models\PostTagViewModel.cs" />
@@ -242,6 +247,7 @@
     <Compile Include="Models\ProductTagViewModel.cs" />
     <Compile Include="Models\ProductViewModel.cs" />
     <Compile Include="Models\RouterViewModel.cs" />
+    <Compile Include="Models\SeatNoViewModel.cs" />
     <Compile Include="Models\SeatViewModel.cs" />
     <Compile Include="Models\TagViewModel.cs" />
     <Compile Include="Models\TypeCarViewModel.cs" />
@@ -299,6 +305,9 @@
     <Content Include="app\components\cars\carEditView.html" />
     <Content Include="app\components\cars\carListController.js" />
     <Content Include="app\components\cars\carListView.html" />
+    <Content Include="app\components\customers\customer.module.js" />
+    <Content Include="app\components\customers\customerListController.js" />
+    <Content Include="app\components\customers\customerListView.html" />
     <Content Include="app\components\drivers\driver.module.js" />
     <Content Include="app\components\drivers\driverAddController.js" />
     <Content Include="app\components\drivers\driverAddView.html" />

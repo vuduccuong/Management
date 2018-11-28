@@ -1,4 +1,5 @@
-﻿using Management.Data.Infrastructure;
+﻿using Management.Common.ViewModel;
+using Management.Data.Infrastructure;
 using Management.Data.Repositories;
 using Management.Model.Models;
 using System;
@@ -20,6 +21,8 @@ namespace Management.Service
         IEnumerable<SeatNo> GetAll(string keyword);
 
         SeatNo GetById(int id);
+
+        int UpdateStatus(bool status, int id);
 
         void Save();
     }
@@ -65,6 +68,12 @@ namespace Management.Service
         public void Update(SeatNo seatno)
         {
             _seatnoRepository.Update(seatno);
+        }
+
+        public int UpdateStatus(bool status, int id)
+        {
+             _seatnoRepository.UpdateStatus(status, id);
+            return 1;
         }
     }
 }

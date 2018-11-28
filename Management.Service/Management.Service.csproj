@@ -47,7 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookService.cs" />
     <Compile Include="CarService.cs" />
+    <Compile Include="CustomerService.cs" />
     <Compile Include="DriveService.cs" />
     <Compile Include="ErrorService.cs" />
     <Compile Include="HistoryActionService.cs" />
