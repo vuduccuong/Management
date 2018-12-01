@@ -11,6 +11,12 @@
             url: "/customers",
             templateUrl: "/app/components/customers/customerListView.html",
             controller: "customerListController"
-        });
+        })
+            .state('edit_customer', {
+                parent: 'base',
+                url: "/edit_customer/:id",
+                templateUrl: "/app/components/customers/customerEditView.html",
+                controller: "customerEditController"
+            });
     }
 })();

@@ -72,5 +72,22 @@ namespace Management.Web.Api
         }
 
         #endregion
+
+        #region GetCustomerById
+        [Route("getbyid/{id:int}")]
+        [HttpGet]
+        public HttpResponseMessage GetById(HttpRequestMessage request, int id)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                var model = _customerService.GetCustDetail(id);
+
+
+                var response = request.CreateResponse(HttpStatusCode.OK, model);
+
+                return response;
+            });
+        }
+        #endregion
     }
 }

@@ -167,6 +167,22 @@
     <Compile Include="Migrations\201811281631580_getIDBook.Designer.cs">
       <DependentUpon>201811281631580_getIDBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812010956510_UpdateStatusWhenDelCustomer.cs" />
+    <Compile Include="Migrations\201812010956510_UpdateStatusWhenDelCustomer.Designer.cs">
+      <DependentUpon>201812010956510_UpdateStatusWhenDelCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812011020361_UpdateStatusWhenDelCustomer1.cs" />
+    <Compile Include="Migrations\201812011020361_UpdateStatusWhenDelCustomer1.Designer.cs">
+      <DependentUpon>201812011020361_UpdateStatusWhenDelCustomer1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812011444493_getBookWithIDCus.cs" />
+    <Compile Include="Migrations\201812011444493_getBookWithIDCus.Designer.cs">
+      <DependentUpon>201812011444493_getBookWithIDCus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812011709091_editCustomer.cs" />
+    <Compile Include="Migrations\201812011709091_editCustomer.Designer.cs">
+      <DependentUpon>201812011709091_editCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Infrastructure\DbFactory.cs" />
@@ -301,6 +317,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811281631580_getIDBook.resx">
       <DependentUpon>201811281631580_getIDBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812010956510_UpdateStatusWhenDelCustomer.resx">
+      <DependentUpon>201812010956510_UpdateStatusWhenDelCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812011020361_UpdateStatusWhenDelCustomer1.resx">
+      <DependentUpon>201812011020361_UpdateStatusWhenDelCustomer1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812011444493_getBookWithIDCus.resx">
+      <DependentUpon>201812011444493_getBookWithIDCus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812011709091_editCustomer.resx">
+      <DependentUpon>201812011709091_editCustomer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

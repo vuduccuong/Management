@@ -308,6 +308,8 @@
     <Content Include="app\components\customers\customer.module.js" />
     <Content Include="app\components\customers\customerListController.js" />
     <Content Include="app\components\customers\customerListView.html" />
+    <Content Include="app\components\customers\customerEditController.js" />
+    <Content Include="app\components\customers\customerEditView.html" />
     <Content Include="app\components\drivers\driver.module.js" />
     <Content Include="app\components\drivers\driverAddController.js" />
     <Content Include="app\components\drivers\driverAddView.html" />

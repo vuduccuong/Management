@@ -18,7 +18,8 @@ namespace Management.Service
 
         Booking Delete(int id);
 
-        IEnumerable<Booking> GetAll(string keyword);
+        IEnumerable<Booking> GetAll(int id);
+
 
         IEnumerable<GetBookViewModel> GetBookByIDCustomer(int id);
 
@@ -46,10 +47,10 @@ namespace Management.Service
             return _bookRepository.Delete(id);
         }
 
-        public IEnumerable<Booking> GetAll(string keyword)
+        public IEnumerable<Booking> GetAll(int id)
         {
-            if (!string.IsNullOrEmpty(keyword))
-                return _bookRepository.GetMulti(x => x.ID == int.Parse(keyword));
+            if (!string.IsNullOrEmpty(id.ToString()))
+                return _bookRepository.GetMulti(x => x.IDCustomer == id);
             else
                 return _bookRepository.GetAll();
         }

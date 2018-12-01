@@ -12,7 +12,7 @@
             var config = {
                 params: {
                     id: id,
-                    dateBook: '11/28/2018'
+                    dateBook: '12/02/2018'
                 }
             };
             apiService.get('api/seat/getseatstatus?id=' + config.params.id + '&dateBook=' + config.params.dateBook,null, function (result) {

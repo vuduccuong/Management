@@ -1,0 +1,194 @@
+﻿<section class="content-header">
+    <h1>
+        Cập nhật thông tin khách hàng: {{customer.Name}}
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href=""><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+        <li><a href="">Xe</a></li>
+        <li><a ui-sref="customers">Quản lý khách hàng</a></li>
+        <li class="active">Cập nhật</li>
+    </ol>
+</section>
+
+<div class="content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-12">
+                <div class="">
+                    <div class="timeline">
+                        <article class="timeline-item alt">
+                            <div class="text-left">
+                                <div class="time-show first">
+                                    <button type="button" class="btn btn-info waves-effect waves-light"> <span>Book Car</span> <i class="mdi mdi-bus-side" style="width: 50%"></i> </button>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="timeline-item alt"></article>
+                        <article class="timeline-item ">
+                            <div class="timeline-desk">
+                                <div class="panel">
+                                    <div class="timeline-box">
+                                        <span class="arrow"></span>
+                                        <span class="timeline-icon bg-custom"><i class="mdi mdi-adjust"></i></span>
+                                        <form class="form-horizontal" novalidate name="frmBook" role="form" ng-submit="UpdateCustomer()">
+                                            <div class="box-body">
+                                                <h4 style="color:firebrick">Thông tin hành khách</h4>
+                                                <br />
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <lable>Tên hành khách</lable>
+                                                        <div class="col-">
+                                                            <input type="text" class="form-control" required id="nameCustomer" name="name" ng-model="customer.NameCustomer">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <lable>Số điện thoại</lable>
+                                                        <div class="input-group">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text"><i class="mdi mdi-cellphone-basic"></i></span>
+                                                            </div>
+                                                            <input type="text" class="form-control" id="phoneCustomer" name="name" ng-model="customer.PhoneNumber">
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <lable>Địa chỉ Email</lable>
+                                                        <div class="col-">
+                                                            <input type="email" class="form-control" id="mailCustomer" name="mail" ng-model="customer.Email">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <br />
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <lable>Nơi ở hiện tại</lable>
+                                                        <div class="col-">
+                                                            <input type="text" class="form-control" required id="addressCustomer" name="name" ng-model="customer.Address">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <hr />
+                                                <h4 style="color:firebrick">Thông tin chuyến đi</h4>
+                                                <br />
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <lable>Địa điểm đón</lable>
+                                                        <div class="col-">
+                                                            <select name="IDRouter" id="IDRoute" class="form-control" ng-model="customer.IDRoute" ng-options="option.ID as option.StartPoint + ' - ' + option.EndPoint for option in customers">
+                                                                <option value="">-Chọn lộ trình-</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <!--<div class="col-md-6">
+                                                        <lable>Địa điểm đến</lable>
+                                                        <div class="col-">
+                                                            <select name="IDRouter" class="form-control" ng-model="routes.ID" ng-options="option.ID as option.EndPoint for option in routes">
+                                                                <option value="">-Chọn điểm đến-</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>-->
+                                                </div>
+                                                <br />
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <lable>Ngày đi</lable>
+                                                        <div class="input-group">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                                            </div>
+                                                            <input type="text" class="form-control" placeholder="mm/dd/yyyy" id="datepicker-autoclose" ng-model="customer.DateBook">
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <lable>Thời gian đi</lable>
+                                                        <div class="input-group">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text"><i class="mdi mdi-clock"></i></span>
+                                                            </div>
+                                                            <input id="time" type="text" ng-model="customer.StartTime" ng-change="ShowCar()" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div>
+                                                    <hr />
+                                                    <h4 style="color:firebrick">Thông tin xe</h4>
+                                                    <br />
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <lable>Tên xe</lable>
+                                                            <div class="col-">
+                                                                <select name="IDCar" id="IDCar" class="form-control" ng-model="customer.NameCar" ng-change="LoadStatus()" ng-options="option.ID as option.Name  for option in cars">
+                                                                    <option value="">-Chọn xe-</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <lable>Hàng ghế</lable>
+                                                            <div class="col-">
+                                                                <select name="IDSeat" id="IDSeat" class="form-control" ng-model="customer.IDSeat" ng-change="GetStatus()" ng-options="option.ID as option.Row for option in rows">
+                                                                    <option value="">-Chọn hàng ghế-</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <lable>Vị trí</lable>
+                                                            <div class="col-">
+                                                                <select name="IDSeatNo" id="IDSeatNo" class="form-control" ng-model="customer.IDSeatNo" ng-options="option.IDSeatNo as option.SeatNb  for option in status">
+                                                                    <option value="">-Chọn vị trí-</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <br />
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>Chú thích</label>
+                                                            <div class="col-">
+                                                                <textarea class="form-control" rows="5"></textarea>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <br /><br />
+                                                </div>
+                                            </div><!-- /.box-body -->
+                                            <br />
+                                            <br />
+                                            <div class="row" style="text-align: center;">
+                                                <div class="box-footer">
+                                                    <button ui-sref="cars" class="btn btn-default center-block">Hủy</button>
+                                                    <button type="submit" class="btn btn-success center-block">Hoàn thành đặt vé</button>
+                                                </div><!-- /.box-footer -->
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- end timeline -->
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+    </div> <!-- container -->
+</div>
+<script>
+
+    jQuery(document).ready(function () {
+
+        // Time Picker
+        jQuery('#timepicker3').timepicker({
+            minuteStep: 60,
+            icons: {
+                up: 'mdi mdi-chevron-up',
+                down: 'mdi mdi-chevron-down'
+            }
+        });
+    });
+</script>

@@ -1,4 +1,5 @@
-﻿using Management.Data.Infrastructure;
+﻿using Management.Common.ViewModel;
+using Management.Data.Infrastructure;
 using Management.Data.Repositories;
 using Management.Model.Models;
 using System;
@@ -19,6 +20,9 @@ namespace Management.Service
 
         IEnumerable<Customer> GetAll(string keyword);
 
+        IEnumerable<Booking> GetBookByIDCus(int id);
+
+        IEnumerable<CustomerDetailViewModel> GetCustDetail(int id);
         Customer GetById(int id);
 
         void Save();
@@ -51,9 +55,19 @@ namespace Management.Service
                 return _customerRepository.GetAll();
         }
 
+        public IEnumerable<Booking> GetBookByIDCus(int id)
+        {
+            return _customerRepository.GetIDSeatNo(id);
+        }
+
         public Customer GetById(int id)
         {
             return _customerRepository.GetSingleById(id);
+        }
+
+        public IEnumerable<CustomerDetailViewModel> GetCustDetail(int id)
+        {
+            return _customerRepository.GetCustDetail(id);
         }
 
         public void Save()

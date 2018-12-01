@@ -49,9 +49,9 @@ namespace Management.Web.Api
 
         #region UpdateStatusWhenDelCustomer
         [Route("updatestatus")]
-        [HttpPut]
+        [HttpPost]
         [AllowAnonymous]
-        public HttpResponseMessage Update(HttpRequestMessage request, int idCustomer)
+        public HttpResponseMessage Create(HttpRequestMessage request, int idSeatNo)
         {
             return CreateHttpResponse(request, () =>
             {
@@ -62,17 +62,13 @@ namespace Management.Web.Api
                 }
                 else
                 {
-                    
-                    //Lấy IDSeatNo từ bảng Book theo IDCustomer Sau đó update status SeatNo theo IDSeat
-
-                    var dbCar = _seatnoService.GetById(idCustomer);
-                    dbCar.Status = false;
-
-                    _seatnoService.Update(dbCar);
+                    //update SeatNo
+                    var dbSeatNo = _seatnoService.GetById(idSeatNo);
+                    dbSeatNo.Status = false;
+                    _seatnoService.Update(dbSeatNo);
                     _seatnoService.Save();
 
-                    var responseData = Mapper.Map<SeatNo, SeatNoViewModel>(dbCar);
-                    response = request.CreateResponse(HttpStatusCode.Created, responseData);
+                    response = request.CreateResponse(HttpStatusCode.Created, dbSeatNo);
                 }
 
                 return response;

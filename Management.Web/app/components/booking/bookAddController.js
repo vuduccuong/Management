@@ -162,6 +162,7 @@
         //LoadStatus
 
         function LoadStatus() {
+            debugger;
             var id = $scope.book.IDCar;
             var config = {
                 param: {
@@ -183,7 +184,7 @@
             var config = {
                 param: {
                     idSeat: id,
-                    dateBook :'11/28/2018'
+                    dateBook :'12/02/2018'
                 }
             };
             apiService.get('/api/car/getstatusbyrow?id=' + config.param.idSeat + '&dateBook=' + config.param.dateBook, null, function (result) {
