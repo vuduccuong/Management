@@ -89,5 +89,64 @@ namespace Management.Web.Api
             });
         }
         #endregion
+
+        #region UpdateCustomer
+        [Route("update")]
+        [HttpPut]
+        [AllowAnonymous]
+        public HttpResponseMessage Update(HttpRequestMessage request, EditCustomerViewModel customerVm)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                if (!ModelState.IsValid)
+                {
+                    response = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+
+                   //Cập nhật thông tin khách hàng
+                    var dbCust = _customerService.GetById(customerVm.IDCustomer);
+                    dbCust.Name = customerVm.NameCustomer;
+                    dbCust.PhoneNumber = customerVm.PhoneNumber;
+                    dbCust.Email = customerVm.Email;
+                    dbCust.Address = customerVm.Address;
+                    
+
+                    _customerService.Update(dbCust);
+                    _customerService.Save();
+
+                    //Cập nhật lại Book
+                    var dbBook = _bookService.GetById(customerVm.IDBook);
+                    dbBook.IDCar = customerVm.IDCar;
+                    dbBook.IDSeat = customerVm.IDSeat;
+                    dbBook.IDSeatNo = customerVm.IDSeatNo;
+                    dbBook.UpdatedBy = customerVm.UpdatedBy;
+                    dbBook.UpdatedDate = DateTime.Now;
+                    dbBook.MetaDescription = customerVm.MetaDescription;
+
+                    _bookService.Update(dbBook);
+                    _bookService.Save();
+
+                    //Update lại status
+                    var dbSeatNo = _seatnoService.GetById(customerVm.oldIDSeatNo);
+                    dbSeatNo.Status = false;
+                    _seatnoService.Update(dbSeatNo);
+                    _seatnoService.Save();
+
+                    var dbNewSeatNo = _seatnoService.GetById(customerVm.IDSeatNo);
+                    dbNewSeatNo.Status = true;
+                    _seatnoService.Update(dbNewSeatNo);
+                    _seatnoService.Save();
+
+                    var responseData = Mapper.Map<Customer, CustomerViewModel>(dbCust);
+                    response = request.CreateResponse(HttpStatusCode.Created, responseData);
+                }
+
+                return response;
+            });
+        }
+        #endregion
     }
 }

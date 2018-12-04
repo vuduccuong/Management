@@ -56,6 +56,7 @@
     <Compile Include="ViewModel\gettttttViewModel.cs" />
     <Compile Include="ViewModel\RowByCarViewModel.cs" />
     <Compile Include="ViewModel\SeatStatusViewModel.cs" />
+    <Compile Include="ViewModel\SeatNoViewModel.cs" />
     <Compile Include="ViewModel\StatusBySeatViewModel.cs" />
     <Compile Include="ViewModel\upDateSeatNoStatusViewModel.cs" />
   </ItemGroup>

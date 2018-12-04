@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Management.Common.ViewModel
 {
-    public class CarByRouteViewModel
+    public class SeatNoViewModel
     {
-        public int ID { get; set; }
-        public string NameCar { get; set; }
+        public int IDSeatNo { get; set; }
+        public int SeatNb { get; set; }
+        public bool? Status { get; set; }
     }
 }

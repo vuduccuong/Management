@@ -1,6 +1,6 @@
 ﻿<section class="content-header">
     <h1>
-        Cập nhật thông tin khách hàng: {{customer.Name}}
+        Cập nhật thông tin khách hàng: {{customer.NameCustomer}}
     </h1>
     <ol class="breadcrumb">
         <li><a href=""><i class="fa fa-dashboard"></i> Trang chủ</a></li>
@@ -76,19 +76,19 @@
                                                     <div class="col-md-12">
                                                         <lable>Địa điểm đón</lable>
                                                         <div class="col-">
-                                                            <select name="IDRouter" id="IDRoute" class="form-control" ng-model="customer.IDRoute" ng-options="option.ID as option.StartPoint + ' - ' + option.EndPoint for option in customers">
+                                                            <select name="IDRouter" id="IDRoute" class="form-control" ng-model="customer.IDRoute" ng-options="option.ID as option.StartPoint + ' - ' + option.EndPoint for option in routes">
                                                                 <option value="">-Chọn lộ trình-</option>
                                                             </select>
                                                         </div>
                                                     </div>
                                                     <!--<div class="col-md-6">
-                                                        <lable>Địa điểm đến</lable>
-                                                        <div class="col-">
-                                                            <select name="IDRouter" class="form-control" ng-model="routes.ID" ng-options="option.ID as option.EndPoint for option in routes">
-                                                                <option value="">-Chọn điểm đến-</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>-->
+            <lable>Địa điểm đến</lable>
+            <div class="col-">
+                <select name="IDRouter" class="form-control" ng-model="routes.ID" ng-options="option.ID as option.EndPoint for option in routes">
+                    <option value="">-Chọn điểm đến-</option>
+                </select>
+            </div>
+        </div>-->
                                                 </div>
                                                 <br />
                                                 <div class="row">
@@ -108,13 +108,12 @@
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text"><i class="mdi mdi-clock"></i></span>
                                                             </div>
-                                                            <input id="time" type="text" ng-model="customer.StartTime" ng-change="ShowCar()" class="form-control">
+                                                            <input id="time" type="text" ng-model="customer.TimeStart" ng-change="ShowCar()" class="form-control">
                                                         </div>
                                                     </div>
                                                 </div>
 
-
-                                                <div>
+                                                <div >
                                                     <hr />
                                                     <h4 style="color:firebrick">Thông tin xe</h4>
                                                     <br />
@@ -122,7 +121,7 @@
                                                         <div class="col-md-4">
                                                             <lable>Tên xe</lable>
                                                             <div class="col-">
-                                                                <select name="IDCar" id="IDCar" class="form-control" ng-model="customer.NameCar" ng-change="LoadStatus()" ng-options="option.ID as option.Name  for option in cars">
+                                                                <select name="IDCar" id="IDCar" class="form-control" ng-model="customer.IDCar" ng-change="LoadStatus()" ng-options="option.ID as option.NameCar  for option in cars">
                                                                     <option value="">-Chọn xe-</option>
                                                                 </select>
                                                             </div>
@@ -149,7 +148,7 @@
                                                         <div class="col-md-6">
                                                             <label>Chú thích</label>
                                                             <div class="col-">
-                                                                <textarea class="form-control" rows="5"></textarea>
+                                                                <textarea class="form-control" rows="5" ng-model="customer.MetaDescription"></textarea>
                                                             </div>
 
                                                         </div>
@@ -162,7 +161,7 @@
                                             <div class="row" style="text-align: center;">
                                                 <div class="box-footer">
                                                     <button ui-sref="cars" class="btn btn-default center-block">Hủy</button>
-                                                    <button type="submit" class="btn btn-success center-block">Hoàn thành đặt vé</button>
+                                                    <button type="submit" class="btn btn-success center-block">Cập nhật</button>
                                                 </div><!-- /.box-footer -->
                                             </div>
                                         </form>

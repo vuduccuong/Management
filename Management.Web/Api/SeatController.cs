@@ -46,6 +46,34 @@ namespace Management.Web.Api
         }
         #endregion
 
+        #region GetSeatByIDCar
+        [Route("getseatbycar")]
+        [HttpGet]
+        public HttpResponseMessage GetSeatByCar(HttpRequestMessage request, int id)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                var model = _seatService.GetSeatByCarID(id);
+                
+                var response = request.CreateResponse(HttpStatusCode.OK, model);
+                return response;
+            });
+        }
+        #endregion
+
+        #region GetSeatNoByIDSeat
+        [Route("getseatnobyseat")]
+        [HttpGet]
+        public HttpResponseMessage GetSeatNoByIDSeat(HttpRequestMessage request, int id,string dateBook)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                var model = _seatService.GetAllSeatNoByIDSeat(id, dateBook);
+                var response = request.CreateResponse(HttpStatusCode.OK, model);
+                return response;
+            });
+        }
+        #endregion
 
         #region UpdateStatusWhenDelCustomer
         [Route("updatestatus")]

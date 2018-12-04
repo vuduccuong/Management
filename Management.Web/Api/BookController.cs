@@ -6,6 +6,7 @@ using Management.Web.Infrastructure.Extensions;
 using Management.Web.Models;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -84,6 +85,7 @@ namespace Management.Web.Api
                     newBook.DateBook = DateTime.Now;
                     newBook.CreatedBy = bookVm.CreatedBy;
                     newBook.CreatedDate = DateTime.Now;
+                    newBook.MetaDescription = bookVm.MetaDescription;
                     newBook.Status = true;
                     //AddBoook
                     _bookService.Add(newBook);

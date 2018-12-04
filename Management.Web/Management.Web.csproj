@@ -238,6 +238,7 @@
     <Compile Include="Models\CarViewModel.cs" />
     <Compile Include="Models\CustomerViewModel.cs" />
     <Compile Include="Models\DriverViewModel.cs" />
+    <Compile Include="Models\EditCustomerViewModel.cs" />
     <Compile Include="Models\GetIDCustomerViewModel.cs" />
     <Compile Include="Models\HistoryActionViewModel.cs" />
     <Compile Include="Models\PostCategoryViewModel.cs" />

@@ -24,6 +24,8 @@ namespace Management.Web.Models
         public DateTime UpdatedDate { get; set; }
         public bool? Status { get; set; }
         public bool StatusSeatNo { get; set; }
+        public string MetaDescription { get; set; }
+
 
     }
 }

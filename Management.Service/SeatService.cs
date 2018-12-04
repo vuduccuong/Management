@@ -23,7 +23,7 @@ namespace Management.Service
         Seat GetById(int id);
 
         void Save();
-
+        IEnumerable<SeatNoViewModel> GetAllSeatNoByIDSeat(int id, string dateBook);
         IEnumerable<Seat> GetSeatByCarID(int id);
         IEnumerable<SeatStatusViewModel> GetSeatStatus(int id, string dateBook);
     }
@@ -54,6 +54,11 @@ namespace Management.Service
                 return _seatRepository.GetMulti(x => x.IDCar.ToString() ==  (keyword) || x.isDel == false);
             else
                 return _seatRepository.GetAll();
+        }
+
+        public IEnumerable<SeatNoViewModel> GetAllSeatNoByIDSeat(int id, string dateBook)
+        {
+            return _seatRepository.GetAllSeatNoByIDSeat(id, dateBook);
         }
 
         public Seat GetById(int id)
