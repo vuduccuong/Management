@@ -364,6 +364,8 @@
     <Content Include="app\shared\services\loginService.js" />
     <Content Include="app\shared\services\notificationService.js" />
     <Content Include="app\shared\views\baseView.html" />
+    <Content Include="Assets\admin\css\abc.css" />
+    <Content Include="Assets\admin\css\bootrap.css" />
     <Content Include="Assets\admin\css\bootstrap-clockpicker.min.css" />
     <Content Include="Assets\admin\css\bootstrap-colorpicker.css" />
     <Content Include="Assets\admin\css\bootstrap-datepicker.min.css" />
@@ -371,6 +373,8 @@
     <Content Include="Assets\admin\css\bootstrap.min.css" />
     <Content Include="Assets\admin\css\icons.css" />
     <Content Include="Assets\admin\css\metismenu.min.css" />
+    <Content Include="Assets\admin\css\slick-theme.css" />
+    <Content Include="Assets\admin\css\slick.css" />
     <Content Include="Assets\admin\css\style.css" />
     <Content Include="Assets\admin\css\style_cl.css" />
     <Content Include="Assets\admin\css\style_dark.css" />
@@ -462,6 +466,8 @@
     <Content Include="Assets\admin\img\bootstrap-colorpicker\hue-horizontal.png" />
     <Content Include="Assets\admin\img\bootstrap-colorpicker\hue.png" />
     <Content Include="Assets\admin\img\bootstrap-colorpicker\saturation.png" />
+    <Content Include="Assets\admin\img\from-to2.png" />
+    <Content Include="Assets\admin\js\abc.js" />
     <Content Include="Assets\admin\js\bootstrap-clockpicker.min.js" />
     <Content Include="Assets\admin\js\bootstrap-colorpicker.js" />
     <Content Include="Assets\admin\js\bootstrap-colorpicker.min.js" />
@@ -475,6 +481,7 @@
     <Content Include="Assets\admin\js\metisMenu.min.js" />
     <Content Include="Assets\admin\js\modernizr.min.js" />
     <Content Include="Assets\admin\js\popper.min.js" />
+    <Content Include="Assets\admin\js\slick.js" />
     <Content Include="Assets\admin\js\waves.js" />
     <Content Include="Assets\admin\js\wow.min.js" />
     <Content Include="Assets\admin\pages\jquery.autocomplete.init.js" />
@@ -1378,6 +1385,7 @@
     <Content Include="XESAPA\static\img\1.jpg" />
     <Content Include="XESAPA\static\img\2.jpg" />
     <Content Include="XESAPA\static\img\3.jpg" />
+    <Content Include="XESAPA\static\img\37c87075-52fc-438e-a835-3c4b3577586f.png" />
     <Content Include="XESAPA\static\img\4-150x150.png" />
     <Content Include="XESAPA\static\img\4.png" />
     <Content Include="XESAPA\static\img\5.jpg" />
@@ -1403,6 +1411,7 @@
     <Content Include="XESAPA\static\img\TSHD-150x150.jpg" />
     <Content Include="XESAPA\static\img\TSHD.jpg" />
     <Content Include="XESAPA\static\img\TTDH_Ver2.png" />
+    <Content Include="XESAPA\static\img\xe-ha-son-hai-van-VIP-Royal-ivivu-8.jpg" />
     <Content Include="XESAPA\static\img\xeHD.png" />
     <Content Include="XESAPA\static\js\all.js" />
     <Content Include="XESAPA\static\js\t.js" />
@@ -1622,6 +1631,9 @@
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular-local-storage.min.js.map" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\News.cshtml" />
+    <Content Include="Views\Home\CheckTicket.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Management.Common\Management.Common.csproj">

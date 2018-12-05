@@ -15,7 +15,7 @@ namespace Management.Web.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            //ViewBag.Message = "Your application description page.";
 
             return View();
         }
@@ -24,6 +24,14 @@ namespace Management.Web.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+        public ActionResult News()
+        {
+            return View();
+        }
+        public ActionResult CheckTicket()
+        {
             return View();
         }
     }
