@@ -18,7 +18,8 @@
         
         $scope.book = {
             CreatedBy: userName,
-            StatusSeatNo:true,
+            StatusSeatNo: true,
+            SeatNoName:"",
         };
         
         function ShowCar() {
@@ -52,7 +53,7 @@
             var mailCustomer = $('#mailCustomer').val();
 
             var idRoute = $('#IDRoute').val();
-            var dateBook = $('#datepicker-autoclose').val();
+            var dateBook = $('#datetimea').val();
             var time = $('#time').val();
 
             var idCar = $('#IDCar').val();
@@ -104,9 +105,13 @@
 
 
         function Booking() {
+            var row = $("#IDSeat option:selected").text();
+            var nb = $("#IDSeatNo option:selected").text();
+            var SeatNoName = row + nb;
+            debugger;
             CkeckData()
             if (a) {
-                
+                $scope.book["SeatNoName"] = SeatNoName;
                 console.log($scope.book);
                 var historyAction = {
                     "ActionName": "Đặt vé xe",
@@ -184,7 +189,7 @@
             var config = {
                 param: {
                     idSeat: id,
-                    dateBook :'12/02/2018'
+                    dateBook: $("#datetimea").val(),
                 }
             };
             apiService.get('/api/car/getstatusbyrow?id=' + config.param.idSeat + '&dateBook=' + config.param.dateBook, null, function (result) {

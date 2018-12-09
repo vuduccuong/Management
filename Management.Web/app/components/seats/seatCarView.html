@@ -1,6 +1,17 @@
 ﻿<div class="card-box">
     <h4 class="header-title">Trạng thái ghế của xe <p id="nameCar"></p></h4>
-    <input id="dateBook" type="date" class="datepicker"/>
+
+    <div class="col-md-4">
+        <lable>Chọn ngày</lable>
+        <div class='input-group date' id='datetimepicker3'>
+            <input type='text' id="datetimea" class="form-control"  />
+            <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <button class="btn btn-danger" ng-click="getSeatStatus()">Kiểm tra</button>
+    </div>
+
     <div id="datatable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
         <div class="row">
             <div class="col-sm-12">
@@ -16,9 +27,7 @@
                         </tr>
                     </thead>
 
-                    <tbody id="tblData">
-                        
-                    </tbody>
+                    <tbody id="tblData"></tbody>
                 </table>
                 <dir-pagination-controls boundary-links="true"
                                          direction-links="true"
@@ -28,3 +37,18 @@
         </div>
     </div>
 </div>
+<script>
+
+    jQuery(document).ready(function () {
+
+       
+        $('#datetimepicker3').datepicker({ dateFormat: 'mm-dd-yy' });
+        var a = new Date();
+        var d = a.getDay() + 3;
+        var m = a.getMonth() + 1;
+        var y = a.getFullYear();
+        var full = m + "/" + d + "/" + y;
+        $("#datetimea").val(full);
+        console.log(full);
+    });
+</script>

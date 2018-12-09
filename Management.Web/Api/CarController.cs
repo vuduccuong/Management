@@ -49,6 +49,22 @@ namespace Management.Web.Api
         }
         #endregion
 
+        #region GetCarByPoint
+        [Route("getcarbypoint")]
+        [HttpGet]
+        public HttpResponseMessage GetCarByPoint(HttpRequestMessage request, string startPoint, string endPoint, string dateBook, int timeStart)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                var model = _carService.GetCarByPoint(startPoint, endPoint, dateBook, timeStart);
+
+                //var responseData = Mapper.Map<IEnumerable<Car>, IEnumerable<CarViewModel>>(model);
+                var response = request.CreateResponse(HttpStatusCode.OK, model);
+                return response;
+            });
+        }
+        #endregion
+
         #region GetStatusByRow
         [Route("getstatusbyrow")]
         [HttpGet]

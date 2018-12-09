@@ -12,12 +12,14 @@
             var config = {
                 params: {
                     id: id,
-                    dateBook: '12/02/2018'
+                    dateBook: $("#datetimea").val(),
                 }
             };
             apiService.get('api/seat/getseatstatus?id=' + config.params.id + '&dateBook=' + config.params.dateBook,null, function (result) {
                 console.log(result)
                 //$scope.seatStatus = result.data;
+                $('#tblData').empty();
+                $('#nameCar').empty();
                 binData(result.data);
             }, function () {
                 console.log("Oopz..");
@@ -88,6 +90,6 @@
             }
             $('#tblData').append(html);
         }
-        getSeatStatus();
+        //getSeatStatus();
     }
 })(angular.module('management.seats'));

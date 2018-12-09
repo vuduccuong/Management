@@ -1,4 +1,5 @@
-﻿using Management.Data.Infrastructure;
+﻿using Management.Common.ViewModel;
+using Management.Data.Infrastructure;
 using Management.Data.Repositories;
 using Management.Model.Models;
 using System;
@@ -15,6 +16,7 @@ namespace Management.Service
         Router Delete(int id);
 
         IEnumerable<Router> GetAll(string keyword);
+        List<RouteViewModel> GetAllFront();
 
         Router GetById(int id);
 
@@ -48,6 +50,11 @@ namespace Management.Service
                 return _routeRepository.GetMulti(x => x.StartPoint.Contains(keyword) || x.EndPoint.Contains(keyword));
             else
                 return _routeRepository.GetAll();
+        }
+
+        public List<RouteViewModel> GetAllFront()
+        {
+            return _routeRepository.GetAllRoute();
         }
 
         public Router GetById(int id)

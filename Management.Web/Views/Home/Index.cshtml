@@ -24,6 +24,86 @@
 
     <meta charSet="utf-8" />
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+    <style type="text/css">
+        #mask {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            z-index: 4;
+            opacity: 0.4;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)"; /* first!*/
+            filter: alpha(opacity=40); /* second!*/
+            background-color: gray;
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        #holder {
+            height: 200px;
+            width: 550px;
+            background-color: #F5F5F5;
+            border: 1px solid #A4A4A4;
+            margin-left: 10px;
+        }
+
+        #place {
+            position: relative;
+            margin: 7px;
+        }
+
+            #place a {
+                font-size: 0.6em;
+            }
+
+            #place li {
+                list-style: none outside none;
+                position: absolute;
+            }
+
+                #place li:hover {
+                    background-color: yellow;
+                }
+
+            #place .seat {
+                background: url("../../Assets/admin/img/available_seat_img.gif") no-repeat scroll 0 0 transparent;
+                height: 33px;
+                width: 33px;
+                display: block;
+            }
+
+            #place .selectedSeat {
+                background-image: url("../../Assets/admin/img/booked_seat_img.gif");
+            }
+
+            #place .selectingSeat {
+                background-image: url("../../Assets/admin/img/selected_seat_img.gif");
+            }
+
+            #place .row-3, #place .row-4 {
+                margin-top: 10px;
+            }
+
+        #seatDescription li {
+            list-style: none outside none;
+            padding-left: 35px;
+            height: 35px;
+            margin-top: 5px;
+            float: left;
+        }
+
+        .popUp label {
+            width: 4em;
+            float: left;
+            text-align: right;
+            margin-right: 0em;
+            display: block;
+        }
+
+        .popUp input {
+        }
+    </style>
 </head>
 <body class="sans-serif">
     <div id="next">
@@ -189,9 +269,7 @@
                                     <div class="w-100 w-25-l pr2-l pb2 pb0-l relative ">
                                         <span class=" red absolute top--2 br3 bg-white db-l dn pr2-l z-999"></span>
                                         <div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-1" aria-expanded="false" class="react-autosuggest__container">
-                                            <select id="EndPoint" value="" autoComplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-1" class=" ba b--red f5 input-reset bn w-100 db black-80 bg-white pa2 lh-copy br2-ns ">
-                                                
-                                            </select>
+                                            <select id="EndPoint" value="" autoComplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-1" class=" ba b--red f5 input-reset bn w-100 db black-80 bg-white pa2 lh-copy br2-ns "></select>
                                             <div id="react-autowhatever-1" role="listbox" class="react-autosuggest__suggestions-container"></div>
                                         </div>
                                         <span class=" red dn-l db top--2 br1 bg-white  pr2-l z-999"></span>
@@ -214,7 +292,7 @@
                                         <div class="absolute w-100 tc db-l dn">
                                             <p class="font-size-hotline pv2 mv0 db-l dn w-100 absolute bg-color bottom-0 b pa1 ttu bn"><span class="tc  "><a class="" href="tel: 1900 6746" title="Nhấn vào để gọi">HotLine: 1900 6746</a></span></p>
                                         </div>
-                                        <input type="button" class="w-100 h-100 f5 button-reset ph3 pv2  tc bn bg-animate btn-bg-color hover-bg-red white pointer br2-ns lh-copy shadow-1" value="Tìm Vé Xe Rẻ" />
+                                        <input id="btnSearchCar" type="button" class="w-100 h-100 f5 button-reset ph3 pv2  tc bn bg-animate btn-bg-color hover-bg-red white pointer br2-ns lh-copy shadow-1" value="Tìm Vé Xe Rẻ" />
                                     </div>
                                 </div>
                             </fieldset>
@@ -225,74 +303,22 @@
             </div>
             <hr />
             <div>
-                <ul class="col-12" style="list-style:none; padding-left:0px;">
-                    <li class="result-item col-12" style=" padding-top:30px;">
-                        <div class="container">
-                            <div class="hidden-xs">
-                                <div class="col-sm-2">
-                                    <div class="row">
-                                        <div class="pull-left comp-name-container">
-                                            <h3 class="mt0 mb0 comp-name-title  text-red" style="color:red; margin:auto auto auto auto" title="HAPA">HAPA</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-5 detail-route">
-                                    <div class="col-12 ml10" style="text-align: center;">
-                                        <div class="col-sm-5 text-left-from">
-                                            <h6 class="span-from-time mt0 mb5">05:30</h6>
-                                        </div>
-                                        <div class="col-sm-2 text-left" style="padding: 0px;">
-                                            <i class="text-gray3 left-arrow" style="width: 100%; display: inline-block; margin-top: -10px; font-size: 12px; text-align: center;">
-                                                5h00'<br>
-                                                <img src="~/Assets/admin/img/from-to2.png" style="width: 100%; height: 10px;">
-                                            </i>
-                                        </div>
-                                        <div class="col-sm-5 text-left-to">
-                                            <h6 class="span-to-time-mobi mt0 mb5 text-gray3">10:30</h6>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                        <div class="pull-left hidden-sm" style="width: 100%;">
-                                            <div class="col-5 col-md-5 col-sm-5 text-left">
-                                                <a class="depart-station ticket-detail-tab-link text-route-link hover-orange-border hover-blue-text black-text">VP 07 Phạm Văn Đồng</a>
-                                            </div>
+                <ul class="col-12" style="list-style:none; padding-left:0px;" id="showCar">
+                    <!--Result Search Cars-->
+                    <!--Select Seat-->
 
-                                            <div class="col-5 col-md-5 col-sm-5 text-right">
-                                                <a class="depart-station ticket-detail-tab-link text-route-link hover-orange-border hover-blue-text black-text">VP Lào Cai</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="clearfix"></div>
-                                    <div class="service-call seats-text text-left">
-                                        <p class="num-avalible-seats">
-                                            27
-                                            <span>Ghế trống</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="text-right col-sm-2 pr0">
-                                <h6 class="mt0 price 14">
-                                    <span></span><!-- react-text: 6166 -->210.000<!-- /react-text --><!-- react-text: 6167 --> <!-- /react-text --><small class="unit-price-small" style="vertical-align: top;">đ</small>
-                                </h6>
-                                <button class="btn btn-warning">Chọn chỗ</button>
-                            </div>
-                        </div>
+                </ul>
             </div>
-            </li>
-            </ul>
-        </div>
-        <hr />
-        <section class="center ph6-l" id="idSlick">
-            @*<div class="color f5 center cf db-l dn mv3" id="idslick">*@
-            <div><img src="~/XESAPA/static/img/sao-viet-xe-vip-02.png" class="w-100 h-100" /></div>
-            <div><img src="~/XESAPA/static/img/sao-viet-xe-vip-03.png" class="w-100 h-100" /></div>
-            <div><img src="~/XESAPA/static/img/sao-viet-xevip-04.png" class="w-100 h-100" /></div>
-            @*</div>*@
-        </section>
-        <section class="ph3 ph6-l pt4 bg-vxr-gray pb4 pb5-ns">
-            <a href="gioi-thieu.html" class="link dim">
+            <hr />
+            <section class="center ph6-l" id="idSlick">
+                @*<div class="color f5 center cf db-l dn mv3" id="idslick">*@
+                <div><img src="~/XESAPA/static/img/sao-viet-xe-vip-02.png" class="w-100 h-100" /></div>
+                <div><img src="~/XESAPA/static/img/sao-viet-xe-vip-03.png" class="w-100 h-100" /></div>
+                <div><img src="~/XESAPA/static/img/sao-viet-xevip-04.png" class="w-100 h-100" /></div>
+                @*</div>*@
+            </section>
+            <section class="ph3 ph6-l pt4 bg-vxr-gray pb4 pb5-ns">
+                <a href="/Home/About" class="link dim"></a>
                 <div class="dt flex flex-wrap">
                     <div class="dtc v-top w-100 w-50-l color pr5-l pr2-l">
                         <p class="f3 f3-l post-title v-top ma0 dib mb2">GIỚI THIỆU XE HAPA</p>
@@ -304,165 +330,49 @@
                     </div>
                     <div class="dtc v-top w-100 w-50-l center"><img src="~/XESAPA/static/img/Cover-1.png" alt="GIỚI THIỆU XE HAPA" class="w-100 db grow br3 shadow-5" /></div>
                 </div>
-            </a>
-        </section>
-        <section class="cf ph2 ph6-l mb4">
-            <p class="f3 f3-l cat-title tc mt4 ttu b">Dịch vụ xe HAPA</p>
-            <div class="flex flex-wrap">
 
-                <div class="fl w-100 w-33-l pa2">
-                    <div class="cover ba br1 dark-gray b--black-10 h-100">
-                        <a href="dich-vu/dich-vu-van-chuyen-hang-hoa.html" class="db link dim tc pointer ">
-                            <img src="~/XESAPA/static/img/Chuyen-hang.png" alt="Chuyển phát nhanh" class="w-100 w5 db black-10" />
-                            <p class="f5 tc ml0 post-title b truncate ttu">Dịch vụ vận chuyển hàng hóa</p>
-                            <div class="f5 tj color ph3 ">
-                                <p>Bên cạnh vị thế hàng đầu trong lĩnh vực vận chuyển hành khách tuyến Hà Nội – Lào Cai – Sapa, HAPA còn cung cấp dịch vụ vận chuyển nhanh hàng hóa trên các tuyến đường khai thác, đảm bảo phục vụ khách hàng một cách nhanh chóng, an toàn và tiết kiệm nhất. HAPA cam &hellip; </p>
-                                <p class="link-more">
-                                    <a href="https://xesaoviet.vexere.net/dich-vu/dich-vu-van-chuyen-hang-hoa/" class="more-link">Continue reading<span class="screen-reader-text"> &#8220;Dịch vụ vận chuyển hàng hóa&#8221;</span></a>
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="fl w-100 w-33-l pa2">
-                    <div class="cover ba br1 dark-gray b--black-10 h-100">
-                        <a href="dich-vu/dich-vu-thue-xe-hop-dong.html" class="db link dim tc pointer ">
-                            <img src="~/XESAPA/static/img/xeHD.png" alt="Chuyển phát nhanh" class="w-100 w5 db black-10" />
-                            <p class="f5 tc ml0 post-title b truncate ttu">Dịch vụ thuê xe (Hợp Đồng)</p>
-                            <div class="f5 tj color ph3 ">
-                                <p>GIỚI THIỆU HAPA Với ưu thế là số lượng xe lớn, nhiều chủng loại xe khác nhau từ xe Limousine 7 chỗ, Limousine 16 chỗ đến xe giường nằm loại lớn 43 chỗ, có thương hiệu lớn trong ngành vận tải, đặc biệt là tuyến đường Hà Nội – Sapa – Lào Cai cùng với đội ngũ &hellip; </p>
-                                <p class="link-more">
-                                    <a href="https://xesaoviet.vexere.net/dich-vu/dich-vu-thue-xe-hop-dong/" class="more-link">Continue reading<span class="screen-reader-text"> &#8220;Dịch vụ thuê xe (Hợp Đồng)&#8221;</span></a>
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="fl w-100 w-33-l pa2">
-                    <div class="cover ba br1 dark-gray b--black-10 h-100">
-                        <a href="dich-vu/cac-dich-vu-cua-chung-toi.html" class="db link dim tc pointer ">
-                            <img src="~/XESAPA/static/img/Ava.png" alt="Chuyển phát nhanh" class="w-100 w5 db black-10" />
-                            <p class="f5 tc ml0 post-title b truncate ttu">Các dịch vụ của chúng tôi</p>
-                            <div class="f5 tj color ph3 ">
-                                <p>Vận chuyển hành khách Với đoàn xe mới đời 2008, 2009, hiệu UNIVERSE của hãng Huyndai – Hàn Quốc tiện nghi, hiện đại, lái xe và hướng dẫn viên lành nghề, lịch sự, chu đáo sẽ đem lại cho quý khách sự  thoải mái, hài lòng trên mọi chặng đường. Nhận đặt vé qua điện thoại. Xe &hellip; </p>
-                                <p class="link-more">
-                                    <a href="https://xesaoviet.vexere.net/dich-vu/cac-dich-vu-cua-chung-toi/" class="more-link">Continue reading<span class="screen-reader-text"> &#8220;Các dịch vụ của chúng tôi&#8221;</span></a>
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="fl w-100 w-33-l pa2">
-                    <div class="cover ba br1 dark-gray b--black-10 h-100">
-                        <a href="dich-vu/xe-limousine-9-cho-di-sapa-lao-cai-hop-dong-thue-xe-limousine-9-cho.html" class="db link dim tc pointer ">
-                            <img src="~/XESAPA/static/img/P1.png" alt="Chuyển phát nhanh" class="w-100 w5 db black-10" />
-                            <p class="f5 tc ml0 post-title b truncate ttu">Hợp đồng thuê xe Limousine 9 chổ</p>
-                            <div class="f5 tj color ph3 ">
-                                <p>HAPA &#8211; Hà Nội – Lào Cai – Sa Pa Nhằm hướng đến sự tiện nghi, thoải mái, đẳng cấp khi di chuyển, hãng xe HAPA xin trân trọng thông báo khai trương dịch vụ xe V.I.P – xe limousine 9 chỗ đi Sapa Lào Cai để đáp ứng nhu cầu đi lại của Quý khách. Từ &hellip; </p>
-                                <p class="link-more">
-                                    <a href="https://xesaoviet.vexere.net/dich-vu/xe-limousine-9-cho-di-sapa-lao-cai-hop-dong-thue-xe-limousine-9-cho/" class="more-link">Continue reading<span class="screen-reader-text"> &#8220;Hợp đồng thuê xe Limousine 9 chổ&#8221;</span></a>
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="fl w-100 w-33-l pa2">
-                    <div class="cover ba br1 dark-gray b--black-10 h-100">
-                        <a href="dich-vu/tam-ve-yeu-thuong.html" class="db link dim tc pointer ">
-                            <img src="~/XESAPA/static/img/p2.png" alt="Chuyển phát nhanh" class="w-100 w5 db black-10" />
-                            <p class="f5 tc ml0 post-title b truncate ttu">Tấm vé yêu thương</p>
-                            <div class="f5 tj color ph3 ">
-                                <p>“ Hạnh phúc là sẻ chia” Với hơn 10 năm kinh nghiệm hoạt động trong lĩnh vực vận tải hành khách, HAPA đã trở thành một thương hiệu mà mọi người dân có nhu cầu đi lại trên tuyến đường từ Hà Nội – Lào Cai- Sapa và ngược lại đã không còn xa lạ. Xe HAPA – &hellip; </p>
-                                <p class="link-more">
-                                    <a href="https://xesaoviet.vexere.net/dich-vu/tam-ve-yeu-thuong/" class="more-link">Continue reading<span class="screen-reader-text"> &#8220;Tấm vé yêu thương&#8221;</span></a>
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="cf ph3 ph6-l  pb4">
-            <p class="f3 f3-l cat-title tc mt4 ttu b">Tin tức mới</p>
-            <div class="flex flex-wrap">
-                <div class="w-50 w-25-l pa2 h-75 h-100-l">
-                    <div class="dark-gray h-100">
-                        <a href="tin-tuc/sao-viet-dong-hanh-cung-trung-thu-sin-chai-2018.html" class="db link grow tc h-100">
-                            <div class="w-100 aspect-ratio aspect-ratio--6x4"><img src="~/XESAPA/static/img/Into.png" alt="HAPA đồng hành cùng TRUNG THU SÍN CHẢI 2018" class="aspect-ratio--object cover br3 shadow-5  db black-10" /></div>
-                            <p class="f5 h2 mb4 mb3-l tl ml0 color ttc ">HAPA đồng hành cùng TRUNG THU SÍN CHẢI 2018</p>
-                            <div class="f7 tl vxr-gray ">12-09-2018</div>
-                        </a>
-                    </div>
-                </div>
-                <div class="w-50 w-25-l pa2 h-75 h-100-l">
-                    <div class="dark-gray h-100">
-                        <a href="tin-tuc/sao-viet-tiep-suc-hoc-duong-2018.html" class="db link grow tc h-100">
-                            <div class="w-100 aspect-ratio aspect-ratio--6x4"><img src="~/XESAPA/static/img/TSHD.jpg" alt="HAPA TIẾP SỨC HỌC ĐƯỜNG 2018" class="aspect-ratio--object cover br3 shadow-5  db black-10" /></div>
-                            <p class="f5 h2 mb4 mb3-l tl ml0 color ttc ">HAPA TIẾP SỨC HỌC ĐƯỜNG 2018</p>
-                            <div class="f7 tl vxr-gray ">17-08-2018</div>
-                        </a>
-                    </div>
-                </div>
-                <div class="w-50 w-25-l pa2 h-75 h-100-l">
-                    <div class="dark-gray h-100">
-                        <a href="tin-tuc/cac-mon-ngon-tai-sapa.html" class="db link grow tc h-100">
-                            <div class="w-100 aspect-ratio aspect-ratio--6x4"><img src="~/XESAPA/static/img/4.png" alt="CÁC MÓN NGON TẠI SAPA" class="aspect-ratio--object cover br3 shadow-5  db black-10" /></div>
-                            <p class="f5 h2 mb4 mb3-l tl ml0 color ttc ">CÁC MÓN NGON TẠI SAPA</p>
-                            <div class="f7 tl vxr-gray ">20-07-2018</div>
-                        </a>
-                    </div>
-                </div>
-                <div class="w-50 w-25-l pa2 h-75 h-100-l">
-                    <div class="dark-gray h-100">
-                        <a href="tin-tuc/nhung-li-do-de-ban-nen-di-phuot-sapa.html" class="db link grow tc h-100">
-                            <div class="w-100 aspect-ratio aspect-ratio--6x4"><img src="~/XESAPA/static/img/phuot.png" alt="NHỮNG LÍ DO ĐỂ BẠN NÊN ĐI PHƯỢT SAPA" class="aspect-ratio--object cover br3 shadow-5  db black-10" /></div>
-                            <p class="f5 h2 mb4 mb3-l tl ml0 color ttc ">NHỮNG LÍ DO ĐỂ BẠN NÊN ĐI PHƯỢT SAPA</p>
-                            <div class="f7 tl vxr-gray ">21-06-2018</div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="w-100 bg-vxr-gray cf db-l dn center ph4 pv5 "><img src="~/XESAPA/static/img/TTDH_Ver2.png" class=" shadow-1  " /></section>
-        </main>
-    </div>
-    <footer class="tl f5 bg-color black-color">
-        <div class="cf ph3 ph6-l center flex flex-wrap pb4">
-            <div class="w-100 w-33-l pv3">
-                <p class="f5 b pb2 black-color bb b--light-blue">Kết nối với chúng tôi</p>
-                <h3 class="black-color f3 b pb0 ttu mt0 mb1">HAPA</h3>
-                <div class="black-color tj lh-copy">Xe Khách HAPA được biết đến như là một thương hiệu uy tín trong lĩnh vực vận tải hành khách chất lượng cao và dịch vụ chuyển phát nhanh bằng ô tô.</div>
-                <p><i class="fas fa-location-arrow mr2"></i>789 Giải Phóng</p>
-                <p><i class="fas fa-phone mr2"></i>(024) 3668.6358</p>
-                <p></p>
-                <p class="mt4"><i class="fab f3 fa-facebook mr2" aria-hidden="true"></i><i class="fab f3 fa-twitter-square mr2"></i><i class="fab f3 fa-google-plus-square mr2"></i></p>
-            </div>
-            <div class="w-100 w-33-l pa3-l black-color">
-                <p class="f5 b pb2 black-color bb b--light-blue">Liên kết nhanh</p>
-                <ul class="pl3 f5 lh-copy ">
-                    <li class=""><a class="black-color link dim" href="/Home/Index">Trang chủ</a></li>
-                    <li class=""><a class="black-color link dim" href="bang-gia.html">Bảng giá</a></li>
-                    @*<li class=""><a class="black-color link dim" href="dich-vu.html">Dịch vụ</a></li>*@
-                    <li class=""><a class="black-color link dim" href="tin-tuc.html">Tin tức</a></li>
-                    <li class=""><a class="black-color link dim" href="lien-he.html">Liên hệ</a></li>
-                </ul>
-            </div>
-            <div class="w-100 w-33-l pv3">
-                <p class="f5 b pb2 black-color bb b--light-blue">Đăng ký nhận tin tức</p>
-                <p class="black-color tj lh-copy">Bạn muốn biết thông tin khuyến mãi? Bạn muốn mua vé trực tuyến? bạn muốn nhận tin tức và sự kiện hoạt động của Xe Khách HAPA? Hãy đăng ký chúng tôi</p>
-                <form class="" action="#" name="Đăng ký nhận tin">
-                    <fieldset class="cf bn ma0 pa0">
-                        <input type="text" class="db w-70 h2 input-reset fl black-80 bg-light-gray pa2 lh-solid br2-ns mb2 ba b--light-gray" placeholder="Họ và tên" name="name" value="" /><input type="text" class="db w-70 h2 input-reset  fl black-80 bg-light-gray pa2 lh-solid br2-ns mb2 ba b--light-gray" placeholder="Số điện thoại" name="phone" value="" id="from" />
-                        <div class="dib w-70 mb2"><input type="text" class="w-100 h2 input-reset  fl black-80 bg-light-gray pa2 lh-solid br2-ns  ba b--light-gray" placeholder="Địa chỉ email" name="email" autoComplete="email" value="" id="from" /></div>
-                        <div class="dib w-30 mb2 pl2"><input type="submit" class="w-100 h2 ph2 button-reset fl tc bn bg-animate bg-cta color-cta b hover-bg-light-yellow  pointer br2-ns" value="Đăng ký" /></div>
-                    </fieldset>
-                </form>
-            </div>
+            </section>
+            
+
+            </main>
         </div>
-        <div class="cf ph3 ph6-l p-undefined poweredby pv2 v-mid">
-            <p class="fl fr-l pt1">© 2018 - HAPA. All Right Reserved</p>
-        </div>
-    </footer>
+        <footer class="tl f5 bg-color black-color">
+            <div class="cf ph3 ph6-l center flex flex-wrap pb4">
+                <div class="w-100 w-33-l pv3">
+                    <p class="f5 b pb2 black-color bb b--light-blue">Kết nối với chúng tôi</p>
+                    <h3 class="black-color f3 b pb0 ttu mt0 mb1">HAPA</h3>
+                    <div class="black-color tj lh-copy">Xe Khách HAPA được biết đến như là một thương hiệu uy tín trong lĩnh vực vận tải hành khách chất lượng cao và dịch vụ chuyển phát nhanh bằng ô tô.</div>
+                    <p><i class="fas fa-location-arrow mr2"></i>789 Giải Phóng</p>
+                    <p><i class="fas fa-phone mr2"></i>(024) 3668.6358</p>
+                    <p></p>
+                    <p class="mt4"><i class="fab f3 fa-facebook mr2" aria-hidden="true"></i><i class="fab f3 fa-twitter-square mr2"></i><i class="fab f3 fa-google-plus-square mr2"></i></p>
+                </div>
+                <div class="w-100 w-33-l pa3-l black-color">
+                    <p class="f5 b pb2 black-color bb b--light-blue">Liên kết nhanh</p>
+                    <ul class="pl3 f5 lh-copy ">
+                        <li class=""><a class="black-color link dim" href="/Home/Index">Trang chủ</a></li>
+                        <li class=""><a class="black-color link dim" href="bang-gia.html">Bảng giá</a></li>
+                        @*<li class=""><a class="black-color link dim" href="dich-vu.html">Dịch vụ</a></li>*@
+                        <li class=""><a class="black-color link dim" href="tin-tuc.html">Tin tức</a></li>
+                        <li class=""><a class="black-color link dim" href="lien-he.html">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="w-100 w-33-l pv3">
+                    <p class="f5 b pb2 black-color bb b--light-blue">Đăng ký nhận tin tức</p>
+                    <p class="black-color tj lh-copy">Bạn muốn biết thông tin khuyến mãi? Bạn muốn mua vé trực tuyến? bạn muốn nhận tin tức và sự kiện hoạt động của Xe Khách HAPA? Hãy đăng ký chúng tôi</p>
+                    <form class="" action="#" name="Đăng ký nhận tin">
+                        <fieldset class="cf bn ma0 pa0">
+                            <input type="text" class="db w-70 h2 input-reset fl black-80 bg-light-gray pa2 lh-solid br2-ns mb2 ba b--light-gray" placeholder="Họ và tên" name="name" value="" /><input type="text" class="db w-70 h2 input-reset  fl black-80 bg-light-gray pa2 lh-solid br2-ns mb2 ba b--light-gray" placeholder="Số điện thoại" name="phone" value="" id="from" />
+                            <div class="dib w-70 mb2"><input type="text" class="w-100 h2 input-reset  fl black-80 bg-light-gray pa2 lh-solid br2-ns  ba b--light-gray" placeholder="Địa chỉ email" name="email" autoComplete="email" value="" id="from" /></div>
+                            <div class="dib w-30 mb2 pl2"><input type="submit" class="w-100 h2 ph2 button-reset fl tc bn bg-animate bg-cta color-cta b hover-bg-light-yellow  pointer br2-ns" value="Đăng ký" /></div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="cf ph3 ph6-l p-undefined poweredby pv2 v-mid">
+                <p class="fl fr-l pt1">© 2018 - HAPA. All Right Reserved</p>
+            </div>
+        </footer>
 
 
     </div>
@@ -472,6 +382,7 @@
 
     <script type="text/javascript">
         $(document).on('ready', function () {
+            $("#1115").show();
             $("#idSlick").slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,
@@ -486,31 +397,150 @@
             var full = m + "/" + d + "/" + y;
             $("#datetimea").val(full);
             console.log(full);
+
+
         })
-        //ajaxt
+
+        //ajax get all Route
 
         $.ajax({
-            url: '/api/route/getall?keyword=',
+            url: '/api/route/getallfront',
             type: 'get',
             success: function (data) {
-                debugger;
                 var htmlstart = "<option>- Chọn nơi đi -</option>";
                 var htmlend = "<option>- Chọn nơi đến -</option>";
                 for (var i = 0; i < data.length; i++) {
-                    htmlstart += "<option>" + data[i].StartPoint + "</option >";
-                    htmlend += "<option>" + data[i].EndPoint + "</option >";
+                    htmlstart += "<option value='" + data[i].StartPoint + "'>" + data[i].StartPoint + "</option >";
+                    htmlend += "<option value='" + data[i].EndPoint + "'>" + data[i].EndPoint + "</option >";
                 }
-                console.log(htmlend);
-                console.log(htmlstart);
                 $('#StartPoint').append(htmlstart);
                 $('#EndPoint').append(htmlend);
-                
-                debugger;
             },
 
-        })
-    </script>
+        });
 
+        //lấy danh sách xe theo điểm đón trả
+
+        $("#btnSearchCar").click(function () {
+            var StartPoint = $("#StartPoint option:selected").text();
+            var EndPoint = $("#EndPoint option:selected").text();
+
+            var time = 0;
+            var date = $("#datetimea").val();
+
+            var datepare = new Date(date);
+            var mili = datepare.getTime();
+
+            var timess = new Date();
+
+            var mili2 = timess.getTime();
+
+            if (mili < mili2) {
+                $("#showCar").empty();
+                $("#showCar").append("Ngày đi không hợp lệ");
+            }
+            else {
+                var data = { startPoint: StartPoint, endPoint: EndPoint, dateBook: date, timeStart: time };
+                $.ajax({
+                    url: '/api/car/getcarbypoint',
+                    type: 'get',
+                    data: data,
+                    success: function (data) {
+                        $("#showCar").empty();
+                        if (data.length == 0) {
+                            $("#showCar").append("Không tìm thấy xe thoả mãn");
+                        }
+                        else {
+                            console.log(data);
+                            binData(data);
+                            $("#showCar").show();
+
+                        }
+                    }
+                });
+            }
+        });
+
+        function binData(item) {
+            var date = $("#datetimea").val();
+            var html = "";
+            var count = 5;
+            for (var i = 0; i < item.length; i++) {
+                $("#" + item[i].IDCar + "").hide();
+                html += '<li class="result-item col-12" style=" padding-top:30px;">';
+                html += '<div class="container">';
+                html += '<div class="hidden-xs">';
+                html += '<div class="col-sm-2">';
+                html += '    <div class="row">';
+                html += '        <div class="pull-left comp-name-container">';
+                html += '            <h3 class="mt0 mb0 comp-name-title  text-red" style="color:red; margin:auto auto auto auto" title="HAPA">' + item[i].NameCar + '</h3>';
+                html += '<span hidden id="route' + item[i].IDCar + '">' + item[i].IDRoute + '</span>';
+                html += '        </div>';
+                html += '    </div>';
+                html += '</div>';
+                html += '<div class="col-sm-5 detail-route">';
+                html += '    <div class="col-12 ml10" style="text-align: center;">';
+                html += '        <div class="col-sm-5 text-left-from">';
+                html += '            <h6 class="span-from-time mt0 mb5" >Khởi hành : <span id="timeStart' + item[i].IDCar +'">' + item[i].TimeStart + '</span>h</h6 > ';
+                html += '        </div>';
+                html += '        <div class="col-sm-2 text-left" style="padding: 0px;">';
+                html += '            <i class="text-gray3 left-arrow" style="width: 100%; display: inline-block; margin-top: -10px; font-size: 12px; text-align: center;">';
+                html += '                <br>';
+                html += '                    <img src="/Assets/admin/img/from-to2.png" style="width: 100%; height: 10px;">';
+                html += '                 </i>';
+                html += '                </div>';
+                html += '                <div class="col-sm-5 text-left-to">';
+                html += '                    <h6 class="span-to-time-mobi mt0 mb5 text-gray3"></h6>';
+                html += '                </div>';
+                html += '                <div class="clearfix"></div>';
+                html += '                <div class="pull-left hidden-sm" style="width: 100%;">';
+                html += '                    <div class="col-5 col-md-5 col-sm-5 text-left">';
+                html += '                        <a class="depart-station ticket-detail-tab-link text-route-link hover-orange-border hover-blue-text black-text">' + item[i].StartPoint + '</a>';
+                html += '                    </div>';
+                html += ''
+                html += '                   <div class="col-5 col-md-5 col-sm-5 text-right">';
+                html += '                        <a class="depart-station ticket-detail-tab-link text-route-link hover-orange-border hover-blue-text black-text">' + item[i].EndPoint + '</a>';
+                html += '                    </div>';
+                html += '                </div>';
+                html += '            </div>';
+                html += '        </div>';
+                html += '        <div class="col-sm-3">';
+                html += '            <div class="clearfix"></div>';
+                html += '            <div class="service-call seats-text text-left">';
+                html += '                <p class="num-avalible-seats">';
+                html += item[i].Count;
+                html += '                    <span>Ghế trống</span>';
+                html += '                </p>';
+                html += '            </div>';
+                html += '        </div>';
+                html += '    </div>';
+                html += '    <div class="text-right col-sm-2 pr0">';
+                html += '        <h6 class="mt0 price 14">';
+                html += '            <span></span><!-- react-text: 6166 -->210.000<!-- /react-text --><!-- react-text: 6167 --> <!-- /react-text --><small class="unit-price-small" style="vertical-align: top;">đ</small>';
+                html += '        </h6>';
+                html += '        <button id="abcsearch" value="' + item[i].IDCar + '" class="btn btn-warning" onclick=searchSeat(' + item[i].IDCar +') >Chọn chỗ</button>';
+                html += '    </div>';
+                html += '</div>';
+                html += '<li id="' + item[i].IDCar + '" class="ticket-booking-details ticket-booking-detail-seat-selection col-12 col-md-12 col-xs-12" style="margin: 0px; padding: 0px;">';
+
+                html += '</li>';
+                html += '</li > <hr />';
+            }
+
+            $("#showCar").append(html);
+        };
+
+        function searchSeat(idCar) {
+            var date = $("#datetimea").val();
+            var StartPoint = $("#StartPoint option:selected").text();
+            var EndPoint = $("#EndPoint option:selected").text(); 
+            var time = $("#timeStart" + idCar + "").text();
+            var idroute = $("#route" + idCar + "").text();
+            //alert(idCar + date);
+            window.location = "/Home/NextStep?id=" + idCar + '&date=' + date + '&start=' + StartPoint + '&end=' + EndPoint + "&timeStart=" + time + "&route=" + idroute;
+        };
+   </script>
+    
 
 </body>
 </html>

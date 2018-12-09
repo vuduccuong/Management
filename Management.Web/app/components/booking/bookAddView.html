@@ -82,12 +82,9 @@
                                                 <div class="row">
                                                     <div class="col-md-4">
                                                         <lable>Ngày đi</lable>
-                                                        <div class="input-group">
-                                                            <div class="input-group-append">
-                                                                <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
-                                                            </div>
-                                                            <input type="text" class="form-control" placeholder="mm/dd/yyyy" id="datepicker-autoclose" ng-model="book.Date">
-
+                                                        <div class='input-group date' id='datetimepicker3'>
+                                                            <input type='text' id="datetimea" class="form-control" />
+                                                            <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-2">
@@ -178,5 +175,15 @@
                 down: 'mdi mdi-chevron-down'
             }
         });
+
+
+        //$('#datetimepicker3').datepicker({ dateFormat: 'mm-dd-yy' });
+        var a = new Date();
+        var d = a.getDay() + 3;
+        var m = a.getMonth() + 1;
+        var y = a.getFullYear();
+        var full = m + "/" + d + "/" + y;
+        $("#datetimea").val(full);
+        console.log(full);
     });
 </script>

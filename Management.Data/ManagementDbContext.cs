@@ -47,6 +47,7 @@ namespace Management.Data
         public DbSet<Ticket> Tickets { set; get; }
         public DbSet<TypeCar> TypeCars { set; get; }
         public DbSet<Booking> Bookings { set; get; }
+        public DbSet<Bill> Bills { set; get; }
 
         public DbSet<HistoryAction> HistoryActions { set; get; }
 

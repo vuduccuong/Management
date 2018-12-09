@@ -371,6 +371,12 @@
     <Content Include="Assets\admin\css\bootstrap-datepicker.min.css" />
     <Content Include="Assets\admin\css\bootstrap-timepicker.min.css" />
     <Content Include="Assets\admin\css\bootstrap.min.css" />
+    <Content Include="Assets\admin\css\fonts\dripicons-v2.svg" />
+    <Content Include="Assets\admin\css\fonts\feather-webfont.svg" />
+    <Content Include="Assets\admin\css\fonts\fontawesome-webfont.svg" />
+    <Content Include="Assets\admin\css\fonts\materialdesignicons-webfont.svg" />
+    <Content Include="Assets\admin\css\fonts\Simple-Line-Icons.svg" />
+    <Content Include="Assets\admin\css\fonts\slick.svg" />
     <Content Include="Assets\admin\css\icons.css" />
     <Content Include="Assets\admin\css\metismenu.min.css" />
     <Content Include="Assets\admin\css\slick-theme.css" />
@@ -461,12 +467,15 @@
     <Content Include="Assets\admin\images\users\avatar-7.jpg" />
     <Content Include="Assets\admin\images\users\avatar-8.jpg" />
     <Content Include="Assets\admin\images\users\avatar-9.jpg" />
+    <Content Include="Assets\admin\img\available_seat_img.gif" />
+    <Content Include="Assets\admin\img\booked_seat_img.gif" />
     <Content Include="Assets\admin\img\bootstrap-colorpicker\alpha-horizontal.png" />
     <Content Include="Assets\admin\img\bootstrap-colorpicker\alpha.png" />
     <Content Include="Assets\admin\img\bootstrap-colorpicker\hue-horizontal.png" />
     <Content Include="Assets\admin\img\bootstrap-colorpicker\hue.png" />
     <Content Include="Assets\admin\img\bootstrap-colorpicker\saturation.png" />
     <Content Include="Assets\admin\img\from-to2.png" />
+    <Content Include="Assets\admin\img\selected_seat_img.gif" />
     <Content Include="Assets\admin\js\abc.js" />
     <Content Include="Assets\admin\js\bootstrap-clockpicker.min.js" />
     <Content Include="Assets\admin\js\bootstrap-colorpicker.js" />
@@ -1614,6 +1623,28 @@
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
     <Content Include="app1\components\drivers\driver.module.js" />
+    <Content Include="Assets\admin\css\fonts\dripicons-v2.eot" />
+    <Content Include="Assets\admin\css\fonts\dripicons-v2.ttf" />
+    <Content Include="Assets\admin\css\fonts\dripicons-v2.woff" />
+    <Content Include="Assets\admin\css\fonts\feather-webfont.eot" />
+    <Content Include="Assets\admin\css\fonts\feather-webfont.ttf" />
+    <Content Include="Assets\admin\css\fonts\feather-webfont.woff" />
+    <Content Include="Assets\admin\css\fonts\fontawesome-webfont.eot" />
+    <Content Include="Assets\admin\css\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Assets\admin\css\fonts\fontawesome-webfont.woff" />
+    <Content Include="Assets\admin\css\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Assets\admin\css\fonts\FontAwesome.otf" />
+    <Content Include="Assets\admin\css\fonts\materialdesignicons-webfont.eot" />
+    <Content Include="Assets\admin\css\fonts\materialdesignicons-webfont.ttf" />
+    <Content Include="Assets\admin\css\fonts\materialdesignicons-webfont.woff" />
+    <Content Include="Assets\admin\css\fonts\materialdesignicons-webfont.woff2" />
+    <Content Include="Assets\admin\css\fonts\Simple-Line-Icons.eot" />
+    <Content Include="Assets\admin\css\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="Assets\admin\css\fonts\Simple-Line-Icons.woff" />
+    <Content Include="Assets\admin\css\fonts\Simple-Line-Icons.woff2" />
+    <Content Include="Assets\admin\css\fonts\slick.eot" />
+    <Content Include="Assets\admin\css\fonts\slick.ttf" />
+    <Content Include="Assets\admin\css\fonts\slick.woff" />
     <None Include="packages.config" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Scripts\version.json" />
@@ -1634,6 +1665,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\News.cshtml" />
     <Content Include="Views\Home\CheckTicket.cshtml" />
+    <Content Include="Views\Home\NextStep.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Management.Common\Management.Common.csproj">

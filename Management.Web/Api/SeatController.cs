@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text.RegularExpressions;
 using System.Web.Http;
 
 namespace Management.Web.Api
@@ -74,6 +75,33 @@ namespace Management.Web.Api
             });
         }
         #endregion
+
+        #region GetSeatNoByRowSeatNb
+        [Route("getidseatno")]
+        [HttpGet]
+        public HttpResponseMessage GetSeatNoByRowSeatNb(HttpRequestMessage request, string arr,int idCar,string dateBook)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                List<GetIDSeatNoByRow> lstIDSeatNo = new List<GetIDSeatNoByRow>();
+            string[] str = arr.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+                foreach (var item in str)
+                {
+                    var row = "";
+                    int nb=0;
+                var rownb = item;
+                 row = rownb[0].ToString();
+                 nb = int.Parse(rownb[1].ToString());
+                   var a =  _seatService.GetIDSeatNoByRow(idCar, row, dateBook, nb);
+                    lstIDSeatNo.AddRange(a);
+                }
+                var lsta = lstIDSeatNo ;
+                var response = request.CreateResponse(HttpStatusCode.OK, lsta.AsEnumerable());
+                return response;
+            });
+        }
+        #endregion
+        
 
         #region UpdateStatusWhenDelCustomer
         [Route("updatestatus")]

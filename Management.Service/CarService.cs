@@ -23,6 +23,7 @@ namespace Management.Service
         IEnumerable<CarByRouteViewModel> GetByRoute(int id, string timeStart);
         IEnumerable<RowByCarViewModel> GetRowByCar(int id);
         IEnumerable<StatusBySeatViewModel> GetStatusBySeat(int id, string dateBook);
+        IEnumerable<GetCarByPointVewModel> GetCarByPoint(string startPoint, string endPoint, string dateBook, int timeStart);
 
         void Save();
     }
@@ -68,6 +69,11 @@ namespace Management.Service
         public IEnumerable<CarByRouteViewModel> GetByRoute(int id, string timeStart)
         {
             return _carRepository.GetCarByRoute(id, timeStart);
+        }
+
+        public IEnumerable<GetCarByPointVewModel> GetCarByPoint(string startPoint, string endPoint, string dateBook, int timeStart)
+        {
+            return _carRepository.GetCarByPoint(startPoint, endPoint, dateBook, timeStart);
         }
 
         public IEnumerable<RowByCarViewModel> GetRowByCar(int id)

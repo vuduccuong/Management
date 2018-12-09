@@ -26,6 +26,7 @@ namespace Management.Service
         IEnumerable<SeatNoViewModel> GetAllSeatNoByIDSeat(int id, string dateBook);
         IEnumerable<Seat> GetSeatByCarID(int id);
         IEnumerable<SeatStatusViewModel> GetSeatStatus(int id, string dateBook);
+        IEnumerable<GetIDSeatNoByRow> GetIDSeatNoByRow(int idCar, string row, string dateBook, int seatNb);
     }
     class SeatService : ISeatService
     {
@@ -64,6 +65,11 @@ namespace Management.Service
         public Seat GetById(int id)
         {
             return _seatRepository.GetSingleById(id);
+        }
+
+        public IEnumerable<GetIDSeatNoByRow> GetIDSeatNoByRow(int idCar, string row, string dateBook, int seatNb)
+        {
+            return _seatRepository.GetIDSeatNoByRow(idCar, row, dateBook, seatNb);
         }
 
         public IEnumerable<Seat> GetSeatByCarID(int id)

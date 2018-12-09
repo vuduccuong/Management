@@ -12,6 +12,7 @@ namespace Management.Web.Models
         public string PhoneCustomer { get; set; }
         public string MailCustomer { get; set; }
         public string AddressCustomer { get; set; }
+        public string SeatNoName { get; set; }
         public int IDRoute { get; set; }
         public string Date { get; set; }
         public string StartTime { get; set; }

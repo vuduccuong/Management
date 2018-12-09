@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -32,6 +33,17 @@ namespace Management.Web.Controllers
         }
         public ActionResult CheckTicket()
         {
+            return View();
+        }
+        public ActionResult NextStep(int id, string date,string start, string end, string timeStart,int route)
+        {
+            ViewBag.IDCar = id;
+            ViewBag.date = date;
+            ViewBag.start = start;
+            ViewBag.end = end;
+            ViewBag.time = timeStart;
+            ViewBag.idroute = route;
+
             return View();
         }
     }

@@ -16,6 +16,7 @@ namespace Management.Data.Repositories
         IEnumerable<CarByRouteViewModel> GetCarByRoute(int id, string timestart);
         IEnumerable<RowByCarViewModel> GetRowByCar(int id);
         IEnumerable<StatusBySeatViewModel> GetStatusBySeat(int id, string dateBook);
+        IEnumerable<GetCarByPointVewModel> GetCarByPoint(string startPoint, string endPoint, string dateBook, int timeStart);
     }
     public class CarRepository : RepositoryBase<Car>, ICarRepository
     {
@@ -26,6 +27,18 @@ namespace Management.Data.Repositories
         public IEnumerable<CarDetailVewModel> GetAllDetail()
         {
             return DbContext.Database.SqlQuery<CarDetailVewModel>("Proc_CarDetal");
+        }
+
+        public IEnumerable<GetCarByPointVewModel> GetCarByPoint(string startPoint, string endPoint, string dateBook, int timeStart)
+        {
+            var parameters = new Object[]
+            {
+                new SqlParameter("@StartPoint",startPoint),
+                new SqlParameter("@EndPoint",endPoint),
+                new SqlParameter("@DateBook",dateBook),
+                new SqlParameter("@Time",timeStart),
+            };
+            return DbContext.Database.SqlQuery<GetCarByPointVewModel>("GetCarByPointTime @StartPoint,@EndPoint,@DateBook,@Time", parameters);
         }
 
         public IEnumerable<CarByRouteViewModel> GetCarByRoute(int id, string timestart)
