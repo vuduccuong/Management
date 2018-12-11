@@ -15,9 +15,9 @@ namespace Management.Service
 
         void Update(Post post);
 
-        void Delete(int id);
+        Post Delete(int id);
 
-        IEnumerable<Post> GetAll();
+        IEnumerable<Post> GetAll(string keyword);
 
         IEnumerable<Post> GetAllPaging(int page, int pageSize, out int totalRow);
 
@@ -27,7 +27,7 @@ namespace Management.Service
 
         IEnumerable<Post> GetAllByTagPaging(string tag, int page, int pageSize, out int totalRow);
 
-        void SaveChanges();
+        void Save();
     }
 
     public class PostService : IPostService
@@ -46,14 +46,17 @@ namespace Management.Service
             _postRepository.Add(post);
         }
 
-        public void Delete(int id)
+        public Post Delete(int id)
         {
-            _postRepository.Delete(id);
+            return _postRepository.Delete(id);
         }
 
-        public IEnumerable<Post> GetAll()
+        public IEnumerable<Post> GetAll(string keyword)
         {
-            return _postRepository.GetAll(new string[] { "PostCategory" });
+            if (!string.IsNullOrEmpty(keyword))
+                return _postRepository.GetMulti(x => x.Name.Contains(keyword) || x.CreatedBy.Contains(keyword));
+            else
+                return _postRepository.GetAll();
         }
 
         public IEnumerable<Post> GetAllByCategoryPaging(int categoryId, int page, int pageSize, out int totalRow)
@@ -78,7 +81,7 @@ namespace Management.Service
             return _postRepository.GetSingleById(id);
         }
 
-        public void SaveChanges()
+        public void Save()
         {
             _unitOfWork.Commit();
         }

@@ -10,7 +10,12 @@
             'management.history_actions',
             'management.booking',
             'management.customers',
-            'management.common'
+            'management.common',
+            'management.posts',
+            'management.bills',
+            'management.application_groups',
+            'management.application_roles',
+            'management.application_users'
             
         ])
         .config(config)

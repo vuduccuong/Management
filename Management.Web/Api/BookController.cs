@@ -102,6 +102,7 @@ namespace Management.Web.Api
                     newBill.DatedBill = DateTime.Now;
                     newBill.IDCar = bookVm.IDCar;
                     newBill.SeatName = bookVm.SeatNoName;
+                    newBill.CountMoney = "210000";
 
                     //AddBill
                     _billService.Add(newBill);
@@ -158,18 +159,18 @@ namespace Management.Web.Api
                     _bookService.Add(newBook);
                     _bookService.Save();
 
-            //NewBill
-            var newBill = new Bill();
-            newBill.CustomerName = bookVm.NameCustomer;
-            newBill.CustomerPhone = bookVm.PhoneCustomer;
-            newBill.dateBook = bookVm.Date;
-            newBill.DatedBill = DateTime.Now;
-            newBill.IDCar = bookVm.IDCar;
-            newBill.SeatName = bookVm.SeatNoName;
+            ////NewBill
+            //var newBill = new Bill();
+            //newBill.CustomerName = bookVm.NameCustomer;
+            //newBill.CustomerPhone = bookVm.PhoneCustomer;
+            //newBill.dateBook = bookVm.Date;
+            //newBill.DatedBill = DateTime.Now;
+            //newBill.IDCar = bookVm.IDCar;
+            //newBill.SeatName = bookVm.SeatNoName;
 
-            //AddBill
-            _billService.Add(newBill);
-            _billService.Save();
+            ////AddBill
+            //_billService.Add(newBill);
+            //_billService.Save();
 
             //update SeatNo
             var dbSeatNo = _seatnoService.GetById(bookVm.IDSeatNo);
@@ -190,12 +191,6 @@ namespace Management.Web.Api
         [AllowAnonymous]
         public HttpResponseMessage Createbill(HttpRequestMessage request, [FromBody] BookViewModel bookVm)
         {
-
-            
-
-
-          
-
             //NewBill
             var newBill = new Bill();
             newBill.CustomerName = bookVm.NameCustomer;
@@ -204,6 +199,9 @@ namespace Management.Web.Api
             newBill.DatedBill = DateTime.Now;
             newBill.IDCar = bookVm.IDCar;
             newBill.SeatName = bookVm.SeatNoName;
+            string[] str = bookVm.SeatNoName.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+            int mouney = 210000 * (int.Parse(str.Length.ToString()));
+            newBill.CountMoney = mouney.ToString();
 
             //AddBill
             _billService.Add(newBill);
@@ -241,6 +239,22 @@ namespace Management.Web.Api
             });
         }
 
+        #endregion
+
+        #region GetBillBySearch
+        [Route("getallbill")]
+        [HttpGet]
+        public HttpResponseMessage GetAllBill(HttpRequestMessage request, string keyword)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                var model = _billService.GetAll(keyword);
+
+                var responseData = Mapper.Map<IEnumerable<Bill>, IEnumerable<BillViewModel>>(model);
+                var response = request.CreateResponse(HttpStatusCode.OK, responseData);
+                return response;
+            });
+        }
         #endregion
     }
 }

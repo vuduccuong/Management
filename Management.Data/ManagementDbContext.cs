@@ -51,6 +51,11 @@ namespace Management.Data
 
         public DbSet<HistoryAction> HistoryActions { set; get; }
 
+        public DbSet<ApplicationGroup> ApplicationGroups { set; get; }
+        public DbSet<ApplicationRole> ApplicationRoles { set; get; }
+        public DbSet<ApplicationRoleGroup> ApplicationRoleGroups { set; get; }
+        public DbSet<ApplicationUserGroup> ApplicationUserGroups { set; get; }
+
 
         //Phương thức tạo mới chính nó
         public static ManagementDbContext Create()
@@ -60,8 +65,10 @@ namespace Management.Data
 
         protected override void OnModelCreating(DbModelBuilder builder)
         {
-            builder.Entity<IdentityUserRole>().HasKey(i => new { i.UserId, i.RoleId });
-            builder.Entity<IdentityUserLogin>().HasKey(i => i.UserId);
+            builder.Entity<IdentityUserRole>().HasKey(i => new { i.UserId, i.RoleId }).ToTable("ApplicationUserRoles");
+            builder.Entity<IdentityUserLogin>().HasKey(i => i.UserId).ToTable("ApplicationUserLogins");
+            builder.Entity<IdentityUserClaim>().HasKey(i => i.UserId).ToTable("ApplicationUserClaims");
+            builder.Entity<IdentityRole>().ToTable("ApplicationRoles");
 
         }
 

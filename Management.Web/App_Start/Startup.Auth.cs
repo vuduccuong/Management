@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Management.Common;
 using Management.Data;
 using Management.Model.Models;
+using Management.Service;
+using Management.Web.Infrastructure.Core;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
@@ -57,6 +61,8 @@ namespace Management.Web.App_Start
         }
         public class AuthorizationServerProvider : OAuthAuthorizationServerProvider
         {
+
+
             public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
             {
                 context.Validated();
@@ -84,10 +90,20 @@ namespace Management.Web.App_Start
                 }
                 if (user != null)
                 {
-                    ClaimsIdentity identity = await userManager.CreateIdentityAsync(
+                    //var applicationGroupService = ServiceFactory.Get<IApplicationGroupService>();
+                    //var listGroup = applicationGroupService.GetListGroupByUserId(user.Id);
+                    //if (listGroup.Any(x => x.Name == CommonConstants.Administrator))
+                    //{
+
+                        ClaimsIdentity identity = await userManager.CreateIdentityAsync(
                                                            user,
                                                            DefaultAuthenticationTypes.ExternalBearer);
-                    context.Validated(identity);
+                        context.Validated(identity);
+                    //}
+                    //else
+                    //{
+                    //    context.Rejected();
+                    //}
                 }
                 else
                 {

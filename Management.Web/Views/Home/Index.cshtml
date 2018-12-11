@@ -362,9 +362,14 @@
                     <p class="black-color tj lh-copy">Bạn muốn biết thông tin khuyến mãi? Bạn muốn mua vé trực tuyến? bạn muốn nhận tin tức và sự kiện hoạt động của Xe Khách HAPA? Hãy đăng ký chúng tôi</p>
                     <form class="" action="#" name="Đăng ký nhận tin">
                         <fieldset class="cf bn ma0 pa0">
-                            <input type="text" class="db w-70 h2 input-reset fl black-80 bg-light-gray pa2 lh-solid br2-ns mb2 ba b--light-gray" placeholder="Họ và tên" name="name" value="" /><input type="text" class="db w-70 h2 input-reset  fl black-80 bg-light-gray pa2 lh-solid br2-ns mb2 ba b--light-gray" placeholder="Số điện thoại" name="phone" value="" id="from" />
-                            <div class="dib w-70 mb2"><input type="text" class="w-100 h2 input-reset  fl black-80 bg-light-gray pa2 lh-solid br2-ns  ba b--light-gray" placeholder="Địa chỉ email" name="email" autoComplete="email" value="" id="from" /></div>
-                            <div class="dib w-30 mb2 pl2"><input type="submit" class="w-100 h2 ph2 button-reset fl tc bn bg-animate bg-cta color-cta b hover-bg-light-yellow  pointer br2-ns" value="Đăng ký" /></div>
+                            <input type="text" class="db w-70 h2 input-reset fl black-80 bg-light-gray pa2 lh-solid br2-ns mb2 ba b--light-gray" placeholder="Họ và tên" name="name" value="" />
+                            <input type="text" class="db w-70 h2 input-reset  fl black-80 bg-light-gray pa2 lh-solid br2-ns mb2 ba b--light-gray" placeholder="Số điện thoại" name="phone" value="" id="from" />
+                            <div class="dib w-70 mb2">
+                            <input type="text" class="w-100 h2 input-reset  fl black-80 bg-light-gray pa2 lh-solid br2-ns  ba b--light-gray" placeholder="Địa chỉ email" name="email" autoComplete="email" value="" id="from" />
+                            </div>
+                            <div class="dib w-30 mb2 pl2">
+                            <input type="submit" class="w-100 h2 ph2 button-reset fl tc bn bg-animate bg-cta color-cta b hover-bg-light-yellow  pointer br2-ns" value="Đăng ký" />
+                            </div>
                         </fieldset>
                     </form>
                 </div>
@@ -391,7 +396,7 @@
             });
             $('#datetimepicker3').datepicker({ dateFormat: 'mm-dd-yy' });
             var a = new Date();
-            var d = a.getDay() + 3;
+            var d = a.getDay();
             var m = a.getMonth() + 1;
             var y = a.getFullYear();
             var full = m + "/" + d + "/" + y;

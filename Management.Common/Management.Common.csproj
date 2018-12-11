@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonConstants.cs" />
+    <Compile Include="Exceptions\NameDuplicatedException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\CustomerDetailViewModel.cs" />
     <Compile Include="ViewModel\GetBookViewModel.cs" />
