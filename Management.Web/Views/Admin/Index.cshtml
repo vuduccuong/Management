@@ -13,11 +13,14 @@
 
     <!-- App css -->
     <link href="~/Assets/admin/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Assets/admin/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <link href="~/Assets/admin/css/bootstrap-timepicker.min.css" rel="stylesheet" />
     <link href="~/Assets/admin/css/icons.css" rel="stylesheet" />
     <link href="~/Assets/admin/css/metismenu.min.css" rel="stylesheet" />
     <link href="~/Assets/admin/css/style.css" rel="stylesheet" />
     <link href="~/Content/toastr.css" rel="stylesheet" />
     <link href="~/Content/loading-bar.css" rel="stylesheet" />
+
 
     <script src="~/Assets/admin/js/modernizr.min.js"></script>
 
@@ -34,6 +37,8 @@
     <script src="~/Assets/admin/js/metisMenu.min.js"></script>
     <script src="~/Assets/admin/js/waves.js"></script>
     <script src="~/Assets/admin/js/jquery.slimscroll.js"></script>
+    <script src="~/Assets/admin/js/bootstrap-datepicker.min.js"></script>
+    <script src="~/Assets/admin/js/bootstrap-timepicker.js"></script>
 
     <!-- App js -->
     <script src="~/Assets/admin/js/jquery.core.js"></script>
@@ -44,24 +49,40 @@
     <script src="~/Scripts/angular-ui-router.js"></script>
     <script src="~/Scripts/toastr.js"></script>
     <script src="~/Scripts/bootbox.min.js"></script>
+    <script src="~/Assets/admin/libs/ckeditor/ckeditor.js"></script>
+    <script src="~/Assets/admin/libs/ckfinder/ckfinder.js"></script>
     <script src="~/Scripts/ngBootbox.js"></script>
+    <script src="~/Assets/admin/js/ng-ckeditor.min.js"></script>
     <script src="~/Scripts/angular-local-storage.js"></script>
     <script src="~/Scripts/loading-bar.js"></script>
+    <script src="~/Scripts/ckecklist_model.js"></script>
 
     <script src="~/app/shared/modules/management.common.js"></script>
+    <script src="~/app/shared/directives/asDateDirective.js"></script>
     <script src="~/app/shared/services/notificationService.js"></script>
     <script src="~/app/shared/services/authData.js"></script>
     <script src="~/app/shared/services/authenticationService.js"></script>
     <script src="~/app/shared/services/loginService.js"></script>
     <script src="~/app/shared/services/commonService.js"></script>
     <script src="~/app/shared/services/apiService.js"></script>
+    @*Module*@
     <script src="~/app/components/products/products.module.js"></script>
     <script src="~/app/components/drivers/driver.module.js"></script>
     <script src="~/app/components/cars/car.module.js"></script>
     <script src="~/app/components/routes/route.module.js"></script>
     <script src="~/app/components/seats/seat.module.js"></script>
     <script src="~/app/components/history_actions/historyAction.module.js"></script>
+    <script src="~/app/components/booking/book.module.js"></script>
+    <script src="~/app/components/customers/customer.module.js"></script>
     <script src="~/app/components/product_categories/productCategories.module.js"></script>
+    <script src="~/app/components/posts/posts.module.js"></script>
+    <script src="~/app/components/bills/bills.module.js"></script>
+    <script src="~/app/components/application_groups/applicationGroups.module.js"></script>
+    <script src="~/app/components/application_groups/applicationGroups.module.js"></script>
+    <script src="~/app/components/application_roles/applicationRoles.module.js"></script>
+    <script src="~/app/components/application_users/applicationUsers.module.js"></script>
+
+
     <script src="~/app/app.js"></script>
     <script src="~/app/components/home/rootController.js"></script>
     <script src="~/Scripts/dirPagination.js"></script>
@@ -96,5 +117,36 @@
     <script src="~/app/components/seats/seatCarController.js"></script>
     <script src="~/app/components/seats/seatEditController.js"></script>
     <script src="~/app/components/seats/seatListController.js"></script>
+
+    @*Booking*@
+    <script src="~/app/components/booking/bookAddController.js"></script>
+
+    @*Customer*@
+    <script src="~/app/components/customers/customerListController.js"></script>
+    <script src="~/app/components/customers/customerEditController.js"></script>
+
+    @*Post*@
+    <script src="~/app/components/posts/postListController.js"></script>
+    <script src="~/app/components/posts/postAddController.js"></script>
+    <script src="~/app/components/posts/postEditController.js"></script>
+
+    @* Bill *@
+    <script src="~/app/components/bills/BillListController.js"></script>
+
+    @* Application Group *@
+    <script src="~/app/components/application_groups/applicationGroupAddController.js"></script>
+    <script src="~/app/components/application_groups/applicationGroupEditController.js"></script>
+    <script src="~/app/components/application_groups/applicationGroupListController.js"></script>
+
+    @* Application Role *@
+    <script src="~/app/components/application_roles/applicationRoleAddController.js"></script>
+    <script src="~/app/components/application_roles/applicationRoleEditController.js"></script>
+    <script src="~/app/components/application_roles/applicationRoleListController.js"></script>
+
+    @* Application User *@
+    <script src="~/app/components/application_users/applicationUserAddController.js"></script>
+    <script src="~/app/components/application_users/applicationUserEditController.js"></script>
+    <script src="~/app/components/application_users/applicationUserListController.js"></script>
+
 </body>
 </html>

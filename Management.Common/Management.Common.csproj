@@ -47,8 +47,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonConstants.cs" />
+    <Compile Include="Exceptions\NameDuplicatedException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\CustomerDetailViewModel.cs" />
+    <Compile Include="ViewModel\GetBookViewModel.cs" />
+    <Compile Include="ViewModel\CarByRouteViewModel.cs" />
     <Compile Include="ViewModel\CarDetailVewModel.cs" />
+    <Compile Include="ViewModel\GetCarByPointVewModel.cs" />
+    <Compile Include="ViewModel\GetIDSeatNo.cs" />
+    <Compile Include="ViewModel\GetIDSeatNoByRow.cs" />
+    <Compile Include="ViewModel\gettttttViewModel.cs" />
+    <Compile Include="ViewModel\RouteViewModel.cs" />
+    <Compile Include="ViewModel\RowByCarViewModel.cs" />
+    <Compile Include="ViewModel\SeatStatusViewModel.cs" />
+    <Compile Include="ViewModel\SeatNoViewModel.cs" />
+    <Compile Include="ViewModel\StatusBySeatViewModel.cs" />
+    <Compile Include="ViewModel\upDateSeatNoStatusViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

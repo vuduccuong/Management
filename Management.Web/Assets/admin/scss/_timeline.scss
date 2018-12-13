@@ -20,7 +20,6 @@
     background-color: $light;
     bottom: 0;
     content: "";
-    left: 50%;
     position: absolute;
     top: 30px;
     width: 2px;
@@ -64,7 +63,6 @@ h3.timeline-title {
 }
 
 .timeline-item {
-  display: table-row;
   &:before {
     content: "";
     display: block;

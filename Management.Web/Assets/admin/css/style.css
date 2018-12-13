@@ -5287,7 +5287,6 @@ File Manager
   background-color: #e3eaef;
   bottom: 0;
   content: "";
-  left: 50%;
   position: absolute;
   top: 30px;
   width: 2px;
@@ -5330,7 +5329,7 @@ h3.timeline-title {
 }
 
 .timeline-item {
-  display: table-row;
+
 }
 
 .timeline-item:before {
@@ -5409,9 +5408,9 @@ h3.timeline-title {
 }
 
 .timeline-desk {
-  display: table-cell;
-  vertical-align: top;
-  width: 50%;
+  /*display: table-cell;*/
+  /*vertical-align: top;
+  width: 50%;*/
 }
 
 .timeline-desk h4 {

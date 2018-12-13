@@ -102,6 +102,139 @@
     <Compile Include="Migrations\201811221746461_bb.Designer.cs">
       <DependentUpon>201811221746461_bb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811230228574_add_price.cs" />
+    <Compile Include="Migrations\201811230228574_add_price.Designer.cs">
+      <DependentUpon>201811230228574_add_price.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811231017412_Proc_Status_Seat.cs" />
+    <Compile Include="Migrations\201811231017412_Proc_Status_Seat.Designer.cs">
+      <DependentUpon>201811231017412_Proc_Status_Seat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811231202547_Proc_Status_Seat1.cs" />
+    <Compile Include="Migrations\201811231202547_Proc_Status_Seat1.Designer.cs">
+      <DependentUpon>201811231202547_Proc_Status_Seat1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811251009259_addDateBooking.cs" />
+    <Compile Include="Migrations\201811251009259_addDateBooking.Designer.cs">
+      <DependentUpon>201811251009259_addDateBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811251028359_addTableBooking.cs" />
+    <Compile Include="Migrations\201811251028359_addTableBooking.Designer.cs">
+      <DependentUpon>201811251028359_addTableBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811251057230_getSeatByDate.cs" />
+    <Compile Include="Migrations\201811251057230_getSeatByDate.Designer.cs">
+      <DependentUpon>201811251057230_getSeatByDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811251257466_getSeatByDate3.cs" />
+    <Compile Include="Migrations\201811251257466_getSeatByDate3.Designer.cs">
+      <DependentUpon>201811251257466_getSeatByDate3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811260202419_26\11\2018.cs" />
+    <Compile Include="Migrations\201811260203324_addStoreProc.cs" />
+    <Compile Include="Migrations\201811260203324_addStoreProc.Designer.cs">
+      <DependentUpon>201811260203324_addStoreProc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811260817249_addSearchCarByRoute.cs" />
+    <Compile Include="Migrations\201811260817249_addSearchCarByRoute.Designer.cs">
+      <DependentUpon>201811260817249_addSearchCarByRoute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811260842390_addSearchCarByRoute1.cs" />
+    <Compile Include="Migrations\201811260842390_addSearchCarByRoute1.Designer.cs">
+      <DependentUpon>201811260842390_addSearchCarByRoute1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811261003151_addCheckStatusByCar.cs" />
+    <Compile Include="Migrations\201811261003151_addCheckStatusByCar.Designer.cs">
+      <DependentUpon>201811261003151_addCheckStatusByCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811280350511_Proc_UpdateStatusWhenBook.cs" />
+    <Compile Include="Migrations\201811280350511_Proc_UpdateStatusWhenBook.Designer.cs">
+      <DependentUpon>201811280350511_Proc_UpdateStatusWhenBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811280549313_Proc_UpdateStatus.cs" />
+    <Compile Include="Migrations\201811280549313_Proc_UpdateStatus.Designer.cs">
+      <DependentUpon>201811280549313_Proc_UpdateStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811281525076_AAAaaa.cs" />
+    <Compile Include="Migrations\201811281525076_AAAaaa.Designer.cs">
+      <DependentUpon>201811281525076_AAAaaa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811281606293_Add_AdressCusstomer.cs" />
+    <Compile Include="Migrations\201811281606293_Add_AdressCusstomer.Designer.cs">
+      <DependentUpon>201811281606293_Add_AdressCusstomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811281631580_getIDBook.cs" />
+    <Compile Include="Migrations\201811281631580_getIDBook.Designer.cs">
+      <DependentUpon>201811281631580_getIDBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812010956510_UpdateStatusWhenDelCustomer.cs" />
+    <Compile Include="Migrations\201812010956510_UpdateStatusWhenDelCustomer.Designer.cs">
+      <DependentUpon>201812010956510_UpdateStatusWhenDelCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812011020361_UpdateStatusWhenDelCustomer1.cs" />
+    <Compile Include="Migrations\201812011020361_UpdateStatusWhenDelCustomer1.Designer.cs">
+      <DependentUpon>201812011020361_UpdateStatusWhenDelCustomer1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812011444493_getBookWithIDCus.cs" />
+    <Compile Include="Migrations\201812011444493_getBookWithIDCus.Designer.cs">
+      <DependentUpon>201812011444493_getBookWithIDCus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812011709091_editCustomer.cs" />
+    <Compile Include="Migrations\201812011709091_editCustomer.Designer.cs">
+      <DependentUpon>201812011709091_editCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812040204344_editSearchCarByRoute.cs" />
+    <Compile Include="Migrations\201812040204344_editSearchCarByRoute.Designer.cs">
+      <DependentUpon>201812040204344_editSearchCarByRoute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812040407163_edit_ProcCustomer.cs" />
+    <Compile Include="Migrations\201812040407163_edit_ProcCustomer.Designer.cs">
+      <DependentUpon>201812040407163_edit_ProcCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812040418235_Proc_GếtatNobySeat.cs" />
+    <Compile Include="Migrations\201812040418235_Proc_GếtatNobySeat.Designer.cs">
+      <DependentUpon>201812040418235_Proc_GếtatNobySeat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812040424343_Proc_GếtatNobySeat1.cs" />
+    <Compile Include="Migrations\201812040424343_Proc_GếtatNobySeat1.Designer.cs">
+      <DependentUpon>201812040424343_Proc_GếtatNobySeat1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812060638567_Proc_SearchCarByPointNoTime.cs" />
+    <Compile Include="Migrations\201812060638567_Proc_SearchCarByPointNoTime.Designer.cs">
+      <DependentUpon>201812060638567_Proc_SearchCarByPointNoTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812071602452_nooo.cs" />
+    <Compile Include="Migrations\201812071602452_nooo.Designer.cs">
+      <DependentUpon>201812071602452_nooo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812090219362_editSearchCarByPointTIme.cs" />
+    <Compile Include="Migrations\201812090219362_editSearchCarByPointTIme.Designer.cs">
+      <DependentUpon>201812090219362_editSearchCarByPointTIme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812090425014_GetIDSeatNoByRow.cs" />
+    <Compile Include="Migrations\201812090425014_GetIDSeatNoByRow.Designer.cs">
+      <DependentUpon>201812090425014_GetIDSeatNoByRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812091055004_AddBillTable.cs" />
+    <Compile Include="Migrations\201812091055004_AddBillTable.Designer.cs">
+      <DependentUpon>201812091055004_AddBillTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812091108053_AddBillTable1.cs" />
+    <Compile Include="Migrations\201812091108053_AddBillTable1.Designer.cs">
+      <DependentUpon>201812091108053_AddBillTable1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812110809093_RenameIdentityTable.cs" />
+    <Compile Include="Migrations\201812110809093_RenameIdentityTable.Designer.cs">
+      <DependentUpon>201812110809093_RenameIdentityTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812110833365_AddGroupUsser.cs" />
+    <Compile Include="Migrations\201812110833365_AddGroupUsser.Designer.cs">
+      <DependentUpon>201812110833365_AddGroupUsser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812111009325_EditApplicationRole.cs" />
+    <Compile Include="Migrations\201812111009325_EditApplicationRole.Designer.cs">
+      <DependentUpon>201812111009325_EditApplicationRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Infrastructure\DbFactory.cs" />
@@ -111,6 +244,12 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
+    <Compile Include="Repositories\ApplicationGroupRepository.cs" />
+    <Compile Include="Repositories\ApplicationRoleGroupRepository.cs" />
+    <Compile Include="Repositories\ApplicationRoleRepository.cs" />
+    <Compile Include="Repositories\ApplicationUserGroupRepository.cs" />
+    <Compile Include="Repositories\BillRepository.cs" />
+    <Compile Include="Repositories\BookRepository.cs" />
     <Compile Include="Repositories\CarRepository.cs" />
     <Compile Include="Repositories\CustomerRepository.cs" />
     <Compile Include="Repositories\DriverRepository.cs" />
@@ -187,6 +326,105 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811221746461_bb.resx">
       <DependentUpon>201811221746461_bb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811230228574_add_price.resx">
+      <DependentUpon>201811230228574_add_price.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811231017412_Proc_Status_Seat.resx">
+      <DependentUpon>201811231017412_Proc_Status_Seat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811231202547_Proc_Status_Seat1.resx">
+      <DependentUpon>201811231202547_Proc_Status_Seat1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811251009259_addDateBooking.resx">
+      <DependentUpon>201811251009259_addDateBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811251028359_addTableBooking.resx">
+      <DependentUpon>201811251028359_addTableBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811251057230_getSeatByDate.resx">
+      <DependentUpon>201811251057230_getSeatByDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811251257466_getSeatByDate3.resx">
+      <DependentUpon>201811251257466_getSeatByDate3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811260203324_addStoreProc.resx">
+      <DependentUpon>201811260203324_addStoreProc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811260817249_addSearchCarByRoute.resx">
+      <DependentUpon>201811260817249_addSearchCarByRoute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811260842390_addSearchCarByRoute1.resx">
+      <DependentUpon>201811260842390_addSearchCarByRoute1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811261003151_addCheckStatusByCar.resx">
+      <DependentUpon>201811261003151_addCheckStatusByCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811280350511_Proc_UpdateStatusWhenBook.resx">
+      <DependentUpon>201811280350511_Proc_UpdateStatusWhenBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811280549313_Proc_UpdateStatus.resx">
+      <DependentUpon>201811280549313_Proc_UpdateStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811281525076_AAAaaa.resx">
+      <DependentUpon>201811281525076_AAAaaa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811281606293_Add_AdressCusstomer.resx">
+      <DependentUpon>201811281606293_Add_AdressCusstomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811281631580_getIDBook.resx">
+      <DependentUpon>201811281631580_getIDBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812010956510_UpdateStatusWhenDelCustomer.resx">
+      <DependentUpon>201812010956510_UpdateStatusWhenDelCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812011020361_UpdateStatusWhenDelCustomer1.resx">
+      <DependentUpon>201812011020361_UpdateStatusWhenDelCustomer1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812011444493_getBookWithIDCus.resx">
+      <DependentUpon>201812011444493_getBookWithIDCus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812011709091_editCustomer.resx">
+      <DependentUpon>201812011709091_editCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812040204344_editSearchCarByRoute.resx">
+      <DependentUpon>201812040204344_editSearchCarByRoute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812040407163_edit_ProcCustomer.resx">
+      <DependentUpon>201812040407163_edit_ProcCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812040418235_Proc_GếtatNobySeat.resx">
+      <DependentUpon>201812040418235_Proc_GếtatNobySeat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812040424343_Proc_GếtatNobySeat1.resx">
+      <DependentUpon>201812040424343_Proc_GếtatNobySeat1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812060638567_Proc_SearchCarByPointNoTime.resx">
+      <DependentUpon>201812060638567_Proc_SearchCarByPointNoTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812071602452_nooo.resx">
+      <DependentUpon>201812071602452_nooo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812090219362_editSearchCarByPointTIme.resx">
+      <DependentUpon>201812090219362_editSearchCarByPointTIme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812090425014_GetIDSeatNoByRow.resx">
+      <DependentUpon>201812090425014_GetIDSeatNoByRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812091055004_AddBillTable.resx">
+      <DependentUpon>201812091055004_AddBillTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812091108053_AddBillTable1.resx">
+      <DependentUpon>201812091108053_AddBillTable1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812110809093_RenameIdentityTable.resx">
+      <DependentUpon>201812110809093_RenameIdentityTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812110833365_AddGroupUsser.resx">
+      <DependentUpon>201812110833365_AddGroupUsser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812111009325_EditApplicationRole.resx">
+      <DependentUpon>201812111009325_EditApplicationRole.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

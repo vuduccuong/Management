@@ -42,6 +42,22 @@ namespace Management.Web.Api
         }
         #endregion
 
+        #region GetRouteFront
+        [Route("getallfront")]
+        [HttpGet]
+        public HttpResponseMessage GetAllFront(HttpRequestMessage request)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                var model = _routeService.GetAllFront();
+
+                //var responseData = Mapper.Map<IEnumerable<Router>, IEnumerable<RouterViewModel>>(model);
+                var response = request.CreateResponse(HttpStatusCode.OK, model);
+                return response;
+            });
+        }
+        #endregion
+
         #region GetRouteById
         [Route("getbyid/{id:int}")]
         [HttpGet]

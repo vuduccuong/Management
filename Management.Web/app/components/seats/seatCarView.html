@@ -1,5 +1,16 @@
 ﻿<div class="card-box">
-    <h4 class="header-title">Trạng thái ghế</h4>
+    <h4 class="header-title">Trạng thái ghế của xe <p id="nameCar"></p></h4>
+
+    <div class="col-md-4">
+        <lable>Chọn ngày</lable>
+        <div class='input-group date' id='datetimepicker3'>
+            <input type='text' id="datetimea" class="form-control"  />
+            <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <button class="btn btn-danger" ng-click="getSeatStatus()">Kiểm tra</button>
+    </div>
 
     <div id="datatable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
         <div class="row">
@@ -7,28 +18,16 @@
                 <table class="table table-hover m-0 tickets-list table-actions-bar dt-responsive nowrap dataTable no-footer dtr-inline collapsed" cellspacing="0" id="datatable" role="grid" aria-describedby="datatable_info" style="width: 100%;">
                     <thead>
                         <tr role="row">
+                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Requested By: activate to sort column ascending">Hàng ghế</th>
                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Requested By: activate to sort column ascending">1</th>
                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Assignee: activate to sort column ascending">2</th>
                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Assignee: activate to sort column ascending">3</th>
                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Assignee: activate to sort column ascending">4</th>
                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Assignee: activate to sort column ascending">5</th>
-                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Assignee: activate to sort column ascending">6</th>
                         </tr>
                     </thead>
 
-                    <tbody>
-                        <tr dir-paginate="item in routes | itemsPerPage: 10 ">
-                            <td>{{item.Row}}</td>
-                            <td>{{item.StartPoint}}</td>
-                            <td>{{item.EndPoint}}</td>
-                            <td>{{item.TimeStart}}</td>
-                            <td><span class="badge badge-danger">{{item.Status}}</span></td>
-                            <td>
-                                <button class="btn btn-sm btn-primary" ui-sref="edit_route({id:item.ID})"><i class="fa fa-pencil"></i></button>
-                                <button class="btn  btn-sm btn-danger" ng-click="deleteroute(item.ID)"><i class="fa fa-trash"></i></button>
-                            </td>
-                        </tr>
-                    </tbody>
+                    <tbody id="tblData"></tbody>
                 </table>
                 <dir-pagination-controls boundary-links="true"
                                          direction-links="true"
@@ -38,3 +37,18 @@
         </div>
     </div>
 </div>
+<script>
+
+    jQuery(document).ready(function () {
+
+       
+        $('#datetimepicker3').datepicker({ dateFormat: 'mm-dd-yy' });
+        var a = new Date();
+        var d = a.getDay() + 3;
+        var m = a.getMonth() + 1;
+        var y = a.getFullYear();
+        var full = m + "/" + d + "/" + y;
+        $("#datetimea").val(full);
+        console.log(full);
+    });
+</script>

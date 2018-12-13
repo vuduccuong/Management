@@ -33,7 +33,71 @@ namespace Management.Web.Api
         }
         #endregion
 
+        #region GetRowByCar
+        [Route("getrowbycar")]
+        [HttpGet]
+        public HttpResponseMessage GetRowByCar(HttpRequestMessage request, int id)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                var model = _carService.GetRowByCar(id);
+
+                //var responseData = Mapper.Map<IEnumerable<Car>, IEnumerable<CarViewModel>>(model);
+                var response = request.CreateResponse(HttpStatusCode.OK, model);
+                return response;
+            });
+        }
+        #endregion
+
+        #region GetCarByPoint
+        [Route("getcarbypoint")]
+        [HttpGet]
+        public HttpResponseMessage GetCarByPoint(HttpRequestMessage request, string startPoint, string endPoint, string dateBook, int timeStart)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                var model = _carService.GetCarByPoint(startPoint, endPoint, dateBook, timeStart);
+
+                //var responseData = Mapper.Map<IEnumerable<Car>, IEnumerable<CarViewModel>>(model);
+                var response = request.CreateResponse(HttpStatusCode.OK, model);
+                return response;
+            });
+        }
+        #endregion
+
+        #region GetStatusByRow
+        [Route("getstatusbyrow")]
+        [HttpGet]
+        public HttpResponseMessage GetStatusByRow(HttpRequestMessage request, int id, string dateBook)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                var model = _carService.GetStatusBySeat(id, dateBook);
+
+                //var responseData = Mapper.Map<IEnumerable<Car>, IEnumerable<CarViewModel>>(model);
+                var response = request.CreateResponse(HttpStatusCode.OK, model);
+                return response;
+            });
+        }
+        #endregion
+
         #region GetCarBySearch
+        [Route("getallbyroute")]
+        [HttpGet]
+        public HttpResponseMessage GetAll(HttpRequestMessage request, int id, string timeStart)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                var model = _carService.GetByRoute(id, timeStart);
+
+                //var responseData = Mapper.Map<IEnumerable<Car>, IEnumerable<CarViewModel>>(model);
+                var response = request.CreateResponse(HttpStatusCode.OK, model);
+                return response;
+            });
+        }
+        #endregion
+
+        #region GetCar
         [Route("getall")]
         [HttpGet]
         public HttpResponseMessage GetAll(HttpRequestMessage request)
@@ -100,7 +164,7 @@ namespace Management.Web.Api
                 {
                     var crSeat = new Seat();
                     var crSeatNo = new SeatNo();
-                    string[] seat = new string[] { "A", "B", "C", "D", "E", "G", "H", "I" };
+                    string[] seat = new string[] { "A", "B", "C", "D", "E", "G", "H", "I","K" };
 
                     var newCar = new Car();
                     newCar.UpdateCar(carVm);
@@ -109,35 +173,52 @@ namespace Management.Web.Api
                     _carService.Add(newCar);
                     _carService.Save();
 
-                    for (int i = 0; i < 8; i++)
+                    for (int i = 0; i < 9; i++)
                     {
                         crSeat.IDCar = newCar.ID;
                         crSeat.Row = seat[i];
                         crSeat.isDel = false;
                         _seatService.Add(crSeat);
                         _seatService.Save();
-
-                        if (seat[i] == "I") //Hàng cuối luôn 6 ghế
-                        {
-                            for (int j = 1; j < 7; j++)
+                        
+                            
+                            if (seat[i] == "K") //Hàng cuối luôn 5 ghế
                             {
-                                crSeatNo.IDSeat = crSeat.ID;
-                                crSeatNo.SeatNb = j;
-                                crSeatNo.Status = false;
-                                _seatnoService.Add(crSeatNo);
-                                _seatnoService.Save();
-                            }
-                        }
-
-                        else //Các hàng còn lại 4 ghế
-                            for (int j = 1; j < 5; j++)
+                            for (int n = 1; n <= 10; n++)
                             {
-                                crSeatNo.IDSeat = crSeat.ID;
-                                crSeatNo.SeatNb = j;
-                                crSeatNo.Status = false;
-                                _seatnoService.Add(crSeatNo);
-                                _seatnoService.Save();
+                                var date1 = DateTime.Now;
+                                var date = date1.AddDays(n);
+                                for (int j = 1; j < 6; j++)
+                                {
+                                    crSeatNo.IDSeat = crSeat.ID;
+                                    crSeatNo.SeatNb = j;
+                                    crSeatNo.Status = false;
+                                    crSeatNo.DateBook = date;
+                                    _seatnoService.Add(crSeatNo);
+                                    _seatnoService.Save();
+                                }
                             }
+                                
+                            }
+
+                            else //Các hàng còn lại 4 ghế
+                            for (int n = 1; n <= 10; n++)
+                            {
+                                var date1 = DateTime.Now;
+                                var date = date1.AddDays(n);
+                                for (int j = 1; j < 5; j++)
+                                {
+                                    
+                                    crSeatNo.IDSeat = crSeat.ID;
+                                    crSeatNo.SeatNb = j;
+                                    crSeatNo.Status = false;
+                                    crSeatNo.DateBook = date;
+                                    _seatnoService.Add(crSeatNo);
+                                    _seatnoService.Save();
+                                }
+                            }
+                                
+                        
                     }
 
 

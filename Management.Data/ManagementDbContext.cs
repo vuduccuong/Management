@@ -46,8 +46,15 @@ namespace Management.Data
         public DbSet<SeatNo> SeatNos { set; get; }
         public DbSet<Ticket> Tickets { set; get; }
         public DbSet<TypeCar> TypeCars { set; get; }
+        public DbSet<Booking> Bookings { set; get; }
+        public DbSet<Bill> Bills { set; get; }
 
         public DbSet<HistoryAction> HistoryActions { set; get; }
+
+        public DbSet<ApplicationGroup> ApplicationGroups { set; get; }
+        public DbSet<ApplicationRole> ApplicationRoles { set; get; }
+        public DbSet<ApplicationRoleGroup> ApplicationRoleGroups { set; get; }
+        public DbSet<ApplicationUserGroup> ApplicationUserGroups { set; get; }
 
 
         //Phương thức tạo mới chính nó
@@ -58,8 +65,10 @@ namespace Management.Data
 
         protected override void OnModelCreating(DbModelBuilder builder)
         {
-            builder.Entity<IdentityUserRole>().HasKey(i => new { i.UserId, i.RoleId });
-            builder.Entity<IdentityUserLogin>().HasKey(i => i.UserId);
+            builder.Entity<IdentityUserRole>().HasKey(i => new { i.UserId, i.RoleId }).ToTable("ApplicationUserRoles");
+            builder.Entity<IdentityUserLogin>().HasKey(i => i.UserId).ToTable("ApplicationUserLogins");
+            builder.Entity<IdentityUserClaim>().HasKey(i => i.UserId).ToTable("ApplicationUserClaims");
+            builder.Entity<IdentityRole>().ToTable("ApplicationRoles");
 
         }
 

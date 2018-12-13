@@ -1,0 +1,58 @@
+﻿
+<div class="card-box">
+    <h4 class="header-title">Danh sách nhóm</h4>
+    <di class="row">
+        <div class="col-md-6">
+            <div class="input-group">
+                <input type="text" class="form-control" ng-model="keyword" placeholder="Từ khóa">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" ng-click="search()">Tìm kiếm</button>
+                </span>
+            </div><!-- /input-group -->
+        </div>
+        <div class="col-md-6">
+            <button class="btn btn-success" ui-sref="add_application_group">Thêm mới</button>
+        </div>
+    </di>
+
+    <div id="datatable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-hover m-0 tickets-list table-actions-bar dt-responsive nowrap dataTable no-footer dtr-inline collapsed" cellspacing="0" id="datatable" role="grid" aria-describedby="datatable_info" style="width: 100%;">
+                    <thead>
+                        <tr role="row">
+                            <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 45px;" aria-sort="ascending" aria-label="
+                                                ID
+                                            : activate to sort column descending">
+                                STT
+                            </th>
+                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Assignee: activate to sort column ascending">Tên nhóm</th>
+                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Assignee: activate to sort column ascending">Mô tả</th>
+
+                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Assignee: activate to sort column ascending">Tác động</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr dir-paginate="item in data | itemsPerPage: 10 ">
+                            <td>{{$index+1}}</td>
+                            <td><a style="color:blue;" ui-sref="edit_application_group({id:item.ID})">{{item.Name}}</a></td>
+                            <td>
+                                {{item.Description}}
+                            </td>
+                            
+                            <td>
+                                <button class="btn btn-sm btn-primary" ui-sref="edit_application_group({id:item.ID})"><i class="fa fa-pencil"></i></button>
+                                <button class="btn  btn-sm btn-danger" ng-click="deleteItem(item.ID)"><i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dir-pagination-controls boundary-links="true"
+                                         direction-links="true"
+                                         on-page-change="pageChangeHandler(newPageNumber)">
+                </dir-pagination-controls>
+            </div>
+        </div>
+    </div>
+</div>

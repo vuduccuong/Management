@@ -8,7 +8,14 @@
             'management.cars',
             'management.drivers',
             'management.history_actions',
-            'management.common'
+            'management.booking',
+            'management.customers',
+            'management.common',
+            'management.posts',
+            'management.bills',
+            'management.application_groups',
+            'management.application_roles',
+            'management.application_users'
             
         ])
         .config(config)

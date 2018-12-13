@@ -38,6 +38,15 @@
                 context.TypeCars.AddRange(listTypeCars);
                 context.SaveChanges();
             }
+            if (context.PostCategories.Count()==0)
+            {
+                List<PostCategory> lstPostCate = new List<PostCategory>()
+                {
+                    new PostCategory(){Name="Tổng hợp",Status=true,Alias="Tonghop"}
+                };
+                context.PostCategories.AddRange(lstPostCate);
+                context.SaveChanges();
+            }
         }
 
         private void CreateAccount(ManagementDbContext context)

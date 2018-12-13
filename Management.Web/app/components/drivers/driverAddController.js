@@ -27,7 +27,6 @@
                 });
             apiService.post('api/historyaction/create', JSON.stringify(historyAction),
                 function () {
-                    debugger;
                     console.log("Lưu lịch sử thành công");
                 },
                 function () {

@@ -22,6 +22,11 @@ namespace Management.Web.Mappings
             CreateMap<TypeCar, TypeCarViewModel>();
             CreateMap<HistoryAction, HistoryActionViewModel>();
             CreateMap<Seat, SeatViewModel>();
+            CreateMap<Driver, DriverViewModel>();
+
+            CreateMap<ApplicationGroup, ApplicationGroupViewModel>();
+            CreateMap<ApplicationRole, ApplicationRoleViewModel>();
+            CreateMap<ApplicationUser, ApplicationUserViewModel>();
         }
     }
 }

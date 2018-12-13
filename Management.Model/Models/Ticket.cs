@@ -19,6 +19,7 @@ namespace Management.Model.Models
         public int IDCar { get; set; }
         public int Customer { get; set; }
         public int SeatNb { get; set; }
+        public string Price { get; set; }
         public bool? isDel { get; set; }
     }
 }
