@@ -5,10 +5,12 @@
 
     function billListController($scope, apiService, notificationService, $ngBootbox) {
         $scope.bills = [];
-        $scope.getBills = getBills;
+        $scope.getBills = getBills; //get list
         $scope.keyword = '';
 
-        $scope.search = search;
+        $scope.search = search; //search
+
+        $scope.SentMail = SentMail; // sent mail
 
         function search() {
             getBills();
@@ -27,6 +29,16 @@
                 $scope.bills = result.data;
             }, function () {
                 console.log('Lỗi load lịch sử tác động.');
+            });
+        }
+
+        function SentMail(item) {
+            apiService.post('api/booking/sentmail', JSON.stringify(item), function (result) {
+                debugger;
+                notificationService.displaySuccess(result.data.Name + ' đã đặt vé thành công!');
+                
+            }, function (error) {
+                notificationService.displayError('Có lỗi khi gửi mail thành công.');
             });
         }
 

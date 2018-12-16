@@ -11,6 +11,12 @@
             url: "/bills",
             templateUrl: "/app/components/bills/billListView.html",
             controller: "billListController"
-        });
+        })
+            .state('billconfirm', {
+                parent: 'base',
+                url: "/billconfirm",
+                templateUrl: "/app/components/bills/billconfirmListView.html",
+                controller: "billconfirmListController"
+            });
     }
 })();

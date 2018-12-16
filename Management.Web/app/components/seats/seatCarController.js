@@ -90,6 +90,6 @@
             }
             $('#tblData').append(html);
         }
-        //getSeatStatus();
+        
     }
 })(angular.module('management.seats'));

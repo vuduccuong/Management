@@ -225,6 +225,7 @@
     <Compile Include="Api\PostCategoryController.cs" />
     <Compile Include="Api\PostController.cs" />
     <Compile Include="Api\ProductCategoryController.cs" />
+    <Compile Include="Api\RandomGenerator.cs" />
     <Compile Include="Api\RouteController.cs" />
     <Compile Include="Api\SeatController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -330,6 +331,8 @@
     <Content Include="app\components\application_users\applicationUserListController.js" />
     <Content Include="app\components\application_users\applicationUserListView.html" />
     <Content Include="app\components\application_users\applicationUsers.module.js" />
+    <Content Include="app\components\bills\billconfirmListController.js" />
+    <Content Include="app\components\bills\billconfirmListView.html" />
     <Content Include="app\components\bills\bills.module.js" />
     <Content Include="app\components\bills\BillListController.js" />
     <Content Include="app\components\bills\BillListView.html" />
@@ -2768,6 +2771,7 @@
     <Content Include="Views\Home\News.cshtml" />
     <Content Include="Views\Home\CheckTicket.cshtml" />
     <Content Include="Views\Home\NextStep.cshtml" />
+    <Content Include="Views\Home\Confirm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Management.Common\Management.Common.csproj">

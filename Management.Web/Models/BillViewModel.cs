@@ -11,9 +11,12 @@ namespace Management.Web.Models
         public DateTime DatedBill { get; set; }
         public string CustomerName { get; set; }
         public string CustomerPhone { get; set; }
+        public string CustomerMail { get; set; }
+        public string ConfirmCode { get; set; }
         public int IDCar { get; set; }
         public string SeatName { get; set; }
         public string dateBook { get; set; }
         public string CountMoney { get; set; }
+        public bool? Status { get; set; }
     }
 }
