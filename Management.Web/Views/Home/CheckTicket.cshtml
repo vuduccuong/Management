@@ -7,10 +7,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" class="next-head" />
     <title class="next-head">Xe HAPA - Website chính thức của hãng xe HAPA đi Hà Nội - Lào Cai - Sapa</title>
 
-    <link rel="stylesheet" href="static/css/react-datetime.css" class="next-head" />
+
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet" type="text/css" class="next-head" />
     <link REL="SHORTCUT ICON" href="~/XESAPA/static/xesaoviet/img/logo.jpg" class="next-head" />
-    <link rel="stylesheet" href="../www.w3schools.com/w3css/4/w3.css" class="next-head" />
     <link rel="stylesheet" type="text/css" charset="UTF-8" href="../cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" class="next-head" />
     <link rel="stylesheet" type="text/css" href="../cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" class="next-head" />
     <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css" class="next-head" />
@@ -74,25 +73,33 @@
                                             <td class=" f3 b  color-menu   w-100" colspan="3">Nhập thông tin vé</td>
                                         </tr>
                                         <tr>
-                                            <td class="gray pv2 "><input type="text" placeholder="Mã Code " name="code" class="w-80-l w-100 pv2 form-input" /></td>
+                                            <td class="gray pv2 "><input type="text" placeholder="Mã Code " id="code" class="w-80-l w-100 pv2 form-input" /></td>
+                                            
+                                        </tr>
+                                        <tr id="txtCodeNoti">
+                                            <td  style="color:red;">*Bạn phải nhập mã</td>
                                         </tr>
                                         <tr>
-                                            <td class="gray pv2"><input type="text" name="phone" value="" placeholder="Số điện thoại" class="w-80-l w-100 pv2 form-input" /></td>
+                                            <td class="gray pv2"><input type="text" id="phone" value="" placeholder="Số điện thoại" class="w-80-l w-100 pv2 form-input" /></td>
+                                            
+                                        </tr>
+                                        <tr id="txtPhoneNoti">
+                                            <td  style="color:red;">*Bạn phải nhập số điện thoại</input>
                                         </tr>
                                         <tr>
-                                            <td class="pv2 "><button type="submit" class="w-80-l w-100 pv2 form-input pointer white bg-color-login dim ">Kiểm tra vé</button></td>
+                                            <td class="pv2 "><label id="btnSearch" class="w-80-l w-100 pv2 form-input pointer white bg-color-login dim ">Kiểm tra vé</label></td>
                                         </tr>
                                         <tr>
                                             <td class=" pv3  w-100 ">
-                                                <div class="w-80-l w-100 pv3 ph4 bg-light-gray"><b class="">Lưu ý</b><br />Trường hợp bạn không thể hủy vé qua mạng hoặc muốn đổi sang vé khác vui lòng liên hệ chúng tôi qua số điện thoại 1900 7070.</div>
+                                                <div class="w-80-l w-100 pv3 ph4 bg-light-gray"><b class="">Lưu ý</b><br />Trường hợp bạn không thể hủy vé qua mạng hoặc muốn đổi sang vé khác vui lòng liên hệ chúng tôi qua số điện thoại 1900 1234.</div>
                                             </td>
                                         </tr>
                                     </table>
                                 </form>
                             </div>
-                            <div>
+                            <div id="dvData">
                                 <div class=" w-50-l w-100 mv5 pv3 br3 b--black-10 fl db-l dn ba tc bg-form ">Vui lòng nhập vào thông tin và bấm kiểm tra vé</div>
-                                <div class="w-50-l w-100 fl"><img src="static/xehaiau/img/vxr-launch-image.png" /></div>
+                                
                             </div>
                         </div>
                     </div>
@@ -141,6 +148,65 @@
             </footer>
         </div>
     </div>
-    <script></script>
+    <script src="~/Assets/admin/js/abc.js"></script>
+    <script src="~/Assets/admin/js/slick.js"></script>
+    <script src="~/Assets/admin/js/bootstrap-datepicker.min.js"></script>
+    <script>
+        $(document).on('ready', function () {
+            $("#txtCodeNoti").hide();
+            $("#txtPhoneNoti").hide();
+            SerchTicket();
+        });
+        var a = true;
+        function CkeckData() {
+            var code = $('#code').val();
+            var phone = $('#phone').val();
+
+
+            if (code == "" || code == null) {
+                $("#txtCodeNoti").show();
+                 a = false;
+            }
+            if (phone == "" || phone == null) {
+
+                $("#txtPhoneNoti").show();
+                 a = false;
+            }
+            return a;
+        }
+
+        function SerchTicket() {
+            
+            $("#btnSearch").click(function () {
+                CkeckData();
+                if (a) {
+                    $.ajax({
+                        url: "/api/booking/searchticket?code=" + $('#code').val() + "&phone=" + $('#phone').val(),
+                        type: 'post',
+                        success: function (data) {
+                            $("#dvData").empty();
+                            if (data.length > 0) {
+                                var html = '<div class=" w-50-l w-100 mv5 pv3 br3 b--black-10 fl db-l dn ba tc bg-form ">'
+                                html += '<p>Thông tin chuyến đi của hành khách <strong>' + data[0].CustomerName + '</strong></p><hr />';
+                                html += '<p>Khởi hành ngày <strong>' + data[0].dateBook + '</strong></p>';
+                                html += '<p>Vị trí ngồi <strong>' + data[0].SeatName + '</strong></p>'
+                                html += '<p>Trạng thái: đã xác nhận</p>'
+                                html += '</div > ';
+                                $("#dvData").append(html);
+                            }
+                            else {
+                                
+                                var html = '<div class=" w-50-l w-100 mv5 pv3 br3 b--black-10 fl db-l dn ba tc bg-form ">Không có kết quả</div>';
+                                $("#dvData").append(html);
+                            }
+                            
+                        },
+
+                    });
+                }
+            })
+            
+        }
+    </script>
 </body>
 </html>

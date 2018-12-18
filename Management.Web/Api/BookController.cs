@@ -10,6 +10,7 @@ using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Mail;
 using System.Web.Http;
 
 namespace Management.Web.Api
@@ -103,6 +104,8 @@ namespace Management.Web.Api
                     newBill.IDCar = bookVm.IDCar;
                     newBill.SeatName = bookVm.SeatNoName;
                     newBill.CountMoney = "210000";
+                    newBill.CustomerMail = bookVm.MailCustomer;
+                    newBill.Status = false;
 
                     //AddBill
                     _billService.Add(newBill);
@@ -198,10 +201,12 @@ namespace Management.Web.Api
             newBill.dateBook = bookVm.Date;
             newBill.DatedBill = DateTime.Now;
             newBill.IDCar = bookVm.IDCar;
+            newBill.CustomerMail = bookVm.MailCustomer;
             newBill.SeatName = bookVm.SeatNoName;
             string[] str = bookVm.SeatNoName.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
             int mouney = 210000 * (int.Parse(str.Length.ToString()));
             newBill.CountMoney = mouney.ToString();
+            newBill.Status = false;
 
             //AddBill
             _billService.Add(newBill);
@@ -214,6 +219,7 @@ namespace Management.Web.Api
 
         }
         #endregion
+
         #region Delete
         [Route("delete")]
         [HttpDelete]
@@ -248,11 +254,104 @@ namespace Management.Web.Api
         {
             return CreateHttpResponse(request, () =>
             {
-                var model = _billService.GetAll(keyword);
+                var model = _billService.GettAllByStatus(keyword);
 
                 var responseData = Mapper.Map<IEnumerable<Bill>, IEnumerable<BillViewModel>>(model);
                 var response = request.CreateResponse(HttpStatusCode.OK, responseData);
                 return response;
+            });
+        }
+        #endregion
+
+        #region GetBillTrue
+        [Route("getallbilltrue")]
+        [HttpGet]
+        public HttpResponseMessage GetAllBillTrue(HttpRequestMessage request, string keyword)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                var model = _billService.GettAllByStatusTrue(keyword);
+
+                var responseData = Mapper.Map<IEnumerable<Bill>, IEnumerable<BillViewModel>>(model);
+                var response = request.CreateResponse(HttpStatusCode.OK, responseData);
+                return response;
+            });
+        }
+        #endregion
+
+        #region SentMail
+        [Route("sentmail")]
+        [HttpPost]
+        public bool SentMail([FromBody] BillViewModel billVm)
+        {
+            try
+            {
+                MailMessage mail = new MailMessage();
+                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
+                mail.From = new MailAddress(billVm.CustomerMail);
+                mail.To.Add(billVm.CustomerMail);
+                mail.Subject = "Xác nhận đặt vé xe ngày" + billVm.dateBook;
+
+                RandomGenerator generator = new RandomGenerator();
+                string str = generator.RandomString(10, false);
+
+                mail.Body = "Cảm ơn <strong>"+billVm.CustomerName+ "</strong> đã sử dụng dịch vụ của nhà xe HAPA <br /><hr /> Đây là mã chuyến đi của bạn, vui lòng mang mã để xác nhận trên chuyến đi của bạn : <strong>" +str+"</strong> <br /><hr />" +
+                    "Bạn vui lòng <a href='http://localhost:52651/Home/Confirm?id="+billVm.ID+"&confirm="+str+"'>click vào đây</a> để xác nhận chuyến đi";
+
+                mail.IsBodyHtml = true;
+
+                SmtpServer.Port = 587;
+                SmtpServer.Credentials = new System.Net.NetworkCredential("noreply.hapa@gmail.com", "*#*#0000#*#*");
+                SmtpServer.EnableSsl = true;
+
+                SmtpServer.Send(mail);
+
+
+                return true;
+                // phải làm cái này ở mail dùng để gửi phải bật lên
+                // https://www.google.com/settings/u/1/security/lesssecureapps
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        #endregion
+
+        #region UpdateConfirmMail
+        [Route("confirmmail")]
+        [HttpPost]
+        [AllowAnonymous]
+        public HttpResponseMessage ConfirmMail(HttpRequestMessage request, int id, string confirmcode)
+        {
+            var oldBill = _billService.GetById(id);
+            oldBill.ConfirmCode = confirmcode;
+            oldBill.Status = true;
+
+            _billService.Update(oldBill);
+            _billService.Save();
+
+
+
+            //var responseData = Mapper.Map<Customer, CustomerViewModel>(newCustomer);
+            return request.CreateResponse(HttpStatusCode.Created, oldBill);
+
+        }
+        #endregion
+
+        #region SearchTicket
+        [Route("searchticket")]
+        [HttpPost]
+        [AllowAnonymous]
+        public HttpResponseMessage SearchTicket(HttpRequestMessage request, string code, string phone)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                var model = _billService.SearchTicket(code, phone);
+                var responseData = Mapper.Map<IEnumerable<Bill>, IEnumerable<BillViewModel>>(model);
+                return request.CreateResponse(HttpStatusCode.Created, responseData);
+
             });
         }
         #endregion

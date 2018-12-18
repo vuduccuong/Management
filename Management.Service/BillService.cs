@@ -18,6 +18,9 @@ namespace Management.Service
         Bill Delete(int id);
 
         IEnumerable<Bill> GetAll(string keyword);
+        IEnumerable<Bill> GettAllByStatus(string keyword);
+        IEnumerable<Bill> GettAllByStatusTrue(string keyword);
+        IEnumerable<Bill> SearchTicket(string code, string phone);
 
         Bill GetById(int id);
 
@@ -57,9 +60,24 @@ namespace Management.Service
             return _billRepository.GetSingleById(id);
         }
 
+        public IEnumerable<Bill> GettAllByStatus(string keyword)
+        {
+            return _billRepository.GetAllByStatus(keyword);
+        }
+
+        public IEnumerable<Bill> GettAllByStatusTrue(string keyword)
+        {
+            return _billRepository.GetAllByStatusTrue(keyword);
+        }
+
         public void Save()
         {
             _unitOfWork.Commit();
+        }
+
+        public IEnumerable<Bill> SearchTicket(string code, string phone)
+        {
+            return _billRepository.SearchTicket(code, phone);
         }
 
         public void Update(Bill bill)

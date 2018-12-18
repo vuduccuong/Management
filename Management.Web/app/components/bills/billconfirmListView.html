@@ -3,9 +3,9 @@
     <di class="row">
         <div class="col-md-6">
             <div class="input-group">
-                <input type="text" class="form-control" ng-model="keyword" placeholder="Từ khóa">
+                <input type="date" class="date-picker" ng-model="keyword" placeholder="Từ khóa">
                 <span class="input-group-btn">
-                    <button class="btn btn-default" type="button" ng-click="search()">Tìm kiếm</button>
+                    <button class="btn btn-info" type="button" ng-click="search()">Xuất Exel</button>
                 </span>
             </div><!-- /input-group -->
         </div>
@@ -25,10 +25,9 @@
                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Requested By: activate to sort column ascending">Tên khách hàng</th>
                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Requested By: activate to sort column ascending">Email</th>
                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Assignee: activate to sort column ascending">SDT</th>
-                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Assignee: activate to sort column ascending">Ngày lập hoá đơn</th>
+                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Assignee: activate to sort column ascending">Mã xác nhận</th>
                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Assignee: activate to sort column ascending">Ghế</th>
                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Assignee: activate to sort column ascending">Ngày đi</th>
-                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Assignee: activate to sort column ascending">Tác động</th>
 
                         </tr>
                     </thead>
@@ -39,10 +38,9 @@
                             <td>{{item.CustomerName}}</td>
                             <td>{{item.CustomerMail}}</td>
                             <td>{{item.CustomerPhone}}</td>
-                            <td>{{item.DatedBill}}</td>
+                            <td>{{item.ConfirmCode}}</td>
                             <td>{{item.SeatName}}</td>
                             <td>{{item.dateBook}}</td>
-                            <td><button class="btn-bg-color btn-danger" ng-click="SentMail(item)" title="Gửi emil xác nhận"><i class="fa fa-envelope-o"></i></button></td>
                         </tr>
                     </tbody>
                 </table>

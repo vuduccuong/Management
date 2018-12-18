@@ -46,5 +46,12 @@ namespace Management.Web.Controllers
 
             return View();
         }
+
+        public ActionResult Confirm(int id, string confirm)
+        {
+            ViewBag.idBill = id;
+            ViewBag.confirmCode = confirm;
+            return View();
+        }
     }
 }
