@@ -2,6 +2,7 @@
 using Management.Model.Models;
 using Management.Service;
 using Management.Web.Infrastructure.Core;
+using Management.Web.Infrastructure.Extensions;
 using Management.Web.Models;
 using System;
 using System.Collections.Generic;
@@ -144,6 +145,34 @@ namespace Management.Web.Api
                     response = request.CreateResponse(HttpStatusCode.Created, responseData);
                 }
 
+                return response;
+            });
+        }
+        #endregion
+
+        #region AddCustomer
+        [Route("add")]
+        [HttpPost]
+        public HttpResponseMessage Create(HttpRequestMessage request, CustomerViewModel customerVM)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                if (!ModelState.IsValid)
+                {
+                    response = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    var newCus = new Customer();
+                    newCus.UpdateCustomer(customerVM);
+                    newCus.isDel = false;
+
+                    _customerService.Add(newCus);
+                    _customerService.Save();
+
+                    response = request.CreateResponse(HttpStatusCode.Created, newCus);
+                }
                 return response;
             });
         }

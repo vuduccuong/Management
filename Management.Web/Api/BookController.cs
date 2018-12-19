@@ -135,22 +135,22 @@ namespace Management.Web.Api
         {
            
                     //Thêm mới khách hàng
-                    var newCustomer = new Customer();
-                    newCustomer.Name = bookVm.NameCustomer;
-                    newCustomer.PhoneNumber = bookVm.PhoneCustomer;
-                    newCustomer.Email = bookVm.MailCustomer;
-                    newCustomer.Address = bookVm.AddressCustomer;
-                    newCustomer.isDel = false;
+                    //var newCustomer = new Customer();
+                    //newCustomer.Name = bookVm.NameCustomer;
+                    //newCustomer.PhoneNumber = bookVm.PhoneCustomer;
+                    //newCustomer.Email = bookVm.MailCustomer;
+                    //newCustomer.Address = bookVm.AddressCustomer;
+                    //newCustomer.isDel = false;
                     //AddCustommer
-                    _customerService.Add(newCustomer);
-                    _customerService.Save();
+                    //_customerService.Add(newCustomer);
+                    //_customerService.Save();
 
 
 
                     //Thêm mới book
                     var newBook = new Booking();
                     newBook.IDCar = bookVm.IDCar;
-                    newBook.IDCustomer = newCustomer.ID;
+                    //newBook.IDCustomer = newCustomer.ID;
                     newBook.IDSeat = bookVm.IDSeat;
                     newBook.IDSeatNo = bookVm.IDSeatNo;
                     newBook.DateBook = DateTime.Now;
@@ -181,8 +181,8 @@ namespace Management.Web.Api
                     _seatnoService.Update(dbSeatNo);
                     _seatnoService.Save();
 
-                    var responseData = Mapper.Map<Customer, CustomerViewModel>(newCustomer);
-            return  request.CreateResponse(HttpStatusCode.Created, responseData);
+                    //var responseData = Mapper.Map<Customer, CustomerViewModel>(newCustomer);
+            return  request.CreateResponse(HttpStatusCode.Created, "OK");
              
         }
         #endregion
