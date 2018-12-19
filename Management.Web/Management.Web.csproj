@@ -441,6 +441,7 @@
     <Content Include="Assets\admin\fonts\materialdesignicons-webfont.svg" />
     <Content Include="Assets\admin\fonts\Simple-Line-Icons.svg" />
     <Content Include="Assets\admin\fonts\slick.svg" />
+    <Content Include="Assets\admin\images\37c87075-52fc-438e-a835-3c4b3577586f.png" />
     <Content Include="Assets\admin\images\attached-files\img-1.jpg" />
     <Content Include="Assets\admin\images\attached-files\img-2.jpg" />
     <Content Include="Assets\admin\images\attached-files\img-3.jpg" />
@@ -518,6 +519,8 @@
     <Content Include="Assets\admin\images\users\avatar-7.jpg" />
     <Content Include="Assets\admin\images\users\avatar-8.jpg" />
     <Content Include="Assets\admin\images\users\avatar-9.jpg" />
+    <Content Include="Assets\admin\images\users\iconfinder_user_285655.png" />
+    <Content Include="Assets\admin\img\annie-spratt-256172-unsplash.jpg" />
     <Content Include="Assets\admin\img\available_seat_img.gif" />
     <Content Include="Assets\admin\img\booked_seat_img.gif" />
     <Content Include="Assets\admin\img\bootstrap-colorpicker\alpha-horizontal.png" />
@@ -525,8 +528,11 @@
     <Content Include="Assets\admin\img\bootstrap-colorpicker\hue-horizontal.png" />
     <Content Include="Assets\admin\img\bootstrap-colorpicker\hue.png" />
     <Content Include="Assets\admin\img\bootstrap-colorpicker\saturation.png" />
+    <Content Include="Assets\admin\img\chansereypich-seng-469326-unsplash.jpg" />
     <Content Include="Assets\admin\img\from-to2.png" />
+    <Content Include="Assets\admin\img\joss-woodhead-798866-unsplash.jpg" />
     <Content Include="Assets\admin\img\selected_seat_img.gif" />
+    <Content Include="Assets\admin\img\yuichi-kageyama-781188-unsplash.jpg" />
     <Content Include="Assets\admin\js\abc.js" />
     <Content Include="Assets\admin\js\bootstrap-clockpicker.min.js" />
     <Content Include="Assets\admin\js\bootstrap-colorpicker.js" />

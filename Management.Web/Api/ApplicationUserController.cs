@@ -55,7 +55,7 @@ namespace Management.Web.Api
         #region GetAllUser
         [Route("getlistall")]
         [HttpGet]
-        [Authorize(Roles ="View")]
+        //[Authorize(Roles ="View")]
         public HttpResponseMessage GetListAll(HttpRequestMessage request)
         {
             return CreateHttpResponse(request, () =>
@@ -74,7 +74,7 @@ namespace Management.Web.Api
 
         [Route("detail/{id}")]
         [HttpGet]
-        [Authorize(Roles = "View")]
+        //[Authorize(Roles = "View")]
         public HttpResponseMessage Details(HttpRequestMessage request, string id)
         {
             if (string.IsNullOrEmpty(id))
@@ -99,7 +99,7 @@ namespace Management.Web.Api
 
         [HttpPost]
         [Route("add")]
-        [Authorize(Roles = "AddUser")]
+        //[Authorize(Roles = "AddUser")]
         public async Task<HttpResponseMessage> Create(HttpRequestMessage request, ApplicationUserViewModel applicationUserViewModel)
         {
             if (ModelState.IsValid)

@@ -35,10 +35,13 @@
         function SentMail(item) {
             apiService.post('api/booking/sentmail', JSON.stringify(item), function (result) {
                 debugger;
-                notificationService.displaySuccess(result.data.Name + ' đã đặt vé thành công!');
-                
+                if (result.data == true) {
+                    notificationService.displaySuccess("Đã gửi mail thành công");
+                }
+                else
+                    notificationService.displayError('Có lỗi khi gửi mail.'); 
             }, function (error) {
-                notificationService.displayError('Có lỗi khi gửi mail thành công.');
+                notificationService.displayError('Có lỗi khi gửi mail.');
             });
         }
 

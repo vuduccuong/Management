@@ -172,5 +172,13 @@ namespace Management.Web.Infrastructure.Extensions
             appUser.PhoneNumber = appUserViewModel.PhoneNumber;
         }
 
+        public static void UpdateCustomer(this Customer customer, CustomerViewModel customerVM)
+        {
+            customer.ID = customerVM.ID;
+            customer.Name = customerVM.Name;
+            customer.PhoneNumber = customerVM.PhoneNumber;
+            customer.Address = customerVM.Address;
+            customer.Email = customerVM.Email;
+        }
     }
 }

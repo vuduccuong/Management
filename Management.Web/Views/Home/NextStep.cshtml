@@ -614,7 +614,8 @@
                                 }
                         });
                         }
-   
+
+                        
                             var obj = new Object();
                             obj.SeatNoName = $("#selectSeat").text();
                             obj.NameCustomer = $("#nameCustomer").val();
@@ -627,7 +628,8 @@
                             obj.IDCar = @ViewBag.IDCar;
                             obj.IDSeat = "";
                             obj.Status = true;
-                            obj.IDSeatNo = 0;
+                        obj.IDSeatNo = 0;
+                        //Create Bill
                             $.ajax({
                                 url: '/api/booking/createbill',
                                 type: 'post',
@@ -638,8 +640,18 @@
                                     console.log("Thêm Bill thành công")
                                 }
                         });
-                    
+                            //Create Customer
+                        var datajs = { Name: obj.NameCustomer, PhoneNumber: obj.PhoneCustomer, Address: obj.AddressCustomer, Email: obj.MailCustomer };
+                        $.ajax({
+                            url: '/api/customer/add',
+                            type: 'post',
+                            data: JSON.stringify(datajs),
+                            contentType: "application/json",
 
+                            success: function () {
+                                console.log("Thêm Customer thành công")
+                            }
+                        });
                     }
                 });
             }); 
