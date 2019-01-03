@@ -1,4 +1,5 @@
-﻿using Management.Data.Infrastructure;
+﻿using Management.Common.ViewModel;
+using Management.Data.Infrastructure;
 using Management.Model.Models;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace Management.Data.Repositories
         IEnumerable<Bill> GetAllByStatus(string keyword);
         IEnumerable<Bill> GetAllByStatusTrue(string keyword);
 
-        IEnumerable<Bill> SearchTicket(string code, string phone);
+        IEnumerable<SearchTicketViewModel> SearchTicket(string code, string phone);
     }
     public class BillRepository : RepositoryBase<Bill>, IBillRepository
     {
@@ -39,11 +40,13 @@ namespace Management.Data.Repositories
             return query;
         }
 
-        public IEnumerable<Bill> SearchTicket(string code, string phone)
+        public IEnumerable<SearchTicketViewModel> SearchTicket(string code, string phone)
         {
             var query = from b in DbContext.Bills
-                        where b.Status==true && b.ConfirmCode.Contains(code) && b.CustomerPhone.Contains(phone)
-                        select b;
+                        join c in DbContext.Cars on b.IDCar equals c.ID
+                        join rt in DbContext.Routers on c.IDRouter equals rt.ID
+                        where b.Status==true && b.ConfirmCode.Contains(code) || b.CustomerPhone.Contains(phone)
+                        select new SearchTicketViewModel() { ID=b.ID, CarCode = c.Code, CustomerName = b.CustomerName, dateBook = b.dateBook, SeatName = b.SeatName, TimeStart = rt.TimeStart, StartPoint = rt.StartPoint, EndPoint = rt.EndPoint };
 
             return query;
         }

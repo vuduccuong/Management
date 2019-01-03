@@ -37,6 +37,7 @@
                 debugger;
                 if (result.data == true) {
                     notificationService.displaySuccess("Đã gửi mail thành công");
+                    $state.go('bills');
                 }
                 else
                     notificationService.displayError('Có lỗi khi gửi mail.'); 

@@ -12,6 +12,9 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Mail;
 using System.Web.Http;
+using Twilio;
+using Twilio.Rest.Api.V2010.Account;
+using Twilio.Types;
 
 namespace Management.Web.Api
 {
@@ -286,6 +289,8 @@ namespace Management.Web.Api
         {
             try
             {
+
+
                 MailMessage mail = new MailMessage();
                 SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
@@ -297,7 +302,7 @@ namespace Management.Web.Api
                 string str = generator.RandomString(10, false);
 
                 mail.Body = "Cảm ơn <strong>"+billVm.CustomerName+ "</strong> đã sử dụng dịch vụ của nhà xe HAPA <br /><hr /> Đây là mã chuyến đi của bạn, vui lòng mang mã để xác nhận trên chuyến đi của bạn : <strong>" +str+"</strong> <br /><hr />" +
-                    "Bạn vui lòng <a href='http://localhost:52651/Home/Confirm?id="+billVm.ID+"&confirm="+str+"'>click vào đây</a> để xác nhận chuyến đi";
+                    "Bạn vui lòng <a href='http://localhost:19968/Home/Confirm?id="+billVm.ID+"&confirm="+str+"'>click vào đây</a> để xác nhận chuyến đi";
 
                 mail.IsBodyHtml = true;
 
@@ -307,6 +312,16 @@ namespace Management.Web.Api
 
                 SmtpServer.Send(mail);
 
+             //   //Send SMS
+
+             //   const string accountSid = "ACef01e35217a812ef7e2b100d74fdd4cf";
+             //   const string authToken = "33d3081567b3aa95f4165483247f2e28";
+             //   TwilioClient.Init(accountSid, authToken);
+
+             //   var message = MessageResource.Create(
+             //to: new PhoneNumber("+84976472341"),
+             //from: new PhoneNumber("+84343382777"),
+             //body: "Hello from C#");
 
                 return true;
                 // phải làm cái này ở mail dùng để gửi phải bật lên
@@ -349,8 +364,8 @@ namespace Management.Web.Api
             return CreateHttpResponse(request, () =>
             {
                 var model = _billService.SearchTicket(code, phone);
-                var responseData = Mapper.Map<IEnumerable<Bill>, IEnumerable<BillViewModel>>(model);
-                return request.CreateResponse(HttpStatusCode.Created, responseData);
+                //var responseData = Mapper.Map<IEnumerable<Bill>, IEnumerable<BillViewModel>>(model);
+                return request.CreateResponse(HttpStatusCode.Created, model);
 
             });
         }

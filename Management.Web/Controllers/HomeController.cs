@@ -53,5 +53,11 @@ namespace Management.Web.Controllers
             ViewBag.confirmCode = confirm;
             return View();
         }
+
+        public ActionResult NewDetal(int id)
+        {
+            ViewBag.id = id;
+            return View();
+        }
     }
 }

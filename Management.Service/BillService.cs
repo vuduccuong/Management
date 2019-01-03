@@ -1,4 +1,5 @@
-﻿using Management.Data.Infrastructure;
+﻿using Management.Common.ViewModel;
+using Management.Data.Infrastructure;
 using Management.Data.Repositories;
 using Management.Model.Models;
 using System;
@@ -20,7 +21,7 @@ namespace Management.Service
         IEnumerable<Bill> GetAll(string keyword);
         IEnumerable<Bill> GettAllByStatus(string keyword);
         IEnumerable<Bill> GettAllByStatusTrue(string keyword);
-        IEnumerable<Bill> SearchTicket(string code, string phone);
+        IEnumerable<SearchTicketViewModel> SearchTicket(string code, string phone);
 
         Bill GetById(int id);
 
@@ -75,7 +76,7 @@ namespace Management.Service
             _unitOfWork.Commit();
         }
 
-        public IEnumerable<Bill> SearchTicket(string code, string phone)
+        public IEnumerable<SearchTicketViewModel> SearchTicket(string code, string phone)
         {
             return _billRepository.SearchTicket(code, phone);
         }

@@ -188,7 +188,9 @@
                             if (data.length > 0) {
                                 var html = '<div class=" w-50-l w-100 mv5 pv3 br3 b--black-10 fl db-l dn ba tc bg-form ">'
                                 html += '<p>Thông tin chuyến đi của hành khách <strong>' + data[0].CustomerName + '</strong></p><hr />';
-                                html += '<p>Khởi hành ngày <strong>' + data[0].dateBook + '</strong></p>';
+                                html += '<p>Biển số xe <strong>' + data[0].CarCode + '</strong></p>';
+                                html += '<p>Khởi hành vào <strong>' + data[0].TimeStart + '</strong> giờ, ngày <strong>' + data[0].dateBook + '</strong></p>';
+                                html += '<p>Điểm đón - trả <strong>' + data[0].StartPoint + '</strong> <strong>-</strong> <strong>' + data[0].EndPoint + '</strong></p>';
                                 html += '<p>Vị trí ngồi <strong>' + data[0].SeatName + '</strong></p>'
                                 html += '<p>Trạng thái: đã xác nhận</p>'
                                 html += '</div > ';

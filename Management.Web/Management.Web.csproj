@@ -70,6 +70,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="JWT, Version=1.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\JWT.1.3.4\lib\3.5\JWT.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -157,6 +160,9 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Twilio, Version=5.24.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Twilio.5.24.1\lib\net35\Twilio.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -262,6 +268,7 @@
     <Compile Include="Models\ProductTagViewModel.cs" />
     <Compile Include="Models\ProductViewModel.cs" />
     <Compile Include="Models\RouterViewModel.cs" />
+    <Compile Include="Models\SearchBillViewModel.cs" />
     <Compile Include="Models\SeatNoViewModel.cs" />
     <Compile Include="Models\SeatViewModel.cs" />
     <Compile Include="Models\TagViewModel.cs" />
@@ -351,6 +358,9 @@
     <Content Include="app\components\customers\customerListView.html" />
     <Content Include="app\components\customers\customerEditController.js" />
     <Content Include="app\components\customers\customerEditView.html" />
+    <Content Include="app\components\dashboad\dashboad.module.js" />
+    <Content Include="app\components\dashboad\dashboadListController.js" />
+    <Content Include="app\components\dashboad\dashboadListView.html" />
     <Content Include="app\components\drivers\driver.module.js" />
     <Content Include="app\components\drivers\driverAddController.js" />
     <Content Include="app\components\drivers\driverAddView.html" />
@@ -2778,6 +2788,7 @@
     <Content Include="Views\Home\CheckTicket.cshtml" />
     <Content Include="Views\Home\NextStep.cshtml" />
     <Content Include="Views\Home\Confirm.cshtml" />
+    <Content Include="Views\Home\NewDetal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Management.Common\Management.Common.csproj">
@@ -2819,7 +2830,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>52651</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:52651/</IISUrl>
+          <IISUrl>http://localhost:19968/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
