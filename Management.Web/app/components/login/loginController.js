@@ -14,7 +14,7 @@
                     }
                     else {
                         var stateService = $injector.get('$state');
-                        stateService.go('bills');
+                        stateService.go('dashboads');
                     }
                 });
             };

@@ -9,40 +9,36 @@
 
                         <div class="text-center mt-4 mb-4">
                             <div class="row">
-                                <div class="col-xs-6 col-sm-3">
+                                <div class="col-xs-6 col-sm-4">
                                     <div class="card-box widget-flat border-custom bg-custom text-white">
                                         <i class="fi-tag"></i>
-                                        <h3 class="m-b-10">25563</h3>
-                                        <p class="text-uppercase m-b-5 font-13 font-600">Total tickets</p>
+                                        <h3 class="m-b-10">{{countall}}</h3>
+                                        <p class="text-uppercase m-b-5 font-13 font-600">Tổng hành khách</p>
                                     </div>
                                 </div>
-                                <div class="col-xs-6 col-sm-3">
+                                <div class="col-xs-6 col-sm-4">
                                     <div class="card-box bg-primary widget-flat border-primary text-white">
                                         <i class="fi-archive"></i>
-                                        <h3 class="m-b-10">6952</h3>
-                                        <p class="text-uppercase m-b-5 font-13 font-600">Pending Tickets</p>
+                                        <h3 class="m-b-10">{{counttrue}}</h3>
+                                        <p class="text-uppercase m-b-5 font-13 font-600">Đã xác nhận</p>
                                     </div>
                                 </div>
-                                <div class="col-xs-6 col-sm-3">
+                                <div class="col-xs-6 col-sm-4">
                                     <div class="card-box widget-flat border-success bg-success text-white">
                                         <i class="fi-help"></i>
-                                        <h3 class="m-b-10">18361</h3>
-                                        <p class="text-uppercase m-b-5 font-13 font-600">Closed Tickets</p>
+                                        <h3 class="m-b-10">{{countnottrue}}</h3>
+                                        <p class="text-uppercase m-b-5 font-13 font-600">Chưa xác nhận</p>
                                     </div>
                                 </div>
-                                <div class="col-xs-6 col-sm-3">
-                                    <div class="card-box bg-danger widget-flat border-danger text-white">
-                                        <i class="fi-delete"></i>
-                                        <h3 class="m-b-10">250</h3>
-                                        <p class="text-uppercase m-b-5 font-13 font-600">Deleted Tickets</p>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
 
 
                         <div id="datatable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
-                            <!--<div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="datatable_length"><label>Show <select name="datatable_length" aria-controls="datatable" class="form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="datatable_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="datatable"></label></div></div></div><div class="row">-->
+                            <div class="row">
+                                <button class="btn btn-confirm" ng-click="Export()">Xuất Exel</button>
+                            </div>
                                 <div class="col-sm-12">
                                     <table class="table table-hover m-0 tickets-list table-actions-bar dt-responsive nowrap dataTable no-footer dtr-inline collapsed" cellspacing="0" width="100%" id="datatable" role="grid" aria-describedby="datatable_info" style="width: 100%;">
                                         <thead>
@@ -50,66 +46,38 @@
                                                 <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 45px;" aria-sort="ascending" aria-label="
                                                 ID
                                             : activate to sort column descending">
-                                                    ID
+                                                    STT
                                                 </th>
-                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 143px;" aria-label="Requested By: activate to sort column ascending">Requested By</th>
-                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 254px;" aria-label="Subject: activate to sort column ascending">Subject</th>
-                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 68px;" aria-label="Assignee: activate to sort column ascending">Assignee</th>
-                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 56px;" aria-label="Priority: activate to sort column ascending">Priority</th>
-                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51px;" aria-label="Status: activate to sort column ascending">Status</th>
-                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 97px;" aria-label="Created Date: activate to sort column ascending">Created Date</th>
-                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 0px; display: none;" aria-label="Due Date: activate to sort column ascending">Due Date</th>
-                                                <th class="hidden-sm sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 0px; display: none;" aria-label="Action: activate to sort column ascending">Action</th>
+                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 143px;" aria-label="Requested By: activate to sort column ascending">Tên hành khách</th>
+                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 68px;" aria-label="Subject: activate to sort column ascending">Email</th>
+                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 254px;" aria-label="Assignee: activate to sort column ascending">Ngày mua vé</th>
+                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51px;" aria-label="Status: activate to sort column ascending">Ghế</th>
+                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 97px;" aria-label="Created Date: activate to sort column ascending">Trạng thái xác nhận</th>
                                             </tr>
                                         </thead>
 
                                         <tbody>
-                                            <tr role="row" class="odd">
-                                                <td tabindex="0" class="sorting_1"><b>#1020</b></td>
+                                            <tr dir-paginate="item in bills | itemsPerPage:100">
+                                                <td tabindex="0" class="sorting_1"><b>{{$index+1}}</b></td>
                                                 <td>
-                                                    <a href="javascript: void(0);">
-                                                        <img src="assets/images/users/avatar-9.jpg" alt="contact-img" title="contact-img" class="rounded-circle">
-                                                        <span class="ml-2">Erwin E. Brown</span>
-                                                    </a>
+                                                    <span class="ml-2">{{item.CustomerName}}</span>
                                                 </td>
 
                                                 <td>
-                                                    A new rating has been received
+                                                    {{item.CustomerMail}}
                                                 </td>
 
                                                 <td>
-                                                    <a href="javascript: void(0);">
-                                                        <img src="assets/images/users/avatar-1.jpg" alt="contact-img" title="contact-img" class="rounded-circle">
-                                                    </a>
+                                                    {{item.DatedBill}}
                                                 </td>
 
                                                 <td>
-                                                    <span class="badge badge-warning">Medium</span>
+                                                    {{item.SeatName}}
                                                 </td>
 
                                                 <td>
-                                                    <span class="badge badge-secondary">Closed</span>
-                                                </td>
-
-                                                <td>
-                                                    2013/08/11
-                                                </td>
-
-                                                <td style="display: none;">
-                                                    2013/08/30
-                                                </td>
-
-                                                <td style="display: none;">
-                                                    <div class="btn-group dropdown">
-                                                        <a href="javascript: void(0);" class="table-action-btn dropdown-toggle arrow-none btn btn-light btn-sm" data-toggle="dropdown" aria-expanded="false"><i class="mdi mdi-dots-horizontal"></i></a>
-                                                        <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#"><i class="mdi mdi-pencil mr-2 text-muted font-18 vertical-middle"></i>Edit Ticket</a>
-                                                            <a class="dropdown-item" href="#"><i class="mdi mdi-check-all mr-2 text-muted font-18 vertical-middle"></i>Close</a>
-                                                            <a class="dropdown-item" href="#"><i class="mdi mdi-delete mr-2 text-muted font-18 vertical-middle"></i>Remove</a>
-                                                            <a class="dropdown-item" href="#"><i class="mdi mdi-star mr-2 font-18 text-muted vertical-middle"></i>Mark as Unread</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
+                                                    <span class="badge badge-danger">{{item.Status}}</span>
+                                                </td> 
                                             </tr>
                                         </tbody>
                                     </table>

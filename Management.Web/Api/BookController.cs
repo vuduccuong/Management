@@ -121,12 +121,12 @@ namespace Management.Web.Api
                     _seatnoService.Update(dbSeatNo);
                     _seatnoService.Save();
 
-                var responseData = Mapper.Map<Customer, CustomerViewModel>(newCustomer);
-                response = request.CreateResponse(HttpStatusCode.Created, responseData);
-            }
+                    var responseData = Mapper.Map<Customer, CustomerViewModel>(newCustomer);
+                    response = request.CreateResponse(HttpStatusCode.Created, responseData);
+                }
 
                 return response;
-        });
+            });
         }
         #endregion
 
@@ -136,34 +136,34 @@ namespace Management.Web.Api
         [AllowAnonymous]
         public HttpResponseMessage CreateFront(HttpRequestMessage request, [FromBody] BookViewModel bookVm)
         {
-           
-                    //Thêm mới khách hàng
-                    //var newCustomer = new Customer();
-                    //newCustomer.Name = bookVm.NameCustomer;
-                    //newCustomer.PhoneNumber = bookVm.PhoneCustomer;
-                    //newCustomer.Email = bookVm.MailCustomer;
-                    //newCustomer.Address = bookVm.AddressCustomer;
-                    //newCustomer.isDel = false;
-                    //AddCustommer
-                    //_customerService.Add(newCustomer);
-                    //_customerService.Save();
+
+            //Thêm mới khách hàng
+            //var newCustomer = new Customer();
+            //newCustomer.Name = bookVm.NameCustomer;
+            //newCustomer.PhoneNumber = bookVm.PhoneCustomer;
+            //newCustomer.Email = bookVm.MailCustomer;
+            //newCustomer.Address = bookVm.AddressCustomer;
+            //newCustomer.isDel = false;
+            //AddCustommer
+            //_customerService.Add(newCustomer);
+            //_customerService.Save();
 
 
 
-                    //Thêm mới book
-                    var newBook = new Booking();
-                    newBook.IDCar = bookVm.IDCar;
-                    //newBook.IDCustomer = newCustomer.ID;
-                    newBook.IDSeat = bookVm.IDSeat;
-                    newBook.IDSeatNo = bookVm.IDSeatNo;
-                    newBook.DateBook = DateTime.Now;
-                    newBook.CreatedBy = bookVm.CreatedBy;
-                    newBook.CreatedDate = DateTime.Now;
-                    newBook.MetaDescription = bookVm.MetaDescription;
-                    newBook.Status = true;
-                    //AddBoook
-                    _bookService.Add(newBook);
-                    _bookService.Save();
+            //Thêm mới book
+            var newBook = new Booking();
+            newBook.IDCar = bookVm.IDCar;
+            //newBook.IDCustomer = newCustomer.ID;
+            newBook.IDSeat = bookVm.IDSeat;
+            newBook.IDSeatNo = bookVm.IDSeatNo;
+            newBook.DateBook = DateTime.Now;
+            newBook.CreatedBy = bookVm.CreatedBy;
+            newBook.CreatedDate = DateTime.Now;
+            newBook.MetaDescription = bookVm.MetaDescription;
+            newBook.Status = true;
+            //AddBoook
+            _bookService.Add(newBook);
+            _bookService.Save();
 
             ////NewBill
             //var newBill = new Bill();
@@ -180,13 +180,13 @@ namespace Management.Web.Api
 
             //update SeatNo
             var dbSeatNo = _seatnoService.GetById(bookVm.IDSeatNo);
-                    dbSeatNo.Status = true;
-                    _seatnoService.Update(dbSeatNo);
-                    _seatnoService.Save();
+            dbSeatNo.Status = true;
+            _seatnoService.Update(dbSeatNo);
+            _seatnoService.Save();
 
-                    //var responseData = Mapper.Map<Customer, CustomerViewModel>(newCustomer);
-            return  request.CreateResponse(HttpStatusCode.Created, "OK");
-             
+            //var responseData = Mapper.Map<Customer, CustomerViewModel>(newCustomer);
+            return request.CreateResponse(HttpStatusCode.Created, "OK");
+
         }
         #endregion
 
@@ -215,7 +215,7 @@ namespace Management.Web.Api
             _billService.Add(newBill);
             _billService.Save();
 
-            
+
 
             //var responseData = Mapper.Map<Customer, CustomerViewModel>(newCustomer);
             return request.CreateResponse(HttpStatusCode.Created, newBill);
@@ -301,8 +301,8 @@ namespace Management.Web.Api
                 RandomGenerator generator = new RandomGenerator();
                 string str = generator.RandomString(10, false);
 
-                mail.Body = "Cảm ơn <strong>"+billVm.CustomerName+ "</strong> đã sử dụng dịch vụ của nhà xe HAPA <br /><hr /> Đây là mã chuyến đi của bạn, vui lòng mang mã để xác nhận trên chuyến đi của bạn : <strong>" +str+"</strong> <br /><hr />" +
-                    "Bạn vui lòng <a href='http://localhost:19968/Home/Confirm?id="+billVm.ID+"&confirm="+str+"'>click vào đây</a> để xác nhận chuyến đi";
+                mail.Body = "Cảm ơn <strong>" + billVm.CustomerName + "</strong> đã sử dụng dịch vụ của nhà xe HAPA <br /><hr /> Đây là mã chuyến đi của bạn, vui lòng mang mã để xác nhận trên chuyến đi của bạn : <strong>" + str + "</strong> <br /><hr />" +
+                    "Bạn vui lòng <a href='http://localhost:19968/Home/Confirm?id=" + billVm.ID + "&confirm=" + str + "'>click vào đây</a> để xác nhận chuyến đi";
 
                 mail.IsBodyHtml = true;
 
@@ -312,16 +312,16 @@ namespace Management.Web.Api
 
                 SmtpServer.Send(mail);
 
-             //   //Send SMS
+                //   //Send SMS
 
-             //   const string accountSid = "ACef01e35217a812ef7e2b100d74fdd4cf";
-             //   const string authToken = "33d3081567b3aa95f4165483247f2e28";
-             //   TwilioClient.Init(accountSid, authToken);
+                //   const string accountSid = "ACef01e35217a812ef7e2b100d74fdd4cf";
+                //   const string authToken = "33d3081567b3aa95f4165483247f2e28";
+                //   TwilioClient.Init(accountSid, authToken);
 
-             //   var message = MessageResource.Create(
-             //to: new PhoneNumber("+84976472341"),
-             //from: new PhoneNumber("+84343382777"),
-             //body: "Hello from C#");
+                //   var message = MessageResource.Create(
+                //to: new PhoneNumber("+84976472341"),
+                //from: new PhoneNumber("+84343382777"),
+                //body: "Hello from C#");
 
                 return true;
                 // phải làm cái này ở mail dùng để gửi phải bật lên
@@ -367,6 +367,32 @@ namespace Management.Web.Api
                 //var responseData = Mapper.Map<IEnumerable<Bill>, IEnumerable<BillViewModel>>(model);
                 return request.CreateResponse(HttpStatusCode.Created, model);
 
+            });
+        }
+        #endregion
+
+
+        #region Get Count
+        [Route("getcount")]
+        [HttpGet]
+        public HttpResponseMessage GetCount(HttpRequestMessage request, string keyword)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                var lstData = _billService.GetAll(keyword);
+                
+                var count = lstData.Count(); //count all
+                var counttrue = lstData.Where(x => x.Status == true).Count(); //count where true
+                var countfalse = lstData.Where(x => x.Status != true).Count(); //count where != true
+                var datares = new
+                {
+                    CountAll = count,
+                    CountWhereTrue = counttrue,
+                    CountNotTrue = countfalse,
+                    data = lstData,
+                };
+                var response = request.CreateResponse(HttpStatusCode.OK, datares);
+                return response;
             });
         }
         #endregion

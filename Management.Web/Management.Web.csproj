@@ -1688,6 +1688,7 @@
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\ckecklist_model.js" />
     <Content Include="Scripts\dirPagination.js" />
+    <Content Include="Scripts\jquery.table2excel.js" />
     <Content Include="Scripts\loading-bar.js" />
     <Content Include="Scripts\loading-bar.min.js" />
     <Content Include="Scripts\ngBootbox.js" />
