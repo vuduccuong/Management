@@ -13,6 +13,7 @@ using System.Net.Http;
 using System.Net.Mail;
 using System.Web.Http;
 using Twilio;
+using Twilio.Clients;
 using Twilio.Rest.Api.V2010.Account;
 using Twilio.Types;
 
@@ -138,22 +139,22 @@ namespace Management.Web.Api
         {
 
             //Thêm mới khách hàng
-            //var newCustomer = new Customer();
-            //newCustomer.Name = bookVm.NameCustomer;
-            //newCustomer.PhoneNumber = bookVm.PhoneCustomer;
-            //newCustomer.Email = bookVm.MailCustomer;
-            //newCustomer.Address = bookVm.AddressCustomer;
-            //newCustomer.isDel = false;
+            var newCustomer = new Customer();
+            newCustomer.Name = bookVm.NameCustomer;
+            newCustomer.PhoneNumber = bookVm.PhoneCustomer;
+            newCustomer.Email = bookVm.MailCustomer;
+            newCustomer.Address = bookVm.AddressCustomer;
+            newCustomer.isDel = false;
             //AddCustommer
-            //_customerService.Add(newCustomer);
-            //_customerService.Save();
+            _customerService.Add(newCustomer);
+            _customerService.Save();
 
 
 
             //Thêm mới book
             var newBook = new Booking();
             newBook.IDCar = bookVm.IDCar;
-            //newBook.IDCustomer = newCustomer.ID;
+            newBook.IDCustomer = newCustomer.ID;
             newBook.IDSeat = bookVm.IDSeat;
             newBook.IDSeatNo = bookVm.IDSeatNo;
             newBook.DateBook = DateTime.Now;
@@ -314,14 +315,23 @@ namespace Management.Web.Api
 
                 //   //Send SMS
 
-                //   const string accountSid = "ACef01e35217a812ef7e2b100d74fdd4cf";
-                //   const string authToken = "33d3081567b3aa95f4165483247f2e28";
-                //   TwilioClient.Init(accountSid, authToken);
+                   const string accountSid = "ACef01e35217a812ef7e2b100d74fdd4cf";
+                   const string authToken = "33d3081567b3aa95f4165483247f2e28";
+                TwilioClient.Init(accountSid, authToken);
 
-                //   var message = MessageResource.Create(
-                //to: new PhoneNumber("+84976472341"),
-                //from: new PhoneNumber("+84343382777"),
-                //body: "Hello from C#");
+                var phonenb = billVm.CustomerPhone.Replace("0", "+84");
+
+                var messageOptions = new CreateMessageOptions(
+            new PhoneNumber(phonenb));
+                messageOptions.From = new PhoneNumber("+13093160895");
+                messageOptions.Body = "HAPA Code " + str;
+                var message = MessageResource.Create(messageOptions);
+
+                if (message.Body !=null)
+                {
+                    return true;
+                }
+
 
                 return true;
                 // phải làm cái này ở mail dùng để gửi phải bật lên

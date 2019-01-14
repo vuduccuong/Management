@@ -36,7 +36,7 @@ namespace Management.Web.Api
         }
         [Route("getlistpaging")]
         [HttpGet]
-        //[Authorize(Roles ="ViewUser")]
+        //[Authorize(Roles ="View")]
         public HttpResponseMessage GetListPaging(HttpRequestMessage request, int page, int pageSize, string filter = null)
         {
             return CreateHttpResponse(request, () =>

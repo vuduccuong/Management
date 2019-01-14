@@ -599,7 +599,7 @@
                             obj.Date = "@ViewBag.date";
                             obj.StartTime = @ViewBag.time;
                             obj.IDCar = @ViewBag.IDCar;
-                            obj.IDSeat = "";
+                            obj.IDSeat = result[i].IDSeat;
                             obj.Status = true;
                             obj.IDSeatNo = result[i].ID;
                             $.ajax({
@@ -641,17 +641,17 @@
                                 }
                         });
                             //Create Customer
-                        var datajs = { Name: obj.NameCustomer, PhoneNumber: obj.PhoneCustomer, Address: obj.AddressCustomer, Email: obj.MailCustomer };
-                        $.ajax({
-                            url: '/api/customer/add',
-                            type: 'post',
-                            data: JSON.stringify(datajs),
-                            contentType: "application/json",
+                        //var datajs = { Name: obj.NameCustomer, PhoneNumber: obj.PhoneCustomer, Address: obj.AddressCustomer, Email: obj.MailCustomer };
+                        //$.ajax({
+                        //    url: '/api/customer/add',
+                        //    type: 'post',
+                        //    data: JSON.stringify(datajs),
+                        //    contentType: "application/json",
 
-                            success: function () {
-                                console.log("Thêm Customer thành công")
-                            }
-                        });
+                        //    success: function () {
+                        //        console.log("Thêm Customer thành công")
+                        //    }
+                        //});
                     }
                 });
             }); 

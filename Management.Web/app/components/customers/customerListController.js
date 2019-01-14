@@ -11,6 +11,7 @@
         $scope.getCustomer = getCustomer;
         $scope.search = search;
         $scope.deletecustomer = deletecustomer;
+        $scope.Export = Export;
 
         var historyAction = {
             "ActionName": "Xoá tài xế",
@@ -61,6 +62,8 @@
 
             });
 
+            
+
             //Lưu lịch sử tác động
             apiService.post('api/historyaction/create', JSON.stringify(historyAction),
                 function () {
@@ -75,6 +78,16 @@
         function search() {
             getCustomer();
         }
+
+        function Export() {
+            $("#datatable").table2excel({
+                // exclude CSS class
+
+                name: "Hành khách",
+                filename: "Bảng đối chiếu hành khách" //do not include extension
+            });
+        }
+
         function getCustomer() {
             var config = {
                 params: {
